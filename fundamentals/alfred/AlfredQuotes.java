@@ -1,35 +1,29 @@
-public class AlfredTest {
-    /*
-    * This main method will always be the launch point for a Java application
-    * For now, we are using the main to test all our 
-    * AlfredQuotes methods.
-    */
-    public static void main(String[] args) {
-        // Make an instance of AlfredQuotes to access all its methods.
-        AlfredQuotes alfredBot = new AlfredQuotes();
-        
-        // Make some test greetings, providing any necessary data
-        String testGreeting = alfredBot.basicGreeting();
-        String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
-        String testDateAnnouncement = alfredBot.dateAnnouncement();
-        
-        String alexisTest = alfredBot.respondBeforeAlexis(
-                            "Alexis! Play some low-fi beats."
-                            );
-        String alfredTest = alfredBot.respondBeforeAlexis(
-            "I can't find my yo-yo. Maybe Alfred will know where it is.");
-        String notRelevantTest = alfredBot.respondBeforeAlexis(
-            "Maybe that's what Batman is about. Not winning. But failing.."
-        );
-        
-        // Print the greetings to test.
-        System.out.println(testGreeting);
-        
-        // Uncomment these one at a time as you implement each method.
-        // System.out.println(testGuestGreeting);
-        // System.out.println(testDateAnnouncement);
-        // System.out.println(alexisTest);
-        // System.out.println(alfredTest);
-        // System.out.println(notRelevantTest);
+import java.util.Date;
+public class AlfredQuotes {
+    
+    public String basicGreeting() {
+        // You do not need to code here, this is an example method
+        return "Hello, lovely to see you. How are you?";
     }
+    
+    public String guestGreeting(String name) {
+        // YOUR CODE HERE
+        return "place holder for guest greeting return string";
+    }
+    
+    public String dateAnnouncement() {
+        // YOUR CODE HERE
+        return "place holder for date announcement return string";
+    }
+    
+    public String respondBeforeAlexis(String conversation) {
+        // YOUR CODE HERE
+        return "for snarky response return string";
+    }
+    
+	// NINJA BONUS
+	// See the specs to overload the guessGreeting method
+    // SENSEI BONUS
+    // Write your own AlfredQuote method using any of the String methods you have learned!
 }
+
