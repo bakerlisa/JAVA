@@ -1,5 +1,8 @@
 public class CafeJava{
     public static void main(String[] args){
-        System.out.println("Hello World");
+        double dripCoffee = 5.95;
+        double latte = 7.00;
+        double cappuccino = 6.32;
+        
     }
 }
