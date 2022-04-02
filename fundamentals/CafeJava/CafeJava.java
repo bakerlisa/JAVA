@@ -23,7 +23,7 @@ public class CafeJava {
         boolean isReadyOrder1 = false;
         boolean isReadyOrder2 = true;
         boolean isReadyOrder3 = true;
-        boolean isReadyOrder4 = false;
+        boolean isReadyOrder4 = true;
     
         // APP INTERACTION SIMULATION (Add your code for the challenges below)
         // Example:
@@ -62,10 +62,21 @@ public class CafeJava {
 
 
         // order4 - JIMMY
-        if(isReadyOrder4){
-            System.out.println(generalGreeting + customer4);
+        System.out.println(generalGreeting + customer4);
+
+        double OrderTotel = dripCoffee - latte;
+        String orderMessage;
+        if(OrderTotel > 1){
+            orderMessage = "here's your change $";
         }else{
-            System.out.println(customer4);
+            orderMessage = "you owe $";
+            OrderTotel = latte - dripCoffee;
+        }
+
+        if(isReadyOrder4){
+            System.out.println(customer4 + ", we're very sorry. You were charged for a coffee not a latte. You " + orderMessage + OrderTotel);
+        }else{
+            System.out.println(customer4 + pendingMessage);
         }
     }
 }
