@@ -21,15 +21,17 @@ public class AlfredTest {
         String notRelevantTest = alfredBot.respondBeforeAlexis(
             "Maybe that's what Batman is about. Not winning. But failing.."
         );
+        String yellingAlfred = alfredBot.angryAlfred("If I told you once I've told you too many times. Do not go into the bat cave!");
         
         // Print the greetings to test.
         System.out.println(testGreeting);
         
         // Uncomment these one at a time as you implement each method.
-        // System.out.println(testGuestGreeting);
-        // System.out.println(testDateAnnouncement);
-        // System.out.println(alexisTest);
-        // System.out.println(alfredTest);
-        // System.out.println(notRelevantTest);
+        System.out.println(testGuestGreeting);
+        System.out.println(testDateAnnouncement);
+        System.out.println(alexisTest);
+        System.out.println(alfredTest);
+        System.out.println(notRelevantTest);
+        System.out.println(yellingAlfred);
     }
 }
