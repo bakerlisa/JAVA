@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.text.DecimalFormat;
 
+import java.awt.event.*;
+import javax.swing.*;
+
 class CafeUtil{
     
     public int getStreakGoal(int count){
@@ -67,10 +70,16 @@ class CafeUtil{
         }
     }
 
-    public String addCustomers(){
-        ArrayList<String> customers = new ArrayList<String>();
-        
-        return customers;
+    public void addCustomers(){
+        ArrayList<String> allCustomers = new ArrayList<String>();
+        System.out.println("Print a list of customers");
+
+        String customer = System.console().readLine();
+
+        while(customer != "q"){
+            allCustomers.add(customer);
+        }
+        System.out.println(allCustomers);
     }
 
 }

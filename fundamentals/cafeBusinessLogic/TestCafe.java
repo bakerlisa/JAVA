@@ -49,5 +49,9 @@ public class TestCafe {
         prices.add(7.50);
 
         appTest.displayMenu(menu,prices);
+
+        // SENSI BONUS
+        appTest.addCustomers();
+        
     }
 }
