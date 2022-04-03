@@ -70,15 +70,12 @@ class CafeUtil{
         }
     }
 
-    public void addCustomers(){
-        ArrayList<String> allCustomers = new ArrayList<String>();
+    public void addCustomers(String name){
         System.out.println("Print a list of customers");
-
         String customer = System.console().readLine();
 
-        while(customer != "q"){
-            allCustomers.add(customer);
-        }
+        ArrayList<String> allCustomers = new ArrayList<String>();
+        allCustomers.add(customer);
         System.out.println(allCustomers);
     }
 

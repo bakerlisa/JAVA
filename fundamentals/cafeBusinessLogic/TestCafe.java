@@ -51,7 +51,13 @@ public class TestCafe {
         appTest.displayMenu(menu,prices);
 
         // SENSI BONUS
-        appTest.addCustomers();
+        System.out.println("Print a list of customers");
+        String customer = System.console().readLine();
+
+        while(customer != "q"){
+            appTest.addCustomers(customer);
+        }    
+        
         
     }
 }
