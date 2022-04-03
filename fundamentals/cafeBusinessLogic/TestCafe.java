@@ -55,15 +55,13 @@ public class TestCafe {
         System.out.println("Print a list of customers");
         String newCustomers = "";
 
-        while(!newCustomers.equals('q')){
-            Stsyem.out.println(newCustomers);
+        while(!newCustomers.equals("q")){
             newCustomers = appTest.addCustomers();
-    
-            allCustomers.add(newCustomers);
-            System.out.println(allCustomers);
+            if(!newCustomers.equals("q")){   
+                allCustomers.add(newCustomers);
+            }
         }
 
         System.out.println(allCustomers);
-        
     }
 }
