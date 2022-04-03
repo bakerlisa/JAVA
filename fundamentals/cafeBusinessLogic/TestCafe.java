@@ -51,13 +51,17 @@ public class TestCafe {
         appTest.displayMenu(menu,prices);
 
         // SENSI BONUS
-        System.out.println("Print a list of customers");
-        String newCustomers = appTest.addCustomers(); 
-        ArrayList<String> allCustomers = new ArrayList<String>();  
+        String go = true;
+        ArrayList<String> allCustomers = new ArrayList<String>(); 
 
-        System.out.println(newCustomers);
-        while(newCustomers != "q" ){
+        while(go){
+            System.out.println("Print a list of customers");
+            String newCustomers = appTest.addCustomers(); 
             allCustomers.add(customer);
+
+            if(newCustomers == 'q'){
+                go = false;
+            }
         }
         System.out.println(allCustomers);
         
