@@ -1,4 +1,3 @@
-for(let i=1; i < arr.length - 1; i++){
-            //     this.next = arr[i];
-            //     // runner = runner.next;
-            // }
+list.PushBack(test_data1);
+// list.PushBack(test_data2);
+// list.PushBack(test_data3);
