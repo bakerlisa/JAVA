@@ -4,24 +4,21 @@ import java.util.HashMap;
 public class TestOrders {
     public static void main(String[] args) {
     
-        // Menu items
-        // ArrayList<Object> items = new ArrayList<Object>();
         Item Item1 = new Item("Mocha", 12.50);
-        Item1.orderInfo();
-        Item1.setTheName("Latte");
-        System.out.println(Item1.getName());
-        // System.out.println(Item1.getPrice());
+        Item Item2 = new Item("Latte", 7.99);
+        Item Item3 = new Item("Drip Coffee", 10.29);
+        Item Item4 = new Item("Capuccino", 3.45);
 
-
-        // ArrayList<Object> Item2 = newItem.menuItem("Latte", 7.35);
-        // ArrayList<Object> Item3 = newItem.menuItem("Drip Coffee", 4.99);
-        // ArrayList<Object> Item4 = newItem.menuItem("Capuccino", 11.05);
-
-        // Order variables -- order1, order2 etc.
-        // HashMap<String, Object>  order1 = submitOrder.indvOrder();
+            // ======== TESTING GETTER / SETTERS ========
+            // Item1.orderInfo();
+            // Item1.setTheName("Latte");
+            // System.out.println(Item1.getName());
+            // System.out.println(Item1.getPrice());
 
         // Order variables -- order1, order2 etc.
-        // Order order1 = new Order();  
+        Order order1 = new Order("Lisa");  
+            //Testing the Order constructor
+            order1.showInfo();
         // order1.name = "Cindhuri";
         // order1.cafe = order1.typeCastCafe(Item1.get(0));
         // order1.total = order1.typeCastPrice(Item1.get(1));
