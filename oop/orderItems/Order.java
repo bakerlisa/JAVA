@@ -4,7 +4,7 @@ public class Order{
     public Double total;
     public Boolean ready;
 
-    public double getPrice(Object price){
+    public double typeCastPrice(Object price){
         Object obj = price;
         Double total = new Double(obj.toString());
 
@@ -12,8 +12,8 @@ public class Order{
         return total;
     }
 
-    public String getCafe(Object cafe){
-        String name = cafe.toString();
+    public String typeCastCafe(Object drink){
+        String name = drink.toString();
         return name;
     }
 }

@@ -5,7 +5,7 @@ public class TestOrders {
     public static void main(String[] args) {
     
         // Menu items
-        ArrayList<Object> items = new ArrayList<Object>();
+        // ArrayList<Object> items = new ArrayList<Object>();
         Item newItem = new Item();
         ArrayList<Object> Item1 = newItem.menuItem("Mocha", 12.50);
         ArrayList<Object> Item2 = newItem.menuItem("Latte", 7.35);
@@ -15,6 +15,7 @@ public class TestOrders {
         // Order variables -- order1, order2 etc.
         // HashMap<String, Object>  order1 = submitOrder.indvOrder();
 
+        // Order variables -- order1, order2 etc.
         Order order1 = new Order();  
         order1.name = "Cindhuri";
         order1.cafe = order1.typeCastCafe(Item1.get(0));
@@ -44,7 +45,7 @@ public class TestOrders {
         // Application Simulations
         // Use this example code to test various orders' updates
         System.out.printf("Name: %s\n", order4.name);
-        System.out.printf("Cafe Ordered: %s\n", order4.cafe);
+        System.out.printf("Drink Ordered: %s\n", order4.cafe);
         System.out.printf("Total: $%s\n", order4.total);
         System.out.printf("Ready: %s\n", order4.ready);
     }
