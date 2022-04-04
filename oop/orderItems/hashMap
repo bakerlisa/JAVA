@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class Order{
+    public HashMap<String, Object> indvOrder(String name, int amount, boolean ready, ArrayList<Object> items){
+        HashMap<String, Object> order = new HashMap<String, Object>();
+        // converst our "object" price value into a double so we can then mutiple byt the amount of the item they ordered
+        Object obj = items.get(1);
+        Double x = new Double(obj.toString());
+        Double total = x * amount;
+
+        // creates hashmap values
+        order.put("name", name);
+        order.put("price", total);
+        order.put("ready", ready);
+
+        // retuent
+        return order;
+    }
+}
