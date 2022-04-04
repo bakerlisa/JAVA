@@ -75,6 +75,7 @@ class PuzzleJava {
     public char[] shuffleArrayTwo(char[] passReset){
         char[] shuffled = new char[8];
         int i = 0;
+        
         while(i < passReset.length){
             shuffled[i] = getRandomLetter();
             i++;
