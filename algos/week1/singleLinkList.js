@@ -39,17 +39,29 @@ class List {
 
     /* Insert an array of nodes with the given values to the end of the list. */
     PushBackN(arr){
-        /* Your Code Here */
         let newNode=new Node(arr[0]);
         this.head = newNode;
         var runner = this.head;
 
-        for(var i=1; i < arr.length; i++){
+        /* Your Code Here */
+        for(var i=0; i < arr.length; i++){
+            
+
             let newerNode=new Node(arr[i]);
             this.next = newerNode;
         }
         runner.next=newNode;
         return list;
+    }
+
+    Iterate(list){
+        if(list.head != null){
+            var runner = this.head;
+            while(runner.next != null){
+                console.log(this.value);
+                runner = runner.next;
+            }
+        }
     }
 };
 
@@ -73,9 +85,9 @@ let list=new List();
 // list.PushBack(test_data3);
 
 /* Insert array of nodes into the list: */
-console.log(list.PushBackN(test_data4));
+list.PushBackN(test_data4);
 
 // console.log(list.PushBackN(test_data5));
 
 /* Iterate our list, so we can see our node values */
-// list.Iterate(value=>console.log(value));
+list.Iterate(list);
