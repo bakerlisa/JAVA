@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.text.DecimalFormat;
 
-import java.awt.event.*;
-import javax.swing.*;
-
 class CafeUtil{
     
     public int getStreakGoal(int count){
