@@ -14,12 +14,48 @@ public class Order{
         this.name = "Guest";
     }
 
-    // shpwing the name data for testing purposes
+    // showing the name data for testing purposes
     public void showInfo(){
         System.out.println(name);
     }
-    
-    // ======== CHANGING THE TYPE CAST ========
+
+    // ======== GETTERS / SETTERS ========
+        // Getters
+        public String getName(){
+            return name;
+        }
+        public String getCafe(){
+            return cafe;
+        }
+        public boolean getReady(){
+            return ready;
+        }
+        public ArrayList getItems(){
+            return items;
+        }
+
+        // Setters
+        public void setTheName(String person){
+            this.name = person;
+        }
+        public void setTheCafe(String drink){
+            this.cafe = drink;
+        }
+        public void setTheReady(boolean done){
+            this.ready = done;
+        }
+        public void setTheItems(ArrayList<Item> orders){
+            this.items = orders;
+        }
+
+    // ======== METHODS ========
+        public void addItem(String name, double price){
+            // STOPPED HERE
+            this.items.add(name);
+            System.out.println(items);
+        }
+
+    // CHANGING THE TYPE CAST 
         // price
         public double typeCastPrice(Object price){
             Object obj = price;

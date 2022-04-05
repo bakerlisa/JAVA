@@ -16,10 +16,28 @@ public class TestOrders {
             // System.out.println(Item1.getPrice());
 
         // Order variables -- order1, order2 etc.
-        Order order1 = new Order("Lisa");  
-            //Testing the Order constructor
-            order1.showInfo();
+        Order order1 = new Order("Cindhuri");  
+        order1.addItem(Item1.getName(),Item1.getPrice());
+            // ======== TESTING GETTER / SETTERS ========
+            // System.out.println(order1.getName());
+            // order1.setTheName("Lisa");
+            // System.out.println(order1.getName());
+
+            // System.out.println(order1.getCafe());
+            // order1.setTheCafe("Coffee");
+            // System.out.println(order1.getCafe());
+            
+            // order1.setTheCafe(Item1.getName());
+            // System.out.println(order1.getCafe());
+
+            // order1.setTheReady(true);
+            // System.out.println(order1.getReady());
+
+
+
+
         // order1.name = "Cindhuri";
+
         // order1.cafe = order1.typeCastCafe(Item1.get(0));
         // order1.total = order1.typeCastPrice(Item1.get(1));
         // order1.ready = true;
