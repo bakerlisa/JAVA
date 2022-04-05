@@ -23,12 +23,25 @@ public class CoffeeKiosk {
 
     public void newOrder(){
         Scanner scan = new Scanner( System.in);
+        Order newOrder = new Order(); 
         
+        // SETS ORDERER'S NAME
         System.out.println("Name on Order: ");
         String name = scan.next();
-        
+        newOrder.setTheName(name);
+
+        // SETS UP WHAT THEY ORDERED
+        ArrayList<String> orderItems = new ArrayList<String>();
         System.out.println("Order: choose by id, hit q to submit order");
-        int order = scan.nextInt();
+        String order = "1";
+
+        while(!order.equals("q")){
+            order = scan.next();
+            if(!order.equals("q")){
+                orderItems.add(order);
+            }
+        }
+        System.out.println(orderItems);
     }
 
 }
