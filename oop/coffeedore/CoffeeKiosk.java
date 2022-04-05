@@ -34,9 +34,10 @@ public class CoffeeKiosk {
         Order newOrder = new Order(name);
 
         // order items
-        String order = "";
+        String order = "1";
 
         while(!order.equals("q")){
+            System.out.println("Order: type the ID of your order ");
             order = scan.next();
             if(!order.equals("q")){
                 int orderNum = Integer.parseInt(order); 
@@ -44,9 +45,16 @@ public class CoffeeKiosk {
             }
         }
         // adds it to our orders arrayList
-        // orders.add(newOrder);
-
-        System.out.println(newOrder);
+        
+        for(int i=0; i<newOrder.getItems().size();i++ ){
+            for(int j = 0; j < menu.size();j++){
+                if(menu.get(j) == newOrder.getItems().get(i)){
+                    System.out.println(menu.get(j).getName() + " -- $" + menu.get(j).getPrice());
+                }
+            }
+            
+            // System.out.println(newOrder.getItems().get(i).getName());
+        }
         // newOrder.getItems();
 
     }
