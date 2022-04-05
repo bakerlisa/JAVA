@@ -1,16 +1,42 @@
+import java.util.Random;
+
 class BankAccount {
     private double checkingBalance;
     private double savingsBalance;
     public static int numAccounts = 0;
     // public static double = checkingBalance + savingsBalance;
+    public static String accountNumber;
 
     public BankAccount(){
         numAccounts++;
+        accountNumber = setAccountNumber();
     }
 
     // SATAIC MEHTOD
     public static int AccountCount() {
         return numAccounts;
+    }
+
+    private static String returnAccountNumber(){
+        return accountNumber;
+    }
+    
+
+
+    // PIRVATE METHOD
+    private static String setAccountNumber(){
+        char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        String allRolls = "";
+        
+        int i=0;
+        while(i<10){
+            Random rand = new Random();
+            int randInt = rand.nextInt(25); 
+            allRolls += alphabet[randInt];
+            i++;
+        }
+
+        return allRolls;
     }
 
     // GETTERS
