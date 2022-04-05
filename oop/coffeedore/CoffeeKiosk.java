@@ -23,27 +23,31 @@ public class CoffeeKiosk {
 
     public void newOrder(){
         Scanner scan = new Scanner( System.in);
-        Order newOrder = new Order(); 
         
         // SETS ORDERER'S NAME
         System.out.println("Name on Order: ");
         String name = scan.next();
-        newOrder.setTheName(name);
+        System.out.println(this.orders);
 
-        // SETS UP WHAT THEY ORDERED
-        System.out.println("Order: choose by id, hit q to submit order");
-        String order = "1";
+        // // SETS UP WHAT THEY ORDERED
+        // System.out.println("Order: choose by id, hit q to submit order");
+        // String order = "1";
 
-        while(!order.equals("q")){
-            order = scan.next();
-            if(!order.equals("q")){
-                int orderNum = Integer.parseInt(order); 
-                newOrder.addItem(menu.get(orderNum));
-            }
-        }
+        // while(!order.equals("q")){
+        //     order = scan.next();
+        //     if(!order.equals("q")){
+        //         int orderNum = Integer.parseInt(order); 
+        //         newOrder.addItem(menu.get(orderNum));
+        //     }
+        // }
 
-        System.out.println("Thank you " + newOrder.getName() + " Your order will be ready shortly");
-        System.out.println(newOrder.getItems());
+        // System.out.println("Thank you " + newOrder.getName() + " Your order will be ready shortly");
+        // // System.out.println(newOrder.getItems().size());
+        // System.out.println(newOrder);
+        // System.out.println(newOrder.getItems());
+        // for(int i=0; i < newOrder.getItems().size(); i++){
+        //     System.out.println(orders);
+        // }
 
         // ============ Now we need to loop through and doe the ritht data ============
         
