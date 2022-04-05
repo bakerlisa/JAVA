@@ -34,11 +34,13 @@ public class CoffeeKiosk {
             System.out.println("Item: " + name + " for " + price  + " has benn addded!");
             
             double cleanPrice = Double.parseDouble(price);
-            Item newDessert = new Item(name,cleanPrice);
-            menu.add(newDessert);
+            Item newItem = new Item(name,cleanPrice);
+            menu.add(newItem);
 
             System.out.println();
             displayMenu();
+        }else{
+            newOrder(); 
         }
 
         
