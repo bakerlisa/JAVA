@@ -31,17 +31,22 @@ public class CoffeeKiosk {
         newOrder.setTheName(name);
 
         // SETS UP WHAT THEY ORDERED
-        ArrayList<String> orderItems = new ArrayList<String>();
         System.out.println("Order: choose by id, hit q to submit order");
         String order = "1";
 
         while(!order.equals("q")){
             order = scan.next();
             if(!order.equals("q")){
-                orderItems.add(order);
+                int orderNum = Integer.parseInt(order); 
+                newOrder.addItem(menu.get(orderNum));
             }
         }
-        System.out.println(orderItems);
+
+        System.out.println("Thank you " + newOrder.getName() + " Your order will be ready shortly");
+        System.out.println(newOrder.getItems());
+
+        // ============ Now we need to loop through and doe the ritht data ============
+        
     }
 
 }
