@@ -19,23 +19,26 @@ public class CoffeeKiosk {
     public void addMenuItemByInput(){
         Scanner scan = new Scanner( System.in);
         System.out.println("Are you admin Y/n");
-        String admin = scan.next();
+        String admin = scan.nextLine();
+
         if(admin.equals("Y")){
             System.out.println("Alright you have the ability to add menu items");
-            System.out.println("Item Name");
-            String name = scan.next();
-            System.out.println("Item price");
-            String price = scan.next();
+            String order = "q";
+
+            System.out.println("Item Name:");
+            String name = scan.nextLine();
+            System.out.println("Item price:");
+            String price = scan.nextLine();
             
             System.out.println();
             System.out.println("Item: " + name + " for " + price  + " has benn addded!");
             
             double cleanPrice = Double.parseDouble(price);
             Item newDessert = new Item(name,cleanPrice);
-            // menu.add(newDessert);
+            menu.add(newDessert);
 
-            // System.out.println();
-            // displayMenu();
+            System.out.println();
+            displayMenu();
         }
 
         
