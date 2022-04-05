@@ -4,18 +4,21 @@ import java.util.ArrayList;
 public class CoffeeKiosk {
     private ArrayList<Order> orders;
     private ArrayList<Item> menu;
+    
 
     public CoffeeKiosk(){
         this.orders = new ArrayList<Order>();
         this.menu = new ArrayList<Item>();
     }
 
-    public void addMenuItem(Item newItem){
+    public void addMenuItem(String name, double price){
+        Item newItem = new Item(name,price);
         menu.add(newItem);
     } 
 
     public void displayMenu(){
         System.out.println("MENU:");
+
         for(int i = 0; i < menu.size();i++){
             System.out.println(menu.get(i).getIndex() + " " +  menu.get(i).getName() + " -- $" + menu.get(i).getPrice());
         }
@@ -23,34 +26,11 @@ public class CoffeeKiosk {
 
     public void newOrder(){
         Scanner scan = new Scanner( System.in);
-        
-        // SETS ORDERER'S NAME
-        System.out.println("Name on Order: ");
+        System.out.println("Name on Order");
         String name = scan.next();
-        System.out.println(this.orders);
+        System.out.println("Hello " + name);
 
-        // // SETS UP WHAT THEY ORDERED
-        // System.out.println("Order: choose by id, hit q to submit order");
-        // String order = "1";
-
-        // while(!order.equals("q")){
-        //     order = scan.next();
-        //     if(!order.equals("q")){
-        //         int orderNum = Integer.parseInt(order); 
-        //         newOrder.addItem(menu.get(orderNum));
-        //     }
-        // }
-
-        // System.out.println("Thank you " + newOrder.getName() + " Your order will be ready shortly");
-        // // System.out.println(newOrder.getItems().size());
-        // System.out.println(newOrder);
-        // System.out.println(newOrder.getItems());
-        // for(int i=0; i < newOrder.getItems().size(); i++){
-        //     System.out.println(orders);
-        // }
-
-        // ============ Now we need to loop through and doe the ritht data ============
-        
+        // Order newOrder = new Order("")
     }
 
 }

@@ -3,13 +3,14 @@ public class Item {
     // MEMBER VARIABLES
     private String name;
     private double price;
-    private int index;
+    private int index = 0;
+    static int idx = 0;
     
     // CONSTRUCTOR
-    public Item(String name, double price, int index){
+    public Item(String name, double price){
         this.name = name;
         this.price = price;
-        this.index = index;
+        this.index = idx++;
     }
 
     // DISPLAYS the order info
@@ -35,8 +36,6 @@ public class Item {
     public void setThePrice(double num){
         this.price = num;
     }
-    public void setTheIndex(int idx){
-        this.index = idx;
-    }
+    
     
 }
