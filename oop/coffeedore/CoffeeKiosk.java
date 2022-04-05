@@ -25,18 +25,29 @@ public class CoffeeKiosk {
     }
 
     public void newOrder(){
-        // Creats a name
+        // Creats name
         Scanner scan = new Scanner( System.in);
         System.out.println("Name on Order");
         String name = scan.next();
 
+        // Creats new order
         Order newOrder = new Order(name);
 
-        // Creats an order 
+        // order items
+        String order = "";
+
+        while(!order.equals("q")){
+            order = scan.next();
+            if(!order.equals("q")){
+                int orderNum = Integer.parseInt(order); 
+                newOrder.addItem(menu.get(orderNum));
+            }
+        }
+        // adds it to our orders arrayList
+        // orders.add(newOrder);
+
         System.out.println(newOrder);
-
-        
-
+        // newOrder.getItems();
 
     }
 
