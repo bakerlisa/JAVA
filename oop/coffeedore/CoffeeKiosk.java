@@ -5,17 +5,19 @@ public class CoffeeKiosk {
     private ArrayList<Order> orders;
     private ArrayList<Item> menu;
     
-
+    // constructor
     public CoffeeKiosk(){
         this.orders = new ArrayList<Order>();
         this.menu = new ArrayList<Item>();
     }
 
+    // ================ DEFAULT NEW MENU ITEM ================
     public void addMenuItem(String name, double price){
         Item newItem = new Item(name,price);
         menu.add(newItem);
     } 
 
+    // ================ ADMIN NEW MENU ITEM ================
     public void addMenuItemByInput(){
         Scanner scan = new Scanner( System.in);
         System.out.println("Are you admin Y/n");
@@ -45,6 +47,7 @@ public class CoffeeKiosk {
         }
     }
 
+    // ================ DISPLAY MENU ================
     public void displayMenu(){
         System.out.println(" ========= MENU ========= ");
 
@@ -53,6 +56,7 @@ public class CoffeeKiosk {
         }
     }
 
+    // ================ NEW ORDER ================
     public void newOrder(){
         // Creats name
         Scanner scan = new Scanner( System.in);
@@ -60,6 +64,7 @@ public class CoffeeKiosk {
         String name = scan.next();
 
         // Creats new order
+        // ?? Is this right? didn't we initiate at the top?
         Order newOrder = new Order(name);
         displayMenu();
 
@@ -80,7 +85,7 @@ public class CoffeeKiosk {
         System.out.println(newOrder.getName() + " your order of:");
         for(int i=0; i<newOrder.getItems().size();i++ ){
             // ?? Why can't I get this to work ??
-            //System.out.println(newOrder.getItems().get(i).getName());
+            // System.out.println(newOrder.getItems().get(i).getName());
             for(int j = 0; j < menu.size();j++){
                 if(menu.get(j) == newOrder.getItems().get(i)){
                     System.out.println(menu.get(j).getName() + " -- $" + menu.get(j).getPrice());
