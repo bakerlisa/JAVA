@@ -13,6 +13,9 @@ public class TestOrder {
             // menuItems.displayMenu();
 
             // ADDS AN ORDER
-            menuItems.newOrder();
+            // menuItems.newOrder();
+
+            // BONUS add menu item
+            menuItems.addMenuItemByInput();
     }
 }

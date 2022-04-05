@@ -16,6 +16,22 @@ public class CoffeeKiosk {
         menu.add(newItem);
     } 
 
+    public void addMenuItemByInput(){
+        Scanner scan = new Scanner( System.in);
+        System.out.println("Are you admin Y/n");
+        String admin = scan.next();
+        if(admin.equals("Y")){
+            System.out.println("Alright you have the ability to add menu items");
+            System.out.println("Item Name");
+            String name = scan.next();
+            System.out.println("Item price");
+            String price = scan.next();
+
+            System.out.println();
+            System.out.println("Item: " + name + " for " + price  + " has benn addded!");
+        }
+    }
+
     public void displayMenu(){
         System.out.println(" ========= MENU ========= ");
 
