@@ -54,6 +54,13 @@ class List {
         return list;
     }
 
+    insertAtFront(value) {
+        let newNode = new Node(value);
+        var temp = this.head;
+        newNode = this.head;
+        newNode.next = temp;
+    }
+
     Iterate(list){
         if(list.head != null){
             var runner = this.head;
@@ -80,12 +87,12 @@ let list=new List();
 // console.log(list.IsEmpty());
 
 /* Insert nodes into the list: */
-// list.PushBack(test_data1);
+list.PushBack(test_data1);
 // list.PushBack(test_data2);
 // list.PushBack(test_data3);
 
 /* Insert array of nodes into the list: */
-list.PushBackN(test_data4);
+// list.PushBackN(test_data4);
 
 // console.log(list.PushBackN(test_data5));
 
