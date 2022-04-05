@@ -17,7 +17,7 @@ public class CoffeeKiosk {
     } 
 
     public void displayMenu(){
-        System.out.println("MENU:");
+        System.out.println(" ========= MENU ========= ");
 
         for(int i = 0; i < menu.size();i++){
             System.out.println(menu.get(i).getIndex() + " " +  menu.get(i).getName() + " -- $" + menu.get(i).getPrice());
@@ -32,6 +32,7 @@ public class CoffeeKiosk {
 
         // Creats new order
         Order newOrder = new Order(name);
+        displayMenu();
 
         // order items
         String order = "1";
@@ -44,19 +45,21 @@ public class CoffeeKiosk {
                 newOrder.addItem(menu.get(orderNum));
             }
         }
+
         // adds it to our orders arrayList
-        
+        System.out.println();
+        System.out.println(newOrder.getName() + " your order of:");
         for(int i=0; i<newOrder.getItems().size();i++ ){
+            // ?? Why can't I get this to work ??
+            //System.out.println(newOrder.getItems().get(i).getName());
             for(int j = 0; j < menu.size();j++){
                 if(menu.get(j) == newOrder.getItems().get(i)){
                     System.out.println(menu.get(j).getName() + " -- $" + menu.get(j).getPrice());
                 }
             }
-            
-            // System.out.println(newOrder.getItems().get(i).getName());
         }
-        // newOrder.getItems();
-
+        System.out.println("__________________________");
+        System.out.println("TOTAL: " + newOrder.getOrderTotal());
     }
 
 }
