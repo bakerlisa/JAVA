@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class Order{
     private String name;
     private String cafe;
     private Boolean ready;
-    private ArrayList<Item> items;
+    private ArrayList<Item> items = new ArrayList<Item>();
 
     public Order(String name) {
         this.name = name;
@@ -12,6 +13,7 @@ public class Order{
 
     public Order(){
         this.name = "Guest";
+        this.ready = false;
     }
 
     // showing the name data for testing purposes
@@ -44,27 +46,40 @@ public class Order{
         public void setTheReady(boolean done){
             this.ready = done;
         }
-        public void setTheItems(ArrayList<Item> orders){
-            this.items = orders;
-        }
+
 
     // ======== METHODS ========
-        public void addItem(String name, double price){
-            // STOPPED HERE
-            this.items.add(name);
-            System.out.println(items);
+        public void addItem(Item order){
+            this.items.add(order);
         }
 
-    // CHANGING THE TYPE CAST 
-        // price
-        public double typeCastPrice(Object price){
-            Object obj = price;
-            Double total = new Double(obj.toString());
-            return total;
+        public String getStatusMessage(){
+            if(this.ready){
+                return "Your order is ready";
+            }else{
+                return "Thank you for waiting. Your order will be ready soon.";
+            }
         }
-        // Drink Name
-        public String typeCastCafe(Object drink){
-            String name = drink.toString();
-            return name;
+
+        public double getOrderTotal(){
+            DecimalFormat df=new DecimalFormat("0.00");
+            
+            double total = 0.00;
+            for(int i = 0; i < items.size(); i++){
+                total += items.get(i).getPrice();
+            }
+            // makes it 2 decimals
+            String formate = df.format(total); 
+            double finalValue = Double.parseDouble(formate);
+
+            return finalValue;
+        }
+
+        public void display(){
+            System.out.println("Customer Name: "  + this.name);
+            for(int i=0; i<this.items.size(); i++){
+                System.out.println(items.get(i).getName() + "-" + items.get(i).getPrice());
+            }
+            System.out.println("Total: $" + getOrderTotal());
         }
 }
