@@ -23,16 +23,17 @@ public class CoffeeKiosk {
 
         if(admin.equals("Y")){
             System.out.println("Alright you have the ability to add menu items");
-            String order = "q";
 
+            // set new item
             System.out.println("Item Name:");
             String name = scan.nextLine();
+            //set price
             System.out.println("Item price:");
             String price = scan.nextLine();
-            
+            //sucess message
             System.out.println();
             System.out.println("Item: " + name + " for " + price  + " has benn addded!");
-            
+            //clean our double na dsubmit it to menu
             double cleanPrice = Double.parseDouble(price);
             Item newItem = new Item(name,cleanPrice);
             menu.add(newItem);
@@ -42,8 +43,6 @@ public class CoffeeKiosk {
         }else{
             newOrder(); 
         }
-
-        
     }
 
     public void displayMenu(){
