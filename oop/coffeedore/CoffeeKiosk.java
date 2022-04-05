@@ -26,10 +26,19 @@ public class CoffeeKiosk {
             String name = scan.next();
             System.out.println("Item price");
             String price = scan.next();
-
+            
             System.out.println();
             System.out.println("Item: " + name + " for " + price  + " has benn addded!");
+            
+            double cleanPrice = Double.parseDouble(price);
+            Item newDessert = new Item(name,cleanPrice);
+            // menu.add(newDessert);
+
+            // System.out.println();
+            // displayMenu();
         }
+
+        
     }
 
     public void displayMenu(){
