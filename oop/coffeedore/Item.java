@@ -20,7 +20,7 @@ public class Item {
     
     // GETTERS
     public String getName(){
-        return name;
+        return this.name;
     }
     public double getPrice(){
         return price;

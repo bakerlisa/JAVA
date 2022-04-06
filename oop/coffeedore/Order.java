@@ -5,7 +5,7 @@ public class Order{
     private String name;
     private String cafe;
     private Boolean ready;
-    private ArrayList<Item> items = new ArrayList<Item>();
+    public ArrayList<Item> items = new ArrayList<Item>();
 
     public Order(String name) {
         this.name = name;
@@ -32,8 +32,11 @@ public class Order{
         public boolean getReady(){
             return ready;
         }
-        public ArrayList getItems(){
-            return items;
+        public void getItems(){
+            for (int i =0 ;i < items.size(); i++) {
+                System.out.println(items.get(i).getName());
+            }
+            // return items;
         }
 
         // Setters

@@ -83,15 +83,18 @@ public class CoffeeKiosk {
         // adds it to our orders arrayList
         System.out.println();
         System.out.println(newOrder.getName() + " your order of:");
-        for(int i=0; i<newOrder.getItems().size();i++ ){
+        System.out.println(newOrder.getItems());
+        // for(int i=0; i<newOrder.getItems().size();i++ ){
             // ?? Why can't I get this to work ??
-            // System.out.println(newOrder.getItems().get(i).getName());
-            for(int j = 0; j < menu.size();j++){
-                if(menu.get(j) == newOrder.getItems().get(i)){
-                    System.out.println(menu.get(j).getName() + " -- $" + menu.get(j).getPrice());
-                }
-            }
-        }
+            // System.out.println(newOrder.menu);
+            // System.out.println(newOrder.getItems().get(i));
+            
+            // for(int j = 0; j < menu.size();j++){
+            //     if(menu.get(j) == newOrder.getItems().get(i)){
+            //         System.out.println(menu.get(j).getName() + " -- $" + menu.get(j).getPrice());
+            //     }
+            // }
+        // }
         System.out.println("__________________________");
         System.out.println("TOTAL: " + newOrder.getOrderTotal());
     }
