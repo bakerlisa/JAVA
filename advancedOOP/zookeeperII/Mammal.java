@@ -1,5 +1,5 @@
 public class Mammal{
-    private int engeryLevel;
+    public int engeryLevel;
 
     // CONSTRUCTORS
     public Mammal(){
@@ -21,7 +21,6 @@ public class Mammal{
 
     // METHODS
     public int displayEnergy(){
-        System.out.println("Anialas has an engery leve of " + this.engeryLevel);
         return this.engeryLevel;
     }
 }
