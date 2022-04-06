@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Sculpture extends Art {
     public String material;
 
@@ -7,6 +9,7 @@ public class Sculpture extends Art {
         this.author = author;
         this.description = description;
         this.material = material;
+        this.museum = new ArrayList<Art>();
     }
 
     // GETTERS
@@ -22,8 +25,5 @@ public class Sculpture extends Art {
     // METHODS
     public void viewArt(){
         System.out.println("Viewing Sculptures");
-    }
-    public void addToMuseum(){
-
     }
 }

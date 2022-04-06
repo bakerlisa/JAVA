@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Painting extends Art {
     public String paintType;
 
@@ -7,6 +9,7 @@ public class Painting extends Art {
         this.author = author;
         this.description = description;
         this.paintType = paintType;
+        this.museum = new ArrayList<Art>();
     }
 
     // GETTERS
@@ -23,7 +26,8 @@ public class Painting extends Art {
     public void viewArt(){
         System.out.println("Viewing Paintings");
     }
-    public void addToMuseum(){
-
-    }
+    public void addToMuseum(String title, String author, String description, String paintType){
+        Painting newPainting = new Painting(title,author,description,paintType);
+        museum.add(newPainting);
+    } 
 }

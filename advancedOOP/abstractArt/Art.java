@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javafx.scene.shape.Mesh;
+
 public abstract class Art{
     public String title;
     public String author;
@@ -22,6 +24,9 @@ public abstract class Art{
     public String getDescription(){
         return description;
     }
+    public ArrayList<Art> getMuseum(){
+        return museum;
+    }
     // SETTERS
     public void setTitle(String title){
         this.title = title;
@@ -32,6 +37,7 @@ public abstract class Art{
     public void setDescription(String description){
         this.description = description;
     }
+    
 
     public abstract void viewArt();
     public abstract void addToMuseum();
