@@ -1,28 +1,22 @@
 public class Card{
-    private String suit;
-    private Integer number;
-    private String color;
+
+    public String suit;
+    public int number;
 
     // CONSTRUCTOR
     public Card(){
-
     }
 
-    public Card(String color){
-        this.color = color;
-    }
-
-    public Card(String color, String suit, Integer number){
+    public Card(String suit, int number){
         this.suit = suit;
         this.number = number;
-        this.color = color;
     }
 
     // GETTERS
     public String getSuit(){
         return this.suit;
     }
-    public Integer getNumber(){
+    public int getNumber(){
         return this.number;
     }
     public String getCard(){
@@ -34,12 +28,13 @@ public class Card{
     public void setSuit(String suit){
         this.suit = suit;
     }
-    public void setNumber(Integer number){
+    public void setNumber(int number){
         this.number = number;
     }
 
-  
-
     // METHODS
-    
+    public void createCard(String suit, int number){
+        this.suit = suit;
+        this.number = number;
+    }
 }   
