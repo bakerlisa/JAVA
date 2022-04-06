@@ -1,18 +1,22 @@
 public class Mammal{
     private int engeryLevel;
 
-    // CONSTRUCTOR
+    // CONSTRUCTORS
     public Mammal(){
+        this.engeryLevel = 100;
+    }
 
+    public Mammal(int engeryLevel){
+        this.engeryLevel = engeryLevel;
     }
 
     // SETTER
     public void setEngery(int level){
-        this.engeryLevel = level;
+        engeryLevel = this.engeryLevel + level;
     }
     // GETTER
     public int getEngery(){
-        return this.engery;
+        return this.engeryLevel;
     }
 
     // METHODS
