@@ -104,6 +104,45 @@ class List {
         } 
     }
 
+    //REMOVE BACK
+    removeBack(){
+        var runner = this.head;
+        var pervious = runner;
+        while(runner.next != null){
+            pervious = runner;
+            runner = runner.next
+        }
+        pervious.next = null;
+    }
+
+    // CONTAINS
+    contains(val) {
+        var runner = this.head;
+        while(runner != null){
+            if(runner.value === val){
+
+                return "Found you!!";
+            }
+            runner = runner.next;
+        }
+        return "Booooooo";
+    }
+
+    // CONTAINSRECURSIVE
+    containsRecursive(val, current = this.head){
+        if(current.value === val){
+            return "Mic drop!";
+        }else{
+            if(current.next != null){
+                return this.containsRecursive(val, current.next);
+            }else{
+                return "Bummer...better luck next time";
+            }
+        }
+    }
+
+
+
     // LOOP THROUGH AND SHOW ALL VALUES
     showValues(){
         var runner = this.head;
@@ -123,32 +162,49 @@ let test_data6=678;
 let test_data7=[111,222,333,444,555];
 let test_data8=[666,777,888,999,1010];
 
-let list=new List();
+let list = new List();
 
-// IS EMPTY
-// console.log(list.IsEmpty());
+// === MONDAY ===
+    // IS EMPTY
+    // console.log(list.IsEmpty());
 
 //ADD TO BACK
-list.PushBack(test_data3);
-list.PushBack(test_data2);
+// list.PushBack(test_data3);
+// list.PushBack(test_data2);
 
 // ADD ARRAY
 // list.PushBackN(test_data7);
 // list.PushBackN(test_data8);
 
 // ADD TO FRONT
-// list.insertAtFront(test_data1);
-// list.insertAtFront(test_data2);
-// list.insertAtFront(test_data3);
+list.insertAtFront(test_data1);
+list.insertAtFront(test_data2);
+list.insertAtFront(test_data3);
 list.insertAtFront(test_data4);
 list.insertAtFront(test_data5);
 list.insertAtFront(test_data6);
 
-// REMOVE HEAD
-// list.removeHead();
+// === TUESDAY ===
+    // REMOVE HEAD
+    // list.removeHead();
 
-// AVERAGE
-// console.log("Average: " + list.average());
+    // AVERAGE
+    // console.log("Average: " + list.average());
+
+// === WEDNESDAY ===
+    // REMOVE FROM BACK
+    list.removeBack();
+
+    // CONTAINS
+    // console.log(list.contains(678));
+
+    // CONTAINSRECURSIVE
+    console.log(list.containsRecursive(222));
+    
+
 
 // SHOW VALUES IN LINKED LIST
 list.showValues();
+
+
+// recursively reverse your list in place
