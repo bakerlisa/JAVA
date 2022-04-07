@@ -1,10 +1,8 @@
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class TestMuseum {
     public static void main(String[] args){
-        ArrayList<Object> museum = new ArrayList<Object>();
+        
 
         // Painting
         Painting Paint = new Painting("Jackson Polluck","Painting 1","Why we every call this art I've not idea but who cares I'm making millions for it","oil on canvas");
@@ -15,19 +13,21 @@ public class TestMuseum {
         // Sculpture
         Sculpture Sculpt = new Sculpture("Mandel Guiver","Thinking man","Man Sitting and thinking","marble");
         Sculpture Sculpt2 = new Sculpture("Reaching for Apples", "Mary Luise", "Rendering of ayoung girll reaching for an apple that's just out of reach", "Metal wires");
-            // System.out.println(Sculpt.getMaterial());
-            // System.out.println(Sculpt2.getAuthor());
+
 
         // Museum
-        museum.add(Paint);
-        museum.add(Paint2);
-        museum.add(Paint3);
-        museum.add(Sculpt);
-        museum.add(Sculpt2);
+        ArrayList<Object> museum = new ArrayList<Object>();
+            museum.add(Paint);
+            Class c = museum.get(0).getClass();
+            for (Field f : c.getDeclaredFields()) {
+                f.setAccessible(true);
+                try {
+                    System.out.println(f.getPainting());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-        
-        for(int i=0;i<museum.get(0).getClass().getMethods().length;i++){
-            System.out.println(museum.get(0).getClass().getMethods()[i]);
-        }
+            }   
+        System.out.println(museum.get(0).getClass());
     }
 }
