@@ -141,7 +141,72 @@ class List {
         }
     }
 
+    secondToLast(){
+        var runner = this.head;
+        while(runner.next.next != null){
+            runner = runner.next;
+        }
+        return runner.value;
+    }
 
+    removeValue(val){
+        // 678
+        var runner = this.head;
+        var pervious = runner;
+
+        while(runner.next != null){
+            if(this.head.value === val){
+                //checks first
+                var temp = this.head;
+                this.head = this.head.next;
+                temp.next = null;
+                break;
+            }else if(runner.value === val){
+                // middle values
+                var temp = runner.next;
+                runner.next = null;
+                pervious.next = temp;
+                break;
+            }
+            pervious = runner;
+            runner = runner.next;
+        }
+        //checks last 
+        if(runner.value === val){
+            pervious.next = null;
+        }
+    }
+
+    prepend(val,newVal){
+        let newNode=new Node(newVal);
+        var runner = this.head;
+        var pervious = runner;
+        
+        while(runner.next != null){
+            if(this.head.value === val){
+                //checks first
+                var temp = runner;
+                this.head = newNode;
+                newNode.next = temp;
+                break;
+            }else if(runner.value === val){
+                // middle values
+                var temp = runner;
+                pervious.next  = newNode;
+                newNode.next = runner;
+                break;
+            }
+            pervious = runner;
+            runner = runner.next;
+        }
+
+        //checks last 
+        if(runner.value === val){
+            var temp = runner;
+            pervious.next = newNode;
+            newNode.next = temp;
+        }
+    }
 
     // LOOP THROUGH AND SHOW ALL VALUES
     showValues(){
@@ -176,6 +241,7 @@ let list = new List();
 // list.PushBackN(test_data7);
 // list.PushBackN(test_data8);
 
+
 // ADD TO FRONT
 list.insertAtFront(test_data1);
 list.insertAtFront(test_data2);
@@ -193,18 +259,30 @@ list.insertAtFront(test_data6);
 
 // === WEDNESDAY ===
     // REMOVE FROM BACK
-    list.removeBack();
+    // list.removeBack();
 
     // CONTAINS
     // console.log(list.contains(678));
 
     // CONTAINSRECURSIVE
-    console.log(list.containsRecursive(222));
-    
+    // console.log(list.containsRecursive(222));
 
+// === THURSDAY ===
+    // GET SECOND TO LAST
+    // console.log("Second to last: " + list.secondToLast());
+
+    // REMOVE VALUE
+    // list.removeValue(567);
+    // list.removeValue(678);
+    // list.removeValue(123);
+
+    // PREPEND
+    // list.prepend(345,111);
+    // list.prepend(678,111);
+    list.prepend(123,111);
+    list.showValues();
 
 // SHOW VALUES IN LINKED LIST
-list.showValues();
 
 
 // recursively reverse your list in place
