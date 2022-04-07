@@ -150,7 +150,6 @@ class List {
     }
 
     removeValue(val){
-        // 678
         var runner = this.head;
         var pervious = runner;
 
