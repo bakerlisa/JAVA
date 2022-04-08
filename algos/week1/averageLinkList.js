@@ -207,6 +207,93 @@ class List {
         }
     }
 
+    concat(addList){
+        var runner = this.head
+        while(runner.next != null){
+            runner = runner.next;
+        }
+        runner.next = addList.head;
+    }
+
+    findMin(){
+        var runner = this.head;
+        var min = this.head.value;
+        while(runner != null){
+            if(runner.value < min){
+                min = runner.value;
+            }
+            runner = runner.next;
+        }
+        return min;
+    }
+
+    moveMinToFront(){
+        var runner = this.head;
+        var min = this.head;
+
+        while(runner != null){
+            if(runner.value < min.value){
+                min = runner;
+            }
+            runner = runner.next;
+        }
+
+        // finds where in the list the min and pervious val to min are
+        runner = this.head;
+        var pervious = runner;
+        while(runner != null){
+            if(runner.value === min.value){
+                break;
+            }
+            pervious = runner;
+            runner = runner.next;
+        }
+
+        // === SWITHCING LOGIC ===
+        // unhitches pervious
+        if(this.head.value === min.value){
+            //head is already the lowest number
+            return true;
+        }else if(runner.next === null){
+            //last value
+            pervious.next = null;
+        }else {
+            //middle value
+            pervious.next = pervious.next.next;
+        }
+
+        // swaps head vals
+        var temp = this.head;
+        this.head = min;
+        min.next = temp;
+    }
+
+    splitOnVal(val,newList){
+        var runner = this.head;
+        var pervious = runner
+        var isInList = false;
+        
+        if(this.head.value === val){
+            //don't need to split cause its the first number
+            return true;
+        }else{
+            while(runner.next != null){
+                if(runner.value === val){
+                    isInList = true;
+                    break;
+                }
+                pervious = runner;
+                runner = runner.next;
+            }
+            if(isInList){
+                pervious.next = null;
+                newList.head = runner;
+            }else{
+                return false;
+            }
+        }
+    }
+
     // LOOP THROUGH AND SHOW ALL VALUES
     showValues(){
         var runner = this.head;
@@ -217,46 +304,65 @@ class List {
     }
 }
 
-let test_data1=123;
-let test_data2=234;
-let test_data3=345;
-let test_data4=456;
-let test_data5=567;
-let test_data6=678;
-let test_data7=[111,222,333,444,555];
-let test_data8=[666,777,888,999,1010];
+let test_data1=-1;
+let test_data7=7;
+let test_data6=6;
+let test_data5=5;
+let test_data4=4;
+let test_data3=3;
+let test_data2=2;
+
+// let test_data7=[111,222,333,444,555];
+// let test_data8=[666,777,888,999,1010];
+
+let test_data12=8;
+let test_data13=9;
+let test_data14=10;
+let test_data15=11;
+let test_data16=12;
 
 let list = new List();
+let listTwo = new List();
+let listThree = new List();
 
-// === MONDAY ===
+
+// ====== MONDAY ======
     // IS EMPTY
     // console.log(list.IsEmpty());
 
-//ADD TO BACK
-// list.PushBack(test_data3);
-// list.PushBack(test_data2);
+    //ADD TO BACK
+    // list.PushBack(test_data3);
+    // list.PushBack(test_data2);
 
-// ADD ARRAY
-// list.PushBackN(test_data7);
-// list.PushBackN(test_data8);
+    // ADD ARRAY
+    // list.PushBackN(test_data7);
+    // list.PushBackN(test_data8);
+
+    // ADD TO FRONT
+    list.insertAtFront(test_data1);
+    list.insertAtFront(test_data4);
+    list.insertAtFront(test_data5);
+    list.insertAtFront(test_data3);
+    list.insertAtFront(test_data6);
+    list.insertAtFront(test_data7);
+    list.insertAtFront(test_data2);
+
+    listTwo.insertAtFront(test_data12);
+    listTwo.insertAtFront(test_data13);
+    listTwo.insertAtFront(test_data14);
+    listTwo.insertAtFront(test_data15);
+    listTwo.insertAtFront(test_data16);
 
 
-// ADD TO FRONT
-list.insertAtFront(test_data1);
-list.insertAtFront(test_data2);
-list.insertAtFront(test_data3);
-list.insertAtFront(test_data4);
-list.insertAtFront(test_data5);
-list.insertAtFront(test_data6);
-
-// === TUESDAY ===
+// ===== TUESDAY ======
     // REMOVE HEAD
     // list.removeHead();
 
     // AVERAGE
     // console.log("Average: " + list.average());
 
-// === WEDNESDAY ===
+
+// ====== WEDNESDAY ======
     // REMOVE FROM BACK
     // list.removeBack();
 
@@ -266,7 +372,8 @@ list.insertAtFront(test_data6);
     // CONTAINSRECURSIVE
     // console.log(list.containsRecursive(222));
 
-// === THURSDAY ===
+
+// ====== THURSDAY ======
     // GET SECOND TO LAST
     // console.log("Second to last: " + list.secondToLast());
 
@@ -279,9 +386,28 @@ list.insertAtFront(test_data6);
     // list.prepend(345,111);
     // list.prepend(678,111);
     list.prepend(123,111);
+    
+
+// ====== FRIDAY ======
+    // CONCAT - two lists together
+    // list.concat(listTwo);
+    
+    // MOVE MIN TO FRONT
+    // console.log(list.findMin());
+    // list.moveMinToFront();
+
+
+    // SPLIT VAL AT
+
+    list.splitOnVal(10,listThree);
+    console.log(" ======================== ");
+    console.log(" ONE ");
     list.showValues();
+    console.log(" ************ ");
+    console.log(" THREE ");
+    listThree.showValues();
 
-// SHOW VALUES IN LINKED LIST
 
-
-// recursively reverse your list in place
+// ====== SHOW VALUES IN LIST ======
+    // list.showValues();
+    // listTwo.showValues();
