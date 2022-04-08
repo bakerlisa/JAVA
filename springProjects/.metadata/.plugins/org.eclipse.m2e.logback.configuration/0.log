@@ -1779,3 +1779,35 @@ java.net.URISyntaxException: Illegal character in path at index 20: file:/Volume
 2022-04-08 13:25:25,428 [Worker-110: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-04-08 13:25:25,428 [Worker-110: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-04-08 13:25:25,428 [Worker-110: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/lisabroadhead/Desktop/JAVA/springProjects/com.codingdojo.helloHumna/src/test/resources
+2022-04-08 13:41:49,177 [Worker-102: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.codingdojo.helloHumna:com.codingdojo.daikichiTwo:0.0.1-SNAPSHOT @ /Users/lisabroadhead/Desktop/JAVA/springProjects/com.codingdojo.daikichiTwo/pom.xml.
+2022-04-08 13:41:49,349 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /com.codingdojo.daikichiTwo/src/main/java
+2022-04-08 13:41:49,350 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /com.codingdojo.daikichiTwo/src/main/resources
+2022-04-08 13:41:49,352 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /com.codingdojo.daikichiTwo/src/main/resources
+2022-04-08 13:41:49,353 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /com.codingdojo.daikichiTwo/src/test/java
+2022-04-08 13:41:49,702 [Worker-102: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2022-04-08 13:41:49,708 [Worker-102: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2022-04-08 13:41:49,783 [Worker-102: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.codingdojo.helloHumna:com.codingdojo.daikichiTwo:0.0.1-SNAPSHOT @ /Users/lisabroadhead/Desktop/JAVA/springProjects/com.codingdojo.daikichiTwo/pom.xml.
+2022-04-08 13:41:49,867 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /com.codingdojo.daikichiTwo/src/main/java
+2022-04-08 13:41:49,868 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /com.codingdojo.daikichiTwo/src/main/resources
+2022-04-08 13:41:49,868 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /com.codingdojo.daikichiTwo/src/main/resources
+2022-04-08 13:41:49,868 [Worker-102: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /com.codingdojo.daikichiTwo/src/test/java
+2022-04-08 13:41:50,343 [Worker-102: Import Getting Started Content] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for com.codingdojo.daikichiTwo
+2022-04-08 13:41:50,355 [Worker-102: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2022-04-08 13:41:51,234 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-08 13:41:51,236 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-08 13:41:51,237 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-08 13:41:51,241 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-08 13:41:51,242 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-08 13:41:51,242 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-08 13:41:51,242 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/lisabroadhead/Desktop/JAVA/springProjects/com.codingdojo.daikichiTwo/src/test/resources
+2022-04-08 13:41:51,243 [Worker-107: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of com.codingdojo.daikichiTwo
+2022-04-08 13:41:51,243 [Worker-107: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for com.codingdojo.daikichiTwo
+2022-04-08 13:41:51,247 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-08 13:41:51,247 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-08 13:42:07,658 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-08 13:42:07,660 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-08 13:42:07,660 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-08 13:42:07,673 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-08 13:42:07,676 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-08 13:42:07,676 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-08 13:42:07,676 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/lisabroadhead/Desktop/JAVA/springProjects/com.codingdojo.daikichiTwo/src/test/resources
