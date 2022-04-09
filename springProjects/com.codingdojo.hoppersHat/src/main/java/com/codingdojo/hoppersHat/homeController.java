@@ -10,11 +10,11 @@ public class homeController {
     @RequestMapping("/")
     public String index(Model model) {
         
-        String name = "Grace Hopper";
-        String itemName = "Copper wire";
-        double price = 5.25;
-        String description = "Metal strips, also an illustration of nanoseconds.";
-        String vendor = "Little Things Corner Store";
+        String name = "His Royal Highness Henry Happer Harriet Hemmingway the IVX";
+        String itemName = "12 barrels of beer, 12 sozen bottels of wine, 6 wheels of cheese, 25lbs of grapes, and 5000crackers";
+        String price = "2.5";
+        String description = "Food for his royalness to eat on his week ling hunting trip";
+        String vendor = "Brewery, Cheese Factory, Winery, and Cotton Keebler Factory";
     
     	// Your code here! Add values to the view model to be rendered
         model.addAttribute("name",name);

@@ -22,8 +22,8 @@ span,p{font-family: 'Open Sans', sans-serif;}
 <body style="background-image: url('/colour-1885352_1920.jpg');">
 	<div class="wrapper">
 	<h1>Cursomer Name: <c:out value="${name}"/></h1>
-	<h3>Item Name: <span<c:out value="${itemName }"/>></span></h3>
-	<p><strong>Price</strong>: <c:out value="${price }"/></p>
+	<h3>Item Name: <span><c:out value="${itemName }"/></span></h3>
+	<p><strong>Price</strong>: $<c:out value="${price }"/> million</p>
 	<p><strong>Description</strong>: <c:out value="${description }"/></p>
 	<p><strong>Vendor</strong>: <c:out value="${ vendor}" /></p>
 	</div>

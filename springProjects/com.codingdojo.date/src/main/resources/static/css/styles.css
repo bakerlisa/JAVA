@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Rubik+Wet+Paint&display=swap');
+
+:root{
+	--olive:#01630D;
+	--green:#08403E;
+	--gold:#B57114;
+	--red:#962B09;
+	--dk_red:#520120;
+	--blue:#3C8BA3;
+}
+
+.green{color:var(--olive);}
+.blue{color:var(--blue);}
+
+*{ color:var(--green); font-family: 'Nunito', sans-serif;}
+
+h1{font-family: 'Rubik Wet Paint', cursive;;}
+
+.container{max-width:1200px; margin: 0 auto; text-align: center;}
+.container a{padding:10px 25px 25px; text-decoration: none;}
+.container a:hover{color:var(--gold); }
+.endWorld{max-width:600px; display: block; margin: 25px auto 0 auto;}

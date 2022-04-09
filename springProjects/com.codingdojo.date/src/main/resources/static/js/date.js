@@ -1,0 +1,1 @@
+alert("now you've done it. Pushed the red button, we're all about to die again!");
