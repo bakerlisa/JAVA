@@ -1,14 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap');
+
 :root{
 	--white:#fff;
 	--cream:#F5EFEF;
 	--gray:#DADADE;
-	--pink:#DADADE;
+	--pink:#D7B7BF;
 		--dr_dink:#BFA1AC;
 	--green:#A0A69F;
 	--black:#000;
 	
 }
-body{background-image:url("/img/flowers.jpg"); background-size:cover; background-position:center; background-repeat:no-repeat; height:100vh;}
 
-.container{max-width:600px; margin: 0 auto; position: absolute; bottom: 0; left: 0;right: 0;}
-h1{color: var(--cream); width: 100%;}
+*{box-sizing:border-box;}
+body{font-family: 'Montserrat', sans-serif; background-image:url("/img/flowers.jpg"); background-size:cover; background-position:center; background-repeat:no-repeat; height:100vh;}
+
+.container{max-width:800px; margin: 0 auto; position: absolute; bottom: 0; left: 0;right: 0; text-align: center;}
+
+h1{color: var(--cream); width: 100%; margin-bottom: 0;}
+h3{color:var(--dr_dink); text-align: center; margin-top: 0;}
+	h3 a{color:var(--dr_dink);}
+		h3 a:hover{color:var(--gray);}
+a.home{color:var(--white); text-transform: uppercase;text-decoration: none; font-weight:900; text-align: right; display: block;width: 100%; padding: 25px;}
+	a.home:hover{color: var(--green);}
+
+/* COUNTER */
+.counter{font-size:300px; font-weight:900; color: var(--black); text-align: center; position: absolute;  top: 50%; transform:translateY(-50%); left: 0;right: 0;}

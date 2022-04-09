@@ -13,6 +13,7 @@
 <body>
 	<div class="container">
 		<h1>Counting...He loves me...He loves me not</h1>
+		<h3>Welcome | <a href="/counter">Counter</a> | <a href="/double">Double</a> | <a href="/reset">Reset</a></h3>
 	</div>
 </body>
 </html>
