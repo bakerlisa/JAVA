@@ -1,0 +1,14 @@
+:root{
+	--white:#fff;
+	--cream:#F5EFEF;
+	--gray:#DADADE;
+	--pink:#DADADE;
+		--dr_dink:#BFA1AC;
+	--green:#A0A69F;
+	--black:#000;
+	
+}
+body{background-image:url("/img/flowers.jpg"); background-size:cover; background-position:center; background-repeat:no-repeat; height:100vh;}
+
+.container{max-width:600px; margin: 0 auto; position: absolute; bottom: 0; left: 0;right: 0;}
+h1{color: var(--cream); width: 100%;}
