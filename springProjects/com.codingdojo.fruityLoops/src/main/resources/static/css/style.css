@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
+:root{
+	--white:#fff;
+	--black:#000;
+}
+body{position:relative; background-image:url('../img/hat (1).jpg'); background-size:cover; background-position:center; color:var(--white); font-family: 'Roboto', sans-serif;}
+body:before{content:''; height:100%; width:100%; position: absolute; top: 0;left: 0;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+1,000000+100&0.5+1,0+100 */
+background: -moz-linear-gradient(left,  rgba(0,0,0,0.5) 1%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0.5) 1%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0.5) 1%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+body p{margin:0;}
+.hats{display: flex; align-items:center; justify-content:center; flex-wrap:wrap; margin: 25px 0;}
+.hats p{width: 50%; border-bottom:solid 1px var(--white); padding: 10px 0;}
+.container{position: absolute; top:50%; transform:translateY(-50%); max-width:400px; padding:25px; position: relative; z-index: 100;}
+.container p{font-weight:300;}
