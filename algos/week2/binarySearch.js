@@ -30,24 +30,23 @@ class BinarySearchTree {
 
         while (true) {
             if (newVal <= current.data) {
-            if (!current.left) {
-                current.left = node
-                return this;
-            }
-
-            current = current.left
+                if (!current.left) {
+                    current.left = node
+                    return this;
+                }
+                current = current.left
             } else {
-            // newVal is greater than current.data
-            if (!current.right) {
-                current.right = node
-                return this;
-            }
-
-            current = current.right
+                // newVal is greater than current.data
+                if (!current.right) {
+                    current.right = node
+                    return this;
+                }
+                current = current.right
             }
         }
     }
 
+    // EMPTY
     isEmpty() {
         if(this.root === null){
             return true;
@@ -55,41 +54,36 @@ class BinarySearchTree {
         return false;
     }
 
+    // MIN
     min(current = this.root){
-        return current.left.data;
+        while(current.left != null){
+            current = current.left;
+        }
+        return current.data;
     }
 
-    /**
-     * Retrieves the smallest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The smallest integer from this tree.
-     */
-    minRecursive(current = this.root) {}
-
-    /**
-     * Retrieves the largest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The largest integer from this tree.
-     */
+    // MAX
     max(current = this.root) {
-        return current.right.data;
+        while(current.right != null){
+            current = current.right;
+        }
+        return current.data;
     }
 
-    /**
-     * Retrieves the largest integer data from this tree.
-     * - Time: O(?).
-     * - Space: O(?).
-     * @param {Node} current The node that is currently accessed from the tree as
-     *    the tree is being traversed.
-     * @returns {number} The largest integer from this tree.
-     */
-    maxRecursive(current = this.root) {}
+    // minRecursive
+    minRecursive(current = this.root){
+        while(current.left != null){
+            return this.minRecursive(current = current.left);
+        }
+        return current.data;
+    }
+
+    maxRecursive(current = this.root) {
+        while(current.right != null){
+            return this.maxRecursive(current = current.right);
+        }
+        return current.data;
+    }
 
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
@@ -111,29 +105,22 @@ class BinarySearchTree {
     //Inserts values
     const oneNodeTree = new BinarySearchTree();
         oneNodeTree.root = new BSTNode(10);
-        oneNodeTree.insert(15);
-        oneNodeTree.insert(5);
-
-    //FIND MIN
-    // console.log(oneNodeTree.min());
-
-    // FIND MAX
-    // console.log(oneNodeTree.max());
-
+        // oneNodeTree.insert(15);
+        // oneNodeTree.insert(5);
 
 /* twoLevelTree
-          root
-          10
-        /   \
-      5     15
+            root
+            10
+          /   \
+        5     15
   */
 
     const twoLevelTree = new BinarySearchTree();
-    twoLevelTree.root = new BSTNode(10);
-    twoLevelTree.root.left = new BSTNode(5);
-    twoLevelTree.root.right = new BSTNode(15);
-    console.log(twoLevelTree);
-    
+        // twoLevelTree.root = new BSTNode(10);
+        // twoLevelTree.root.left = new BSTNode(5);
+        // twoLevelTree.root.right = new BSTNode(15);
+            //console.log(twoLevelTree);
+        
 /* threeLevelTree 
           root
           10
@@ -144,13 +131,15 @@ class BinarySearchTree {
   */
 
 const threeLevelTree = new BinarySearchTree();
-    threeLevelTree.root = new BSTNode(10);
-    threeLevelTree.root.left = new BSTNode(5);
-    threeLevelTree.root.left.left = new BSTNode(2);
-    threeLevelTree.root.left.right = new BSTNode(4);
-    threeLevelTree.root.right = new BSTNode(15);
-    threeLevelTree.root.right.right = new BSTNode(20);
-    threeLevelTree.root.right.left = new BSTNode(13);
+    // threeLevelTree.root = new BSTNode(10);
+        // threeLevelTree.root.left = new BSTNode(5);
+        // threeLevelTree.root.left.left = new BSTNode(2);
+    
+    // threeLevelTree.root.left.right = new BSTNode(4);
+
+    // threeLevelTree.root.right = new BSTNode(15);
+    // threeLevelTree.root.right.right = new BSTNode(20);
+    // threeLevelTree.root.right.left = new BSTNode(13);
 
   /* fullTree
                       root
@@ -163,20 +152,33 @@ const threeLevelTree = new BinarySearchTree();
       4    12  18  24  31  44 66  90
   */
   /***************** Uncomment after insert method is created. ****************/
-  // const fullTree = new BinarySearchTree();
-  // fullTree
-  //   .insert(25)
-  //   .insert(15)
-  //   .insert(10)
-  //   .insert(22)
-  //   .insert(4)
-  //   .insert(12)
-  //   .insert(18)
-  //   .insert(24)
-  //   .insert(50)
-  //   .insert(35)
-  //   .insert(70)
-  //   .insert(31)
-  //   .insert(44)
-  //   .insert(66)
-  //   .insert(90);
+const fullTree = new BinarySearchTree();
+    fullTree.insert(25);
+    fullTree.insert(15);
+    fullTree.insert(10);
+    fullTree.insert(22);
+    fullTree.insert(4);
+    fullTree.insert(12);
+    fullTree.insert(18);
+    fullTree.insert(24);
+    fullTree.insert(50);
+    fullTree.insert(35);
+    fullTree.insert(70);
+    fullTree.insert(31);
+    fullTree.insert(44);
+    fullTree.insert(66);
+    fullTree.insert(90);
+    
+    // ========= MONDAY =========
+    fullTree.print();
+        //FIND MIN
+        // console.log(fullTree.min());
+        
+        //FIND MIN
+        // console.log(fullTree.max());
+
+        // FIND MINRECURSION
+        // console.log(fullTree.minRecursive());
+
+        // FIND MAXRECURSION
+        // console.log(fullTree.maxRecursive());
