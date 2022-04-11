@@ -17,6 +17,7 @@
 *{ color:var(--green); font-family: 'Josefin Sans', sans-serif;}
 
 h1{font-family: 'Bebas Neue', cursive; margin: 0; position: relative; z-index: 10;}
+h2{position:relative; z-index: 10;}
 h4{text-transform: uppercase; font-weight:600 ; font-family: 'Bebas Neue', cursive; font-size: 25px; color: var(--white); margin: 25px 0 0;}
 p{ position: relative; z-index: 10; margin: 10px 0;}
 
@@ -31,7 +32,7 @@ p{ position: relative; z-index: 10; margin: 10px 0;}
 
 /* HOME */
 body{position: relative;}
-body:before{content:''; height:100%; position:fixed; width:400px; background-color:rgba(0,0,0,.25);}
+body:before{content:''; height:100%; position:fixed; width:400px; background-color:rgba(0,0,0,.5);}
 .home{margin: 0; height: 100vh; background-image:url('/img/gold.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat;  background-attachment: fixed;}
 .prision{ margin: 0; height: 100vh; background-image:url('/img/monkey.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat;}
 
@@ -43,6 +44,13 @@ body:before{content:''; height:100%; position:fixed; width:400px; background-col
 /* PRISION */
 .reset{display: none;}
 .reset.active{display: block;}
+
+.prision h1{color:var(--white); width:300px;}
+.prision p{color:var(--white); width:300px;}
+.prision #message.active {display: block;}
+.prision #message{display: none;}
+
+.subtitle{font-size: 20px; font-weight: 600;}
 
 
 

@@ -1,9 +1,9 @@
 
-var randNumber =  Math.floor(Math.random() * 1000);
+var randNumber =  Math.floor(Math.random() * 10000);
 var mes = `Well you are locked out for ${randNumber} milseconds. If you refresh the time restarts`;
 	
 console.log(mes);
-document.getElementById('message').innerHTML = "Well you are locked out for ${randNumber} milseconds. If you refresh the time restarts";
+document.getElementById('message').innerHTML = mes;
 
 setTimeout(function(){
 	document.querySelector('.reset').classList.add('active');

@@ -82,6 +82,15 @@ public class gold {
 		return "redirect:/gold";
 	 }
 	
+	@RequestMapping("/restart")
+	 public String restart(HttpSession session, Model model) {
+		session.setAttribute("gold", 0);
+		actions = new ArrayList<Action>(); 
+		session.setAttribute("prision", "false");
+		
+		return "redirect:/gold";
+	 }
+	
 	@RequestMapping("/prision")
 	 public String prision(HttpSession session, Model model) {
 		session.setAttribute("gold", 0);
