@@ -20,3 +20,6 @@ h1{font-family: 'Rubik Wet Paint', cursive;;}
 .container a{padding:10px 25px 25px; text-decoration: none;}
 .container a:hover{color:var(--gold); }
 .endWorld{max-width:600px; display: block; margin: 25px auto 0 auto;}
+
+.neg{color:var(--red);}
+.pos{color:var(--blue);}
