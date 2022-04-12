@@ -85,6 +85,48 @@ class BinarySearchTree {
         return current.data;
     }
 
+    // CONTAINS
+    contains(searchVal){
+        if(this.root === null){
+            return "empty";
+        }else{
+            var runner = this.root;
+            while(runner.left != null || runner.right != null){
+                if(searchVal === runner.data) {
+                    return "Found You!!";
+                }else if(searchVal < runner.data){
+                    runner = runner.left;
+                }else if(searchVal > runner.data){
+                    runner = runner.right;
+                }
+                return "You loose, value not found";
+            }
+        }
+    }
+
+    // CONTAINSRECURSIVE
+    containsRecursive(searchVal, current = this.root) {
+        if(this.root === null){
+            return "empty";
+        }else{
+            if(current == null){
+                return "You fail, number can't be found...";
+            }else if(current.data === searchVal){
+                return "Found You!!";
+            }else if( searchVal > current.data){
+                return this.containsRecursive(searchVal,current = current.right);
+            }else if(searchVal < current.data){
+                return this.containsRecursive(searchVal,current = current.left);
+            }
+        }
+    }
+
+    range(startNode = this.root){
+        var min = this.minRecursive(startNode);
+        var max = this.maxRecursive(startNode);
+        return `min: ${min} : max ${max}`;
+    }
+
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
         if (!node){ return }
@@ -100,7 +142,7 @@ class BinarySearchTree {
 // ====== MONDAY ======
     // IS EMPTY
     const emptyTree = new BinarySearchTree();
-        console.log(emptyTree.isEmpty());
+        // console.log(emptyTree.isEmpty());
 // 
     //Inserts values
     const oneNodeTree = new BinarySearchTree();
@@ -170,7 +212,7 @@ const fullTree = new BinarySearchTree();
     fullTree.insert(90);
     
     // ========= MONDAY =========
-    fullTree.print();
+    // fullTree.print();
         //FIND MIN
         // console.log(fullTree.min());
         
@@ -182,3 +224,15 @@ const fullTree = new BinarySearchTree();
 
         // FIND MAXRECURSION
         // console.log(fullTree.maxRecursive());
+    
+    // ========= TUESDAY =========
+    // fullTree.print();
+        // CONTAINS
+        // console.log(fullTree.contains(100));
+
+        // CONTAINSRECURSIVE
+        // console.log(fullTree.containsRecursive(100));
+
+        // RANGE
+
+        console.log(fullTree.range());
