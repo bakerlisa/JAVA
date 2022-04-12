@@ -1,4 +1,4 @@
-package com.codingdojo.mvc.controllers;
+package com.codingdojo.mvc.controllers; 
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,8 +40,7 @@ public class BooksApi {
   	 		@RequestParam(value="description") String desc, 
   	 		@RequestParam(value="language") String lang,
   	 		@RequestParam(value="pages") Integer pages) {
-  		 Book book = new Book(id,title,desc,lang,pages);
-  	     
+  		 
   		 return bookService.updateBook(id,title,desc,lang,pages);
   	 }
  

@@ -1,4 +1,4 @@
-package com.codingdojo.booksDemo.models;
+package com.codingdojo.booksTwo.models;
 
 import java.util.Date;
 
@@ -19,9 +19,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="books")
 public class Book {
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;@NotNull
+    private Long id;
+    @NotNull
     @Size(min = 5, max = 200)
     private String title;
     @NotNull
@@ -48,16 +49,16 @@ public class Book {
         this.language = lang;
         this.numberOfPages = pages;
     }
-    public Book(Long id, String title, String desc, String lang, Integer pages) {
-    	this.id = id;
-    	this.title = title;
+    public Book(Long id, String title, String desc, String lang, int pages) {
+        this.id = id;
+        this.title = title;
         this.description = desc;
         this.language = lang;
         this.numberOfPages = pages;
-	}
+    }
     
-    // other getters and setters removed for brevity
-
+    
+    
     public Long getId() {
 		return id;
 	}
@@ -100,15 +101,13 @@ public class Book {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
-	@PrePersist
-		protected void onCreate(){
-			this.createdAt = new Date();
-	}
-	 
-	@PreUpdate
+	// other getters and setters removed for brevity
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
 }
-

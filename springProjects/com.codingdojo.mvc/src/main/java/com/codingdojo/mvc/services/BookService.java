@@ -1,4 +1,5 @@
 package com.codingdojo.mvc.services;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,8 +24,8 @@ public class BookService {
     }
     
     // creates a book
-    public Book createBook(Book book) {
-        return bookRepository.save(book);
+    public Book createBook(Book b) {
+        return bookRepository.save(b);
     }
     
     // update book
