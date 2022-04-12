@@ -1,8 +1,15 @@
 MVC:
 Repository/CRUD Reop: interface, handles SQL queries (builds them)
 
-findAll()
-findById(id)
-create(object)
+findAll();
+findById(id);
+create(object);
 
 Services: Business logic, 
+itemRepo.findAll();
+itemRepo.findById();
+intemReop.save(item);
+
+
+HomeController:
+itemServ.findAll();
