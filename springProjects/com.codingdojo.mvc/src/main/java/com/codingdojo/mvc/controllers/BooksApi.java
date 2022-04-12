@@ -42,7 +42,7 @@ public class BooksApi {
   	 		@RequestParam(value="pages") Integer pages) {
   		 Book book = new Book(id,title,desc,lang,pages);
   	     
-  		 return bookService.updateBook(book);
+  		 return bookService.updateBook(id,title,desc,lang,pages);
   	 }
  
  	@RequestMapping("/api/books/{id}")

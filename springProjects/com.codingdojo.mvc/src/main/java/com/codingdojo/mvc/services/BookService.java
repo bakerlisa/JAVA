@@ -28,8 +28,23 @@ public class BookService {
     }
     
     // update book
-    public Book updateBook(Book book) {
-    	return bookRepository.save(book);
+    public Book updateBook(Long id, String title, String desc, String lang, Integer pages) {
+    	Optional<Book> optionalBook = bookRepository.findById(id);
+    	if(optionalBook.isPresent()) {
+    		// save the book we find
+            Book thisBook = optionalBook.get();
+            
+            //reset the values
+            thisBook.setTitle(title);
+            thisBook.setDescription(desc);
+            thisBook.setLanguage(lang);
+            thisBook.setNumberOfPages(pages);
+            
+            //save them to the database
+            return bookRepository.save(thisBook);
+        } else {
+            return null;
+        }
     }
     
     // retrieves a book

@@ -1,11 +1,21 @@
 
-import com.codingdojo.mvc.models.Book;
-import com.codingdojo.mvc.services.BookService;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codingdojo.booksDemo.services.BookService;
 
 @RestController
 public class Book {
     private final BookService bookService;
-    public BooksApi(BookService bookService){
+    public Book(String title, String desc, String lang, Integer numOfPages) {
+		// TODO Auto-generated constructor stub
+	}
+	public BooksApi(BookService bookService){
         this.bookService = bookService;
     }
     @RequestMapping("/api/books")
@@ -22,6 +32,6 @@ public class Book {
     @RequestMapping("/api/books/{id}")
     public Book show(@PathVariable("id") Long id) {
         Book book = bookService.findBook(id);
-        return book;
+        return book;                
     }
 }
