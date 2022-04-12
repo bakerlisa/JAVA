@@ -17,12 +17,12 @@
 	<form action="/formSubmit" method="post">
 		<div>
 			<label for="name">Name</label>
-			<input type="text" name="name" />
-			<p><c:out value="${nameError }"/></p>
+			<input type="text" name="name" value='<c:out value="${name }"/>' />
+			<p><c:out value="${nameError } "/></p>
 		</div>
 		<div>
 			<label for="email">Email</label>
-			<input type="text" name="email" />
+			<input type="text" name="email" value='<c:out value="${email }"/>'/>
 			<p><c:out value="${emailError }"/></p>
 		</div>
 		<div>
