@@ -16,14 +16,22 @@ public class BookService {
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
+    
     // returns all the books
     public Iterable<Book> allBooks() {
         return bookRepository.findAll();
     }
+    
     // creates a book
-    public Book createBook(Book b) {
-        return bookRepository.save(b);
+    public Book createBook(Book book) {
+        return bookRepository.save(book);
     }
+    
+    // update book
+    public Book updateBook(Book book) {
+    	return bookRepository.save(book);
+    }
+    
     // retrieves a book
     public Book findBook(Long id) {
         Optional<Book> optionalBook = bookRepository.findById(id);
@@ -34,17 +42,11 @@ public class BookService {
         }
     }
     
-	public void deleteBook(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-	public Book addBook(String title, String desc, String lang, int numOfPages) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+    // deletes a book
+    public void deleteBook(Long id) {
+    	Optional<Book> optionalBook = bookRepository.findById(id);
+        if(optionalBook.isPresent()) {
+            bookRepository.deleteById(id);
+        }
+    }
 }

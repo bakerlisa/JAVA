@@ -11,7 +11,7 @@
 		<h1>Books</h1>
 		
 		<!--  Don't have an ID yet. ID placeholder -->
-		<form action="/api/books/add/" method="post">
+		<form action="/api/books" method="post">
 			<div>
 				<label for="title">Title:</label>
 				<input type="text" name="title" />
@@ -28,9 +28,11 @@
 			</div>
 			
 			<div>
-				<label for="numOfPages">Number of Pages:</label>
-				<input type="number" name="numOfPages" />
+				<label for="pages">Number of Pages:</label>
+				<input type="number" name="pages" />
 			</div>
+			
+			<input type="submit" value="submit" />
 		</form>
 	</div>
 </body>
