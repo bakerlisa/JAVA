@@ -127,6 +127,31 @@ class BinarySearchTree {
         return `min: ${min} : max ${max}`;
     }
 
+    printTree(){
+        if(this.root === null){return false}
+
+        console.log(this.printTree(this.root.data));
+        // var right = this.root;
+        // var left = this.root;
+
+        // if(this.root != null){
+        //     console.log("      " + this.root.data + "   " );
+        // }
+
+        // if(left.left != null || right.right != null){    
+        //     console.log(left.left.data + "          "  + right.right.data );
+        // }
+
+        // while(left.left != null){
+        //     console.log(left.left.data + "          "  + left.right.data );
+        //     left = left.left;
+        // }
+
+        // while(right.right != null){
+        //     console.log(right.left.data + "          "  + right.right.data );
+        //     right = right.right;
+        // }
+    }
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
         if (!node){ return }
@@ -234,5 +259,8 @@ const fullTree = new BinarySearchTree();
         // console.log(fullTree.containsRecursive(100));
 
         // RANGE
-
-        console.log(fullTree.range());
+        // console.log(fullTree.range());
+    
+    // ========= Wednesday =========
+    fullTree.printTree();
+    fullTree.print();
