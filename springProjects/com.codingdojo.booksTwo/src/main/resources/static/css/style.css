@@ -2,3 +2,12 @@
 
 
 *{box-sizing:border-box;  font-family: 'Roboto', sans-serif;}
+
+.container{max-width:800px; margin:0 auto;}
+
+.bookWrp,.bookTitles{display: flex; align-items:center; justify-content:start; flex-wrap:wrap; width: 100%; border-bottom:solid 1px gray;}
+.bookTitles{font-weight: 900;}
+.bookWrp .id, .bookTitles .id{width: 100px; padding: 0 25px;}
+.title{width: calc(100% - 500px);}
+.bookWrp .language, .bookTitles .language{width: 200px;}
+.bookWrp .numberOfPages, .bookTitles .numberOfPages{width: 200px;}

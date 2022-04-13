@@ -22,18 +22,23 @@ public class Book {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+	
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Can't be blank")
     private String title;
+    
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Description between 5 - 200 characters")
     private String description;
+    
     @NotNull
     @Size(min = 3, max = 40)
     private String language;
+    
     @NotNull
     @Min(100)
     private Integer numberOfPages;
+    
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -43,23 +48,21 @@ public class Book {
     
     public Book() {
     }
-    public Book(String title, String desc, String lang, int pages) {
+    public Book(String title, String desc, String lang, Integer pages) {
         this.title = title;
         this.description = desc;
         this.language = lang;
         this.numberOfPages = pages;
     }
-    public Book(Long id, String title, String desc, String lang, int pages) {
+    public Book(Long id, String title, String desc, String lang, Integer pages) {
         this.id = id;
         this.title = title;
         this.description = desc;
         this.language = lang;
         this.numberOfPages = pages;
     }
-    
-    
-    
-    public Long getId() {
+  
+	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {

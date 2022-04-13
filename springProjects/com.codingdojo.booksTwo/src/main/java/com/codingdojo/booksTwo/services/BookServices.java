@@ -20,8 +20,8 @@ public class BookServices {
         return BookRepository.findAll();
     }
     // creates a book
-    public Book createBook(Book b) {
-        return BookRepository.save(b);
+    public Book createBook(Book book) {
+        return BookRepository.save(book);
     }
     // retrieves a book
     public Book findBook(Long id) {
