@@ -39,21 +39,22 @@ private final ExpenseRepository expenseRepository;
     	expenseRepository.deleteById(id);
     }
     
-    public Expense updateExpense(Long id, String title, String desc, String vendor, double amount) {
-    	Optional<Expense> optionalExpense = expenseRepository.findById(id);
+    public Expense updateExpense(Expense expense) {
+    	Optional<Expense> optionalExpense = expenseRepository.findById(expense.getId());
     	
     	if(optionalExpense.isPresent()) {
     		
     		Expense thisExpense = optionalExpense.get();
             
-    		thisExpense.setTitle(title);
-    		thisExpense.setDescription(desc);
-    		thisExpense.setVendor(vendor);
-    		thisExpense.setAmount(amount);
+    		thisExpense.setTitle(expense.getTitle());
+    		thisExpense.setDescription(expense.getDescription());
+    		thisExpense.setVendor(expense.getVendor());
+    		thisExpense.setAmount(expense.getAmount());
             
             return expenseRepository.save(thisExpense);
         } else {
             return null;
         }
     }
+   
 }

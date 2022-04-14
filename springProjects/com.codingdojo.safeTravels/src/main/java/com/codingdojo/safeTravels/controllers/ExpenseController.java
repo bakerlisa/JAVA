@@ -29,7 +29,6 @@ public class ExpenseController {
 	public String index(Model model, @ModelAttribute("expense") Expense expense) {
 		List<Expense> expenses = expenseServices.allExpenses();
 		model.addAttribute("expenses", expenses);
-		System.out.println(expenses);
 		return "index.jsp";
 	}
 	
@@ -43,18 +42,19 @@ public class ExpenseController {
 		return "redirect:/expenses";
 	}
 	
-	@GetMapping("/expense")
-	public String expense() {
+	@RequestMapping("/expenses/edit/{expenseId}")
+	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
+		Expense expense = expenseServices.findExpense(expenseId);
+		model.addAttribute("expense",expense);
 		return "show.jsp";
 	}
 	
-//	@RequestMapping("/expense/{expenseId}")
-//	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
-//		Expense expense = expenseServices.findExpense(expenseId);
-//		model.addAttribute("expense",expense);
-//		return "show.jsp";
-//	}
-//	
-//
+	@PostMapping("/api/update")
+	public String updateExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result) {
+		expenseServices.updateExpense(expense);
+		return "redirect/:expenses";
+	}
+	
+
 
 }
