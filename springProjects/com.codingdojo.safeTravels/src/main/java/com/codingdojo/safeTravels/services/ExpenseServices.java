@@ -17,14 +17,17 @@ private final ExpenseRepository expenseRepository;
     public ExpenseServices(ExpenseRepository expenseRepository) {
         this.expenseRepository = expenseRepository;
     }
+    
     // returns all the expense
     public List<Expense> allExpenses() {
     	return expenseRepository.findAll();
     }
+    
     // creates a expense
     public Expense createExpense(Expense expense) {
         return expenseRepository.save(expense);
     }
+    
     // retrieves a expense
     public Expense findExpense(Long id) {
         Optional<Expense> optionalExpense = expenseRepository.findById(id);

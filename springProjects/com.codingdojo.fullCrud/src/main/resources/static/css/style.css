@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;800&display=swap');
 
 :root{
 	--white:#fff;
 	--black:#000;
 }
 
-*{box-sizing:border-box; }
+*{box-sizing:border-box; font-family: 'Dosis', sans-serif;}
+
+body{
+	background: rgb(63,94,251);
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}

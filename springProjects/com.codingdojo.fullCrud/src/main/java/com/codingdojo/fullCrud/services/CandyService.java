@@ -12,26 +12,27 @@ import com.codingdojo.fullCrud.repositories.CandyRespository;
 @Service
 public class CandyService {
 	
-	private final CandyRespository candyRespository;
+	private final CandyRespository candyRepo;
 	
-	 public CandyService(CandyRespository candyRespository) {
-	        this.candyRespository = candyRespository;
+	 public CandyService(CandyRespository candyRepo) {
+	        this.candyRepo = candyRepo;
 	    }
 	 
-	
+	 	// all candies
 	    public List<Candy> allCandies() {
-	    	return candyRespository.findAll();
+	    	return candyRepo.findAll();
 	    }
 	    
-	    
-	    // creates a expense
+	    // creates a candy
 	    public Candy createCandy(Candy candy) {
-	        return candyRespository.save(candy);
+	        return candyRepo.save(candy);
 	    }
+
 	    
-	    // retrieves a expense
+	    
+	    // find one candy by ID
 	    public Candy findCandy(Long id) {
-	        Optional<Candy> optionalCandy = candyRespository.findById(id);
+	        Optional<Candy> optionalCandy = candyRepo.findById(id);
 	        if(optionalCandy.isPresent()) {
 	            return optionalCandy.get();
 	        } else {
@@ -39,23 +40,26 @@ public class CandyService {
 	        }
 	    }
 	    
-	    public void deleteExpense(Long id) {
-	    	candyRespository.deleteById(id);
+	    
+	    //delete candy
+	    public void deleteCandy(Long id) {
+	    	candyRepo.deleteById(id);
 	    }
 	    
-	    public Candy updateExpense(Candy expense) {
-	    	Optional<Candy> optionalCandy = candyRespository.findById(expense.getId());
+	    //update candy
+	    public Candy updateCandy(Candy candy) {
+	    	Optional<Candy> optionalCandy = candyRepo.findById(candy.getId());
 	    	
 	    	if(optionalCandy.isPresent()) {
 	    		
 	    		Candy thisCandy = optionalCandy.get();
 	            
-	    		thisCandy.setName(expense.getName());
-	    		thisCandy.setRating(expense.getRating());
-	    		thisCandy.setPrice(expense.getPrice());
-	    		thisCandy.setBrand(expense.getBrand());
+	    		thisCandy.setName(candy.getName());
+	    		thisCandy.setRating(candy.getRating());
+	    		thisCandy.setPrice(candy.getPrice());
+	    		thisCandy.setBrand(candy.getBrand());
 	            
-	            return candyRespository.save(thisCandy);
+	            return candyRepo.save(thisCandy);
 	        } else {
 	            return null;
 	        }

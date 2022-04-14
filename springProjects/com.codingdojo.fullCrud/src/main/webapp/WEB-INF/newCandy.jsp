@@ -27,5 +27,15 @@
 		<a href="/oneCandy">OneCandy</a>
 		<a href="/updateCandy">UpdateCandy</a>
 	</div>
+	
+	<form:form action="/api/create/candy" method="post" modelAttribute="candy">
+		<div>
+			<span>		
+				<form:label path="name">Name</form:label>
+				<form:errors path="name" class="error"/>
+			</span>
+			<form:input type="text" path="name"/> 
+		</div>
+	</form:form>
 </body>
 </html>
