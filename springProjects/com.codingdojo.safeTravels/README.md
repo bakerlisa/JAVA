@@ -14,4 +14,4 @@ sorry no time to make it look pretty :(
   - Had to check for errors
   - and remeber to pass the id in throug the params -forgot how to do all that
 
-![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/springProjects/com.codingdojo.safeTravels/Screen%20Shot%202022-04-13%20at%2010.14.17%20PM.png)
+![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/springProjects/com.codingdojo.safeTravels/Screen%20Shot%202022-04-14%20at%208.16.56%20AM.png)
