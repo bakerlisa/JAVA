@@ -19,4 +19,4 @@ sorry no time to make it look pretty :(
 3. added in a delete
   - adding a delete button!
   
-![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/springProjects/com.codingdojo.safeTravels/Screen%20Shot%202022-04-14%20at%208.16.56%20AM.png)
+![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/springProjects/com.codingdojo.safeTravels/Screen%20Shot%202022-04-14%20at%2010.41.16%20AM.png)
