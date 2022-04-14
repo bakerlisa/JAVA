@@ -1,5 +1,7 @@
 package com.codingdojo.safeTravels.controllers;
-import java.util.ArrayList;
+import com.codingdojo.safeTravels.models.Expense;
+import com.codingdojo.safeTravels.services.ExpenseServices;
+
 import java.util.List;
 
 import javax.validation.Valid;
@@ -15,48 +17,44 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.codingdojo.safeTravels.models.Expense;
-import com.codingdojo.safeTravels.services.expenseServices;
 
 
 @Controller
 public class ExpenseController {
 	
 	@Autowired
-	expenseServices ExpenseServices;
+	ExpenseServices expenseServices;
 	
-	@RequestMapping("/")
-	public String index() {
+	@GetMapping("/expenses")
+	public String index(Model model, @ModelAttribute("expense") Expense expense) {
+		List<Expense> expenses = expenseServices.allExpenses();
+		model.addAttribute("expenses", expenses);
+		System.out.println(expenses);
 		return "index.jsp";
 	}
 	
-	@RequestMapping("/expense/{expenseId}")
-	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
-		Expense expense = ExpenseServices.findExpense(expenseId);
-		model.addAttribute("expense",expense);
-		return "show.jsp";
-	}
-	
-	@RequestMapping("/expenses")
-	public String allExpenses(Model model) {
-		List<Expense> expenses = ExpenseServices.allExpenses();
-		model.addAttribute("expenses", expenses);
-		return "allExpenses.jsp";
-	}
-	
-	@GetMapping("/expense/create")
-	public String expense( @ModelAttribute("expense") Expense expense) {
-		return "create.jsp";
-	}
-	
-	@PostMapping("/api/expense")
+	@PostMapping("/api/create")
 	public String create(@Valid @ModelAttribute("expense") Expense expense, BindingResult result ) {
 		if(result.hasErrors()) {
-			return "create.jsp";
+			return "index.jsp";
 		}else {
-			ExpenseServices.createExpense(expense);
+			expenseServices.createExpense(expense);
 		}
 		return "redirect:/expenses";
 	}
+	
+	@GetMapping("/expense")
+	public String expense() {
+		return "show.jsp";
+	}
+	
+//	@RequestMapping("/expense/{expenseId}")
+//	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
+//		Expense expense = expenseServices.findExpense(expenseId);
+//		model.addAttribute("expense",expense);
+//		return "show.jsp";
+//	}
+//	
+//
 
 }

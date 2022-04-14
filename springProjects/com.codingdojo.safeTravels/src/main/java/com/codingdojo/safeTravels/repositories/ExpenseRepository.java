@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.codingdojo.safeTravels.models.Expense;
 
 @Repository
-public interface expenseRepositories extends CrudRepository<Expense, Long>{
+public interface ExpenseRepository extends CrudRepository<Expense, Long>{
 	List<Expense> findAll();
 }

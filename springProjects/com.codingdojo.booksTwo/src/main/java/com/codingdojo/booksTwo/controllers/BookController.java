@@ -49,17 +49,6 @@ public class BookController {
 		return "create.jsp";
 	}
 	
-//	@RequestMapping("/api/create")
-//	public String create(Model model,
-//			@RequestParam(value="title") String title,
-//			@RequestParam(value="description") String desc,
-//			@RequestParam(value="language") String lang,
-//			@RequestParam(value="pages") Integer pages) {
-//		System.out.println(title + " " + desc + " " + lang + " " + pages + " ");
-//		Book book = (Book) new Book(title,desc,lang,pages);
-//		bookServices.createBook(book);
-//		return "redirect:/books";
-//	}
 	
 	@PostMapping("/api/create")
 	public String create(@Valid @ModelAttribute("book") Book book,BindingResult result ) {

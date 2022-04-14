@@ -5,26 +5,29 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.codingdojo.safeTravels.models.Expense;
-import com.codingdojo.safeTravels.repositories.expenseRepositories;
+//import org.springframework.stereotype.Service;
 
-public class expenseServices {
-private final expenseRepositories ExpenseRepositories;
+import com.codingdojo.safeTravels.models.Expense;
+import com.codingdojo.safeTravels.repositories.ExpenseRepository;
+
+@Service
+public class ExpenseServices {
+private final ExpenseRepository expenseRepository;
     
-    public expenseServices(expenseRepositories ExpenseRepositories) {
-        this.ExpenseRepositories = ExpenseRepositories;
+    public ExpenseServices(ExpenseRepository expenseRepository) {
+        this.expenseRepository = expenseRepository;
     }
     // returns all the expense
     public List<Expense> allExpenses() {
-        return ExpenseRepositories.findAll();
+    	return expenseRepository.findAll();
     }
     // creates a expense
     public Expense createExpense(Expense expense) {
-        return ExpenseRepositories.save(expense);
+        return expenseRepository.save(expense);
     }
     // retrieves a expense
     public Expense findExpense(Long id) {
-        Optional<Expense> optionalExpense = ExpenseRepositories.findById(id);
+        Optional<Expense> optionalExpense = expenseRepository.findById(id);
         if(optionalExpense.isPresent()) {
             return optionalExpense.get();
         } else {
@@ -33,11 +36,11 @@ private final expenseRepositories ExpenseRepositories;
     }
     
     public void deleteExpense(Long id) {
-    	ExpenseRepositories.deleteById(id);
+    	expenseRepository.deleteById(id);
     }
     
     public Expense updateExpense(Long id, String title, String desc, String vendor, double amount) {
-    	Optional<Expense> optionalExpense = ExpenseRepositories.findById(id);
+    	Optional<Expense> optionalExpense = expenseRepository.findById(id);
     	
     	if(optionalExpense.isPresent()) {
     		
@@ -48,7 +51,7 @@ private final expenseRepositories ExpenseRepositories;
     		thisExpense.setVendor(vendor);
     		thisExpense.setAmount(amount);
             
-            return ExpenseRepositories.save(thisExpense);
+            return expenseRepository.save(thisExpense);
         } else {
             return null;
         }

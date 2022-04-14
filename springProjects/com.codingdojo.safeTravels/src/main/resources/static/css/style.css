@@ -8,3 +8,20 @@
 
 *{box-sizing:border-box; font-family: 'Plus Jakarta Sans', sans-serif;}
 
+.container{max-width:1000px; margin:0 auto;}
+
+h2{padding-top:50px;}
+
+.expenseWrp{display: flex; align-items:center; justify-content:start; flex-wrap:wrap; padding: 0 25px; border-bottom:solid 1px #cbcbcb;}
+
+.titleWrp{display: flex; align-items:center; justify-content:start; flex-wrap:wrap; background-color:#cbcbcb; padding: 0 25px;}
+.titleWrp p{font-weight:900; width:33.33%; }
+.expenseWrp p{width: 33.33%;}
+.empty{padding: 0 25px;}
+
+/* form */
+form{padding:0 50px;}
+form div{display:flex; align-items:center; justify-content:start; flex-wrap:wrap; padding-bottom:25px;}
+form div span{width: 250px; display: block;}
+form div input{width: calc(100% - 250px); padding:10px;}
+.error{color:var(--red);}
