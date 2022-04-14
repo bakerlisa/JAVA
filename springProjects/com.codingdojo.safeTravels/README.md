@@ -20,3 +20,4 @@ sorry no time to make it look pretty :(
   - adding a delete button!
   
 ![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/springProjects/com.codingdojo.safeTravels/Screen%20Shot%202022-04-14%20at%2010.41.16%20AM.png)
+![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/springProjects/com.codingdojo.safeTravels/Screen%20Shot%202022-04-14%20at%2011.37.40%20AM.png)
