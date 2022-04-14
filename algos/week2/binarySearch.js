@@ -127,31 +127,74 @@ class BinarySearchTree {
         return `min: ${min} : max ${max}`;
     }
 
-    printTree(){
-        if(this.root === null){return false}
 
-        console.log(this.printTree(this.root.data));
-        // var right = this.root;
-        // var left = this.root;
+    /**
+        [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
+    */
+    toArrPreorder(node = this.root, vals = []) {
+        if(this.root === null){
+            return "empty";
+        }else{
+            var runnerLeft = node.left;
+            var runnerRight = node.right;
 
-        // if(this.root != null){
-        //     console.log("      " + this.root.data + "   " );
-        // }
-
-        // if(left.left != null || right.right != null){    
-        //     console.log(left.left.data + "          "  + right.right.data );
-        // }
-
-        // while(left.left != null){
-        //     console.log(left.left.data + "          "  + left.right.data );
-        //     left = left.left;
-        // }
-
-        // while(right.right != null){
-        //     console.log(right.left.data + "          "  + right.right.data );
-        //     right = right.right;
-        // }
+            vals.push(node.data);
+            vals.push(node.left.data);
+            vals.push(node.right.data);
+                
+            while(runnerLeft.left != null || runnerRight.right != null){
+            
+                if(runnerLeft.data  != null){
+                    vals.push(runnerLeft.data);
+                    vals.push(runnerLeft.left.data);
+                    vals.push(runnerLeft.right.data);
+                }
+                if(runnerRight.data != null){
+                    vals.push(runnerRight.data);
+                    vals.push(runnerRight.left.data);
+                    vals.push(runnerRight.right.data);
+                }
+                runnerLeft = runnerLeft.left;
+                runnerRight = runnerRight.right;
+            } 
+        }
+        console.log(vals);
+        return vals;
     }
+
+
+    //  [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
+    toArrInorder(node = this.root, vals = []) {
+        if(this.root === null){ return "empty";}
+
+            var runnerLeft = node.left;
+            var runnerRight = node.right;
+                
+            while(runnerLeft.left != null || runnerRight.right != null){
+                if(runnerLeft.data  != null){
+                    vals.push(runnerLeft.left.data);
+                    vals.push(runnerLeft.data);
+                    vals.push(runnerLeft.right.data);
+                }
+                if(runnerRight.data != null){
+                    vals.push(runnerRight.left.data);
+                    vals.push(runnerRight.data);
+                    vals.push(runnerRight.right.data);
+                }
+                runnerLeft = runnerLeft.left;
+                runnerRight = runnerRight.right;
+            } 
+
+        // vals.push(this.root.data);
+        
+
+        console.log(vals); 
+        return vals;
+    }
+    
+
+
+
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
         if (!node){ return }
@@ -262,5 +305,38 @@ const fullTree = new BinarySearchTree();
         // console.log(fullTree.range());
     
     // ========= Wednesday =========
-    fullTree.printTree();
+    // fullTree.printTree();
+    // fullTree.print();
+
+    // ========= THURSDAY =========
+        // fullTree.toArrPreorder();
+        fullTree.toArrInorder();
     fullTree.print();
+
+
+
+    // printTree(){
+        // if(this.root === null){return false}
+
+        // console.log(this.printTree(this.root.data));
+        // var right = this.root;
+        // var left = this.root;
+
+        // if(this.root != null){
+        //     console.log("      " + this.root.data + "   " );
+        // }
+
+        // if(left.left != null || right.right != null){    
+        //     console.log(left.left.data + "          "  + right.right.data );
+        // }
+
+        // while(left.left != null){
+        //     console.log(left.left.data + "          "  + left.right.data );
+        //     left = left.left;
+        // }
+
+        // while(right.right != null){
+        //     console.log(right.left.data + "          "  + right.right.data );
+        //     right = right.right;
+        // }
+    // }
