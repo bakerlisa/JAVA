@@ -25,6 +25,7 @@
 			<p class="vendor">Vendor</p>
 			<p class="amount">Amount</p>
 			<p class="edit">edit</p>
+			<p class="delete">delete</p>
 		</div>
 		
 		<c:if test="${empty expenses}">
@@ -36,7 +37,8 @@
 				<p class="expense"><c:out value="${expense.title }"/></p>
 				<p class="vendor"><c:out value="${expense.vendor }"/></p>
 				<p class="amount">$<c:out value="${expense.amount }"/></p>
-				<a href='/expenses/edit/<c:out value="${expense.id}"/>' class="edit">edit</a>
+				<a href='/expense/edit/<c:out value="${expense.id}"/>' class="edit">edit</a>
+				<a href='/expense/delete/<c:out value="${expense.id}"/>' class="edit">delete</a>
 			</div>
 		</c:forEach> 
 	

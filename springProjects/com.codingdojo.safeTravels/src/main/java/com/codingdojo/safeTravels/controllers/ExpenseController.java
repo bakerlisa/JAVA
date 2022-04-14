@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,7 +43,7 @@ public class ExpenseController {
 		return "redirect:/expenses";
 	}
 	
-	@RequestMapping("/expenses/edit/{expenseId}")
+	@RequestMapping("/expense/edit/{expenseId}")
 	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
 		Expense expense = expenseServices.findExpense(expenseId);
 		model.addAttribute("expense",expense);
@@ -58,6 +59,12 @@ public class ExpenseController {
 			return "redirect:/expenses";
 		}
 	}
+	
+	@DeleteMapping("/expense/delete/{id}")
+	 public String destroy(@PathVariable("id") Long id) {
+		expenseServices.deleteExpense(id);
+        return "redirect:/expenses";
+	}	
 	
 
 

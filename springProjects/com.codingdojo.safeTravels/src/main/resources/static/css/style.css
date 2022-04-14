@@ -15,11 +15,13 @@ h2{padding-top:50px;}
 .expenseWrp{display: flex; align-items:center; justify-content:start; flex-wrap:wrap; padding: 0 25px; border-bottom:solid 1px #cbcbcb;}
 
 .titleWrp{display: flex; align-items:center; justify-content:start; flex-wrap:wrap; background-color:#cbcbcb; padding: 0 25px;}
-.titleWrp p{font-weight:900; width:calc(33.33% - 10px); }
-.titleWrp p.edit{width: 30px;}
-.expenseWrp p{width: calc(33.33% - 10px);}
+.titleWrp p{font-weight:900; width:calc(33.33% - 66.6px); }
+.titleWrp p.edit, .titleWrp p.delete{width: 90px;}
+.expenseWrp p{width: calc(33.33% - 66.6px);}
+
 .empty{padding: 0 25px;}
-.edit{width: 30px;}
+.edit,.delete{width: 90px;}
+
 
 /* form */
 form{padding:0 50px;}
