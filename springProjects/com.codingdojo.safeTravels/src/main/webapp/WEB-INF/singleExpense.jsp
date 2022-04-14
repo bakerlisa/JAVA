@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Single Expense</title>
 </head>
 <body>
-
+	<div class="container">
+		<h1>${expense.title}</h1>
+		<p>${expense.description }</p>
+		
+	</div>
 </body>
 </html>

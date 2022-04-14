@@ -34,14 +34,14 @@
 		
 		<c:forEach var="expense" items="${ expenses }">
 			<div class="expenseWrp">
-				<p class="expense"><c:out value="${expense.title }"/></p>
+				<p class="expense"><a href='expense/<c:out value="${expense.id}"/>'><c:out value="${expense.title }"/></a></p>
 				<p class="vendor"><c:out value="${expense.vendor }"/></p>
 				<p class="amount">$<c:out value="${expense.amount }"/></p>
 				<a href='/expense/edit/<c:out value="${expense.id}"/>' class="edit">edit</a>
 				<form action='/expense/delete/<c:out value="${expense.id}"/>' method="post" class="delete">
     				<input type="hidden" name="_method" value="delete">
     				<input type="submit" value="Delete">
-				</form>
+				</form>              
 			</div>
 		</c:forEach> 
 	

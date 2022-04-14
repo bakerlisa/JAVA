@@ -44,7 +44,7 @@ public class ExpenseController {
 	}
 	
 	@RequestMapping("/expense/edit/{expenseId}")
-	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
+	public String editExpense(Model model, @PathVariable("expenseId") Long expenseId) {
 		Expense expense = expenseServices.findExpense(expenseId);
 		model.addAttribute("expense",expense);
 		return "edit.jsp";
@@ -64,5 +64,12 @@ public class ExpenseController {
 	 public String destroy(@PathVariable("id") Long id) {
 		expenseServices.deleteExpense(id);
         return "redirect:/expenses";
+	}
+	
+	@RequestMapping("/expense/{expenseId}")
+	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
+		Expense expense = expenseServices.findExpense(expenseId);
+		model.addAttribute("expense",expense);
+		return "singleExpense.jsp";
 	}
 }
