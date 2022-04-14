@@ -20,7 +20,7 @@ h2{padding-top:50px;}
 .expenseWrp p{width: calc(33.33% - 66.6px);}
 
 .empty{padding: 0 25px;}
-.edit,.delete{width: 90px;}
+.edit,.delete{width: 90px; padding: 0;}
 
 
 /* form */

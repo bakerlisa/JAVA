@@ -64,8 +64,5 @@ public class ExpenseController {
 	 public String destroy(@PathVariable("id") Long id) {
 		expenseServices.deleteExpense(id);
         return "redirect:/expenses";
-	}	
-	
-
-
+	}
 }

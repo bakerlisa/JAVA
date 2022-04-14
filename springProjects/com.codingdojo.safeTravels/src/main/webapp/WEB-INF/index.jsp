@@ -38,7 +38,10 @@
 				<p class="vendor"><c:out value="${expense.vendor }"/></p>
 				<p class="amount">$<c:out value="${expense.amount }"/></p>
 				<a href='/expense/edit/<c:out value="${expense.id}"/>' class="edit">edit</a>
-				<a href='/expense/delete/<c:out value="${expense.id}"/>' class="edit">delete</a>
+				<form action='/expense/delete/<c:out value="${expense.id}"/>' method="post" class="delete">
+    				<input type="hidden" name="_method" value="delete">
+    				<input type="submit" value="Delete">
+				</form>
 			</div>
 		</c:forEach> 
 	
