@@ -46,13 +46,17 @@ public class ExpenseController {
 	public String singlExpense(Model model, @PathVariable("expenseId") Long expenseId) {
 		Expense expense = expenseServices.findExpense(expenseId);
 		model.addAttribute("expense",expense);
-		return "show.jsp";
+		return "edit.jsp";
 	}
 	
 	@PostMapping("/api/update")
 	public String updateExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result) {
-		expenseServices.updateExpense(expense);
-		return "redirect/:expenses";
+		if(result.hasErrors()) {
+			return "edit.jsp";
+		}else {
+			expenseServices.updateExpense(expense);
+			return "redirect:/expenses";
+		}
 	}
 	
 

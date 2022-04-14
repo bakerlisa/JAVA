@@ -17,7 +17,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Edit: </h1>
+		<<a href="/expenses">Back to Home</a>
+		<h1>Edit Expense: </h1>
 			<form:form action="/api/update/" method="post" modelAttribute="expense">
  			<div>
  				<span>
@@ -51,13 +52,7 @@
  				<form:input type="number" path="amount"  />
  			</div>
  			
- 			<div>
- 				<span>
- 					<form:label path="id">ID</form:label>
- 					<form:errors path="id" class="error"/>
- 				</span>
- 				<form:input type="hidden" path="id"  />
- 			</div>
+ 			<form:input type="hidden" path="id"  />
  	
  			<input type="submit" value="Submit" /> 
  		</form:form></div>
