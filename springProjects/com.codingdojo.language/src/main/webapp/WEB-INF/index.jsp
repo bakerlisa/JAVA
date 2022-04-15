@@ -19,9 +19,10 @@
 	<script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
+	<div class="backgrd"></div>
 	<div class="container">
-		<h1>Dashboard</h1>
 		<a href="/languages">Dashboard</a>
+		<h1>Dashboard</h1>
 	
 	
 	<div class="titles elm">
