@@ -20,11 +20,11 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Creat New Language</h1>
-		<a href="/dashboard">Dashboard</a>
-		<a href=/languages>Create</a>
-		<a href=/languages>Update a Language</a>
+		<a href="/languages">Dashboard</a>
 		
+		<h1>${ language.name}</h1>
+		<p>Creator: ${ language.creator}</p>
+		<p>Version: ${ language.version}</p>
 		
 	</div>
 </body>

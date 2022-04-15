@@ -10,3 +10,20 @@
 
 
 .container{max-width:1000px; margin: 0 auto;}
+
+form{width: 600px; margin:0 auto;}
+form div{margin-bottom:15px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+form span{display:block; width: 250px; text-align:right; padding-right: 10px;}
+form input{width: calc(100% - 250px); padding: 10px;}
+form input.submit{align-self:end; width: 300px; display:block; margin-left: auto; text-align: center; margin-top: 25px;}
+
+.delete input{background:transparent; border:none; display: initial; width: auto; padding: 0 5px; font-size: 16px; }
+.edit{padding: 0 5px;}
+
+.error{color:var(--red);}
+
+
+.elm{display:flex; align-items:flex-start; justify-content:flex-start; flex-wrap:wrap;}
+.elm > p{width: calc(33.33% - 40px);}
+.elm .actions{width: 120px; display: flex;;}	
+
