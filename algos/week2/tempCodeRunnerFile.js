@@ -1,1 +1,2 @@
-  runner = runner.right;
+
+        console.log(right);

@@ -192,7 +192,107 @@ class BinarySearchTree {
         return vals;
     }
     
+    // [25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 24, 31, 44, 66, 90]
+    toArrLevelorder(node = this.root) {
+        var  arr = [];
+        arr.push(this.root.data);
+        arr.push(this.root.left.data);
+        arr.push(this.root.right.data);
 
+        var leftNode = this.root.left;
+        var rightNode = this.root.right;
+
+        while(leftNode != null){
+            if(leftNode.left != null){
+                arr.push(leftNode.left.data);
+            }
+            if(leftNode.right != null){
+                
+                arr.push(leftNode.right.data);
+            }
+            if(rightNode.left != null){
+                arr.push(rightNode.left.data);
+                
+            }
+            if(rightNode.right != null){
+                arr.push(rightNode.right.data);
+            }
+
+            leftNode = leftNode.left;
+            rightNode = rightNode.right;
+        }
+
+
+        
+        
+
+        
+        console.log(arr);
+    }
+
+    // Size
+    size(node = this.root) {
+        var total = 0;
+
+        while(node != null){
+            total++;
+            node = node.left;
+        }
+
+        node = this.root;
+        while(node != null){
+            total++;
+            node = node.right;
+        }
+        return total;
+    }
+
+    //Height - which is
+    height(node = this.root) {
+        var right=0;
+        var left=0;
+
+        while(node != null && node.right != null && node.left != null){
+            left++;
+            node = node.left;
+        }
+
+        node = this.root;
+        while(node != null && node.right != null && node.left != null){
+            right++;
+            node = node.right;
+        }
+        if(right === left){
+            return "You're a full tree!!!!";
+        }else if(right > left){
+            return `Left is taller ${left}`;
+        }else if(right < left){
+            return `Right is taller ${right}`;
+        }
+    }
+
+    // full Tree
+    isFull(node = this.root) {
+        var right=0;
+        var left=0;
+
+        while(node != null ){
+            left++;
+            node = node.left;
+        }
+
+        node = this.root;
+        while(node != null){
+            right++;
+            node = node.right;
+        }
+
+        if(right === left){
+            return "Congrats you are a full tree, what will you do next?";
+        }else{
+            return "**Buzzer** Yooooooou're out!";
+        }
+    }
 
 
     // Logs this tree horizontally with the root on the left.
@@ -278,6 +378,7 @@ const fullTree = new BinarySearchTree();
     fullTree.insert(44);
     fullTree.insert(66);
     fullTree.insert(90);
+    // fullTree.insert(100);
     
     // ========= MONDAY =========
     // fullTree.print();
@@ -305,13 +406,20 @@ const fullTree = new BinarySearchTree();
         // console.log(fullTree.range());
     
     // ========= Wednesday =========
-    // fullTree.printTree();
-    // fullTree.print();
+        // fullTree.printTree();
+        // fullTree.print();
 
     // ========= THURSDAY =========
         // fullTree.toArrPreorder();
-        fullTree.toArrInorder();
-    fullTree.print();
+        // fullTree.toArrInorder();
+        // fullTree.print();
+
+    // ========= FRIDAY =========
+        fullTree.print();
+        // console.log(fullTree.size());
+        // console.log(fullTree.height());
+        // console.log(fullTree.isFull());
+        console.log(fullTree.toArrLevelorder());
 
 
 
