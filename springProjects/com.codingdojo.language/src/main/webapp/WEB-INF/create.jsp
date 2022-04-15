@@ -14,25 +14,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Create</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
 	<div class="container">
-		<h1>Dashboard</h1>
-		<a href="/languages">Dashboard</a>
+		<h1>Creat New Language</h1>
+		<a href="/dashboard">Dashboard</a>
+		<a href=/languages>Create</a>
+		<a href=/languages>Update a Language</a>
+		
+		
 	</div>
-	
-	<form:form action="/api/create" method="post" modelAttribute="language">
-	<div>
-		<span>
-		<form:label path="name">Name:</form:label>
-		<form:errors path="name" class="error"/>
-		</span>
-			<form:input type="text" path="name"/>
-	</div>
-	<input type="submit" value="submit" />
-	</form:form>
 </body>
 </html>
