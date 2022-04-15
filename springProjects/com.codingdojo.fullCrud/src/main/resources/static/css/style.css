@@ -3,11 +3,25 @@
 :root{
 	--white:#fff;
 	--black:#000;
+	--red:red;
 }
 
 *{box-sizing:border-box; font-family: 'Dosis', sans-serif;}
+
+.container{max-width:1000px; margin:0 auto;}
 
 body{
 	background: rgb(63,94,251);
 	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 }
+
+/* error */
+.error{text-transform: uppercase; color:var(--white); font-weight: 900; display: block;}
+form > div{margin-bottom: 25px; display: flex; align-items:center;  flex-wrap:wrap;}
+form > div input{padding: 10px; margin-left: 15px;}
+
+/* INDEX */
+.titles{font-weight: 900;}
+.ele{display: flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+.ele > p:not(.actions) {width: calc(25% - 10px);}
+.ele > p.actions{width: 40px;}

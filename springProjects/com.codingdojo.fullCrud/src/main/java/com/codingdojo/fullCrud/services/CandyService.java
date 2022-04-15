@@ -27,8 +27,6 @@ public class CandyService {
 	    public Candy createCandy(Candy candy) {
 	        return candyRepo.save(candy);
 	    }
-
-	    
 	    
 	    // find one candy by ID
 	    public Candy findCandy(Long id) {

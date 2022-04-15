@@ -26,7 +26,7 @@
 		<a href="/newCandy">NewCandy</a>
 		<a href="/oneCandy">OneCandy</a>
 		<a href="/updateCandy">UpdateCandy</a>
-	</div>
+	
 	
 	<form:form action="/api/create/candy" method="post" modelAttribute="candy">
 		<div>
@@ -36,6 +36,32 @@
 			</span>
 			<form:input type="text" path="name"/> 
 		</div>
+		
+		<div>
+			<span>
+				<form:label path="brand">Brand</form:label>
+				<form:errors path="brand" class="error"/> 
+			</span>
+				<form:input path="brand" type="text" class=""/>
+		</div>
+		
+		<div>
+			<span>
+				<form:label path="rating">Rating</form:label>
+				<form:errors path="rating" class="error"/>
+			</span>
+			<form:input path="rating" type="number" />
+		</div>
+		
+		<div>
+			<span>
+				<form:label path="price">Price</form:label>
+				<form:errors path="price" class="error"/>
+			</span>
+			<form:input type="number" path="price"/>
+		</div>
+		<input type="submit" value="submit" />
 	</form:form>
+	</div>
 </body>
 </html>

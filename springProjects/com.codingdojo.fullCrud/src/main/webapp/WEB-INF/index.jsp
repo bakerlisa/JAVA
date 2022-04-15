@@ -26,6 +26,25 @@
 		<a href="/newCandy">NewCandy</a>
 		<a href="/oneCandy">OneCandy</a>
 		<a href="/updateCandy">UpdateCandy</a>
+		
+		<div class="ele titles">
+			<p class="name">Name</p>
+			<p class="brand">Brand</p>
+			<p class="price">Price</p>
+			<p class="rating">Rating</p>
+			<p class="actions">Actions</p>
+		</div>
+	
+		<c:forEach var="candy" items="${candies}">
+			<div class="ele">
+    			<p class="name"><a href="oneCandy/<c:out value="${candy.id}"/>"><c:out value=" ${candy.name}"/></a></p>
+    			<p class="brand"><c:out value="${candy.brand}"/></p>
+   				<p class="price">$<c:out value="${candy.price}"/></p>
+   				<p class="rating"><c:out value="${candy.rating}"/></p>
+   				<p class="actins"></p>
+   			</div>
+		</c:forEach>
+
 	</div>
 </body>
 </html>

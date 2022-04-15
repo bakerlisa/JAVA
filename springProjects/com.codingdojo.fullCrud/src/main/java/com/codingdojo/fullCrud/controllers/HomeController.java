@@ -1,5 +1,7 @@
 package com.codingdojo.fullCrud.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codingdojo.fullCrud.models.Candy;
@@ -19,9 +22,11 @@ public class HomeController {
 	@Autowired
 	CandyService candyService;
 	
-	//route dashboard - all candies
+	//route  - all candies
 	@GetMapping("/dashboard")
 	public String index(Model model) {
+		List<Candy> candies = candyService.allCandies();
+		model.addAttribute("candies", candies);
 		return "index.jsp";
 	}
 	
@@ -34,16 +39,16 @@ public class HomeController {
 	@PostMapping("/api/create/candy")
 	public String createNewCandy(Model model, @Valid @ModelAttribute("candy") Candy candy, BindingResult result) {
 		if(result.hasErrors()) {
-			return "index.jsp";
+			return "newCandy.jsp";
 		}else {
 			candyService.createCandy(candy);
-			return "redirect/:dashboard";
+			return "redirect:/dashboard";
 		}
 	}
 	
 	//One Candy
-	@GetMapping("/oneCandy")
-	public String oneCandy(Model model) {
+	@GetMapping("/oneCandy/{id}")
+	public String oneCandy(Model model,@PathVariable("id") Long id) {
 		return "oneCandy.jsp";
 	}
 	
