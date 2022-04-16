@@ -62,7 +62,6 @@ public class SongService {
 	}
 	
 	public List<Song> findSearch(String search){
-		System.out.println(search);
 		return songRepo.findByArtistContaining(search);
 	}
 }

@@ -33,7 +33,6 @@
 			</div>
 		</nav>
         <h1>Search by Artist: <span><c:out value="${artist }"/></span> </h1>
-				Size ${song.size() }
        
         <c:choose>
     		<c:when test="${song.size() > 0 }">

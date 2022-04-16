@@ -32,7 +32,7 @@
 				<p class="error">${error }</p>
 			</div>
 		</nav>
-        <h1>Top 10</h1>
+        <h1>Top 10 - Rating >= 8</h1>
         
         
         <c:forEach var="sing" items="${song}" begin="0" end="9">
