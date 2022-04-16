@@ -28,6 +28,10 @@ private final ExpenseRepository expenseRepository;
         return expenseRepository.save(expense);
     }
     
+    
+    
+    
+    
     // retrieves a expense
     public Expense findExpense(Long id) {
         Optional<Expense> optionalExpense = expenseRepository.findById(id);
@@ -41,6 +45,17 @@ private final ExpenseRepository expenseRepository;
     public void deleteExpense(Long id) {
     	expenseRepository.deleteById(id);
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     public Expense updateExpense(Expense expense) {
     	Optional<Expense> optionalExpense = expenseRepository.findById(expense.getId());
