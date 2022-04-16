@@ -22,7 +22,7 @@ public interface SongRepository extends CrudRepository<Song, Long>{
 	
 	 // List<Song> findByArtistLike(String artist);
 	 // List<Song> findByArtistStartingWith(String search);
-	 List<Song> findByArtistContaining(String artist);
+	 List<Song> findByArtistContaining(String search);
 	
 	
 	

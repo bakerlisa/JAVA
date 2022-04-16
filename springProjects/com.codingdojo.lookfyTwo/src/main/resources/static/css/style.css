@@ -19,10 +19,11 @@ a{color:var(--gold); text-decoration: none;}
 .container{max-width:1000px; margin: 0 auto; position:relative; z-index: 10;}
 
 /* NAV */
-nav{padding: 25px 0 0; text-align: right;}
-nav a{text-decoration: none; color: var(--black);}
+nav{padding: 25px 0 0; text-align: right;  display: flex; align-items: center; justify-content: flex-end;flex-wrap: wrap;}
+nav a{text-decoration: none; color: var(--black); padding: 0 5px;}
 nav a:hover{cursor: pointer; color: var(--gold);}
-
+nav form{padding-left: 10px; display:flex;}
+nav form input{width: 50%;}
 /* FORM */
 form{margin:0 auto;}
 form div{margin-bottom:15px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}

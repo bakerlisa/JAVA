@@ -27,9 +27,9 @@
        		<div class="searchWrp">
 				<form method="post" action="/api/search" >
 					<input type="text" name="search" />
-					<p>${error }</p>
 					<input type="submit" value="Search" />
 				</form>
+       			<p class="error">${error }</p>
 			</div>
 		</nav>
         <h1>Song Dashboard!</h1>

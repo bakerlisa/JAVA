@@ -102,11 +102,10 @@ public class HomeController {
 	
 	// FORM - search
 	@PostMapping("/api/search")
-	public String search(Model model,@RequestParam String search, RedirectAttributes redirectAttributes) {
-		
+	public String search(Model model,@Valid @RequestParam("search") String search, RedirectAttributes redirectAttributes) {
+		System.out.println(search);
 		if(search.length() > 0) {
 			List<Song> song = songService.findSearch(search);
-			System.out.println(song);
 			model.addAttribute("artist", search);
 			model.addAttribute("song", song);
 		}else {

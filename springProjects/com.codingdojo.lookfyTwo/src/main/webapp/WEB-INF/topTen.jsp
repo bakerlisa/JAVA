@@ -20,10 +20,17 @@
 </head>
 <body class="">
     <div class="container"> <!-- Beginning of Container -->
-      	<nav>		
+      		<nav>		
        		<a href="/dashboard">Dash</a> |
        		<a href="/add/song">Add Song</a> |
        		<a href="/topTen">Top Song's</a>
+       		<div class="searchWrp">
+				<form method="post" action="/api/search" >
+					<input type="text" name="search" />
+					<input type="submit" value="Search" />
+				</form>
+				<p class="error">${error }</p>
+			</div>
 		</nav>
         <h1>Top 10</h1>
         

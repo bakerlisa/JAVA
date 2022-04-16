@@ -20,9 +20,17 @@
 </head>
 <body class="singleSong">
     <div class="container"> <!-- Beginning of Container -->
-      	<nav>		
-       		<a href="/dashboard">Dash</a>
-       		<a href="/add/song">Add Song</a>
+      		<nav>		
+       		<a href="/dashboard">Dash</a> |
+       		<a href="/add/song">Add Song</a> |
+       		<a href="/topTen">Top Song's</a>
+       		<div class="searchWrp">
+				<form method="post" action="/api/search" >
+					<input type="text" name="search" />
+					<input type="submit" value="Search" />
+				</form>
+				<p class="error">${error }</p>
+			</div>
 		</nav>
         <h1 style="padding-bottom:0;"><c:out value="${song.title}"/>!</h1>
         <h3 style="padding-top:0;"><strong><c:out value="${song.artist}"/></strong> - Rating <c:out value="${song.rating}"/> </h3>
