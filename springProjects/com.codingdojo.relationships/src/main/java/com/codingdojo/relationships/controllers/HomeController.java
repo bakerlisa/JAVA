@@ -77,7 +77,6 @@ public class HomeController {
 	public String destroyPerson( @PathVariable("id") Long id) {
 		personSer.deletePerson(id);
 		return "redirect:/";
-
 	}
 	
 	// ================ LICENSE ================
