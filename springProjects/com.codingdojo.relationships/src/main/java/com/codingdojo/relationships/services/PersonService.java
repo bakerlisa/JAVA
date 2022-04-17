@@ -12,7 +12,6 @@ import com.codingdojo.relationships.repositories.PersonRepository;
 public class PersonService {
 	private final PersonRepository personReop;
 
-	
 	public PersonService(PersonRepository personReop){
 		this.personReop = personReop;
 	}

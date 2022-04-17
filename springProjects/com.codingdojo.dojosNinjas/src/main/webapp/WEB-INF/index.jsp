@@ -19,7 +19,26 @@
 </head>
 <body>
 <div class="container">
+<nav>
+	<a href="/">Home</a> |
+	<a href="/add/ninja">Add Ninja</a> |
+	<a href="/ninjas"> Ninjas</a> |
+	<a href="/add/dojo">Add Dojo</a>
+</nav>
 	<h1>Dojos and Ninjas</h1>
+	
+	<c:forEach var="dojo" items="${dojos }">
+		<div class="elm">
+			<p><a href="/dojo/<c:out value='${dojo.id }'/>"> ${dojo.name } </a></p>
+			
+			<div class="actions">
+				<a href="/edit/dojo/${dojo.id}">Edit </a> 
+				|
+				<form action='/delete/dojo/<c:out value="${dojo.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form>
+			</div>
+		</div>
+	</c:forEach>
+	
 </div>
 
 </body>

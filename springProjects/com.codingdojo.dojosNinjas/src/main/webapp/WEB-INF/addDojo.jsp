@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+   <!-- c:out ; c:forEach ; c:if -->
+ <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+   <!-- Formatting (like dates) -->
+ <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+   <!-- form:form -->
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
+   <!-- for rendering errors on PUT routes -->
+ <%@ page isErrorPage="true" %>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dojos and Ninjas</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/app.js"></script>
+</head>
+<body>
+<div class="container">
+<nav>
+	<a href="/">Home</a> |
+	<a href="/add/ninja">Add Ninja</a> |
+	<a href="/ninjas"> Ninjas</a> |
+	<a href="/add/dojo">Add Dojo</a>
+</nav>
+	<h1>Add Dojos</h1>
+
+<form:form method="post" action="/api/add/dojo" modelAttribute="dojo">
+	<div>
+		<span>
+			<form:label path="name">Dojo:</form:label>
+			<form:errors path="name" class="error"/>
+		</span>
+		<form:input path="name" type="text" />
+	</div>
+	<input type="submit" value="Add Dojo" class="submit"/>
+</form:form>
+</div>
+</body>
+</html>
