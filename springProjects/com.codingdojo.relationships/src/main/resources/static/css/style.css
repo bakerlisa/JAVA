@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
 
 :root{
 	--white:#fff;
@@ -7,7 +7,7 @@
 	--gold:#C4A96E;
 }
 
-*{box-sizing:border-box; font-family: 'Play', sans-serif; margin: 0; padding: 0;}
+*{box-sizing:border-box; font-family: 'Cormorant Garamond', serif; margin: 0; padding: 0;}
 
 h1{margin: 0; font-size:60px; padding: 50px 0; text-align: center;}
 h1 span {font-weight: 100;}
@@ -28,7 +28,7 @@ nav form input{width: 50%;}
 form{margin:0 auto;}
 form div{margin-bottom:15px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
 form span{display:block; width: 250px; text-align:right; padding-right: 10px;}
-form input{width: calc(100% - 250px); padding: 10px; color:var(--gold);}
+form input,form select{width: calc(100% - 250px); padding: 10px; color:var(--gold);}
 form input.submit{color:var(--black); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 25px; background-color: var(--gold); border:none; text-transform: uppercase; padding: 15px;}
 	form input.submit:hover{cursor: pointer; opacity:.9;}
 
@@ -41,7 +41,8 @@ form input.submit{color:var(--black); align-self:end; width: 200px; display:bloc
 .titles.elm{font-weight: 900; font-size: 18px; padding-top: 25px; padding-bottom: 15px;}
 
 .elm{display:flex; align-items:flex-start; justify-content:flex-start; flex-wrap:wrap; padding-bottom: 10px;}
-.elm > p{width: calc(50% - 40px);}
+.elm .state{width: 75px;}
+.elm > p{width: calc(50% - 125px);}
 .elm .actions{width: 80px; display: flex;}	
 
 .singleSong{display: block; text-align: center; }
@@ -51,5 +52,8 @@ form input.submit{color:var(--black); align-self:end; width: 200px; display:bloc
 
 /* INDEX */
 .start{display: block; text-align: center;}
+
+/* PERSON */
+.person p{text-align: center; font-size: 20px;}
 
 

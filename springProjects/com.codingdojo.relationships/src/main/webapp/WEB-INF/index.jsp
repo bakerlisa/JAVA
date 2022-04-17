@@ -19,8 +19,39 @@
 </head>
 <body>
 <div class="container">
+<nav>
+	<a href="/">Dash</a> |
+	<a href="/add/person">Add Person</a> |
+	<a href="/add/license">Add License</a> 
+</nav>
 	<h1>Home</h1>
-</div>
+	<h3>All People | <a href="/licenses">All License</a></h3>
+ 	<c:choose>
+    		<c:when test="${people.size() == 0 }">
+    		<h3>Friends Songs Yet Added!</h3>
+    		</c:when> 
+    		   
+    		<c:otherwise>
+    		<div class="elm titles">
+				<p class="name">Name</p>
+				<p class="rating">License</p>
+				<p class="actions">Action</p>			
+			</div>
+			
+			<c:forEach var="person" items="${people}">
+				<div class="elm">
+					<p class="name"><a href="/people/<c:out value="${person.id}"/>"><c:out value="${person.firstName}"/> <c:out value="${person.lastName}"/></a></p>
+					<p class="licenes"><c:out value="${person.license.number}"/> - <c:out value="${person.license.state}"/></p>
+					<div class="actions">
+						<a href="/edit/<c:out value="${person.id}"/>" class="edit">Edit</a> | 
+						<form action='/delete/<c:out value="${person.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form>  
+					</div>
+				</div>
+			</c:forEach>
+    			
+    		</c:otherwise>
+		</c:choose>
 
+	</div>
 </body>
 </html>
