@@ -56,4 +56,7 @@ form input.submit{color:var(--black); align-self:end; width: 200px; display:bloc
 .controllers{display: block; text-align: center;}
 .controllers > a{font-size: 25px; padding: 0 10px; font-weight: 100;}
 
-
+/* STUDENTS */
+.studentsWrp > div{width: calc(50% - 20px);}
+.studentsWrp > div p{font-size: 18px; padding-top: 10px;}
+.studentsWrp > div span{font-weight: 100;}

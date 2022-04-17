@@ -28,9 +28,13 @@
 		<a href="/dorms">All Dorms</a>
 	</nav>
 	<h1>All Students</h1>
-	<div class="elm">
+	<div class="studentsWrp elm">
 		<c:forEach var="student" items="${students }">
-			<div><a href="/student/<c:out value='${student.id }'/>"> ${student.name } </a> <form action='/delete/student/<c:out value="${student.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form></div>
+			<div>
+				<a href="/edit/student/<c:out value='${student.id }'/>"> ${student.firstName } ${student.lastName } - <span>${student.id }</span></a> 
+				<p><a href="/dorm/${student.dorm.id }">${student.dorm.name }</a></p>
+				<form action='/delete/student/<c:out value="${student.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form>
+			</div>
 		</c:forEach>
 	</div>
 	

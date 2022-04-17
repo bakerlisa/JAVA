@@ -27,12 +27,23 @@
 		<a href="/add/dorm">Add Dorm</a>|
 		<a href="/dorms">All Dorms</a>
 	</nav>
-	<h1>All Dorms</h1>
-	<div class="elm">
-		<c:forEach var="dorm" items="${dorms }">
-			<div><a href="/dorm/<c:out value='${dorm.id }'/>"> ${dorm.name } </a> <form action='/delete/dorm/<c:out value="${dorm.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form></div>
-		</c:forEach>
+	<h1> Edit Dorm - ${editDorm.name}</h1>
+	
+	<div>
+		<form action='/delete/dorm/<c:out value="${editDorm.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form>
+		
+		<form:form method="post" action="/api/dorm/${editDorm.id}" modelAttribute="dorm">
+			<div>
+				<span>
+					<form:label path="name">Dorm Name</form:label>
+					<form:errors path="name" class="error"/>
+				</span>
+				<form:input path="name" type="text" value="${editDorm.name }"/>
+			</div>
+			<input type="submit" value="Update Dorm" class="submit"/>
+		</form:form>
 	</div>
+
 	
 
 	

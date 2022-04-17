@@ -27,12 +27,13 @@
 		<a href="/add/dorm">Add Dorm</a>|
 		<a href="/dorms">All Dorms</a>
 	</nav>
-	<h1>All Dorms</h1>
-	<div class="elm">
-		<c:forEach var="dorm" items="${dorms }">
-			<div><a href="/dorm/<c:out value='${dorm.id }'/>"> ${dorm.name } </a> <form action='/delete/dorm/<c:out value="${dorm.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form></div>
-		</c:forEach>
+	<h1> Dorm - ${dorm.name}</h1>
+	
+	<div>
+		<form action='/delete/dorm/<c:out value="${dorm.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form>
+		<a href="/edit/dorm/<c:out value="${dorm.id}"/>">Edit</a>
 	</div>
+
 	
 
 	

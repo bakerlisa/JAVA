@@ -27,10 +27,10 @@
 		<a href="/add/dorm">Add Dorm</a>|
 		<a href="/dorms">All Dorms</a>
 	</nav>
-	<h1>Add Student</h1>
-	<div class="controllers"><a href="/add/dorm">Dorm</a> | <a href="/add/student">Student</a></div>
+	<h1>Edit Student : ${student.firstName} ${student.lastName}</h1>
+<form action='/delete/student/<c:out value="${student.id}"/>' method="post" class="delete"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete"></form>
 	
-	<form:form megthod="post" action="/api/add/student" modelAttribute="student">
+	<form:form megthod="post" action="/api/edit/student" modelAttribute="student">
 		<div>
 			<span>
 				<form:label path="firstName">First Name:</form:label>
@@ -58,9 +58,10 @@
 			</form:select>
 		</div>
 		
-		
+		<input type="hidden" name="id" value="${student.id}"/>
 		<input type="submit" value="Add Student" class="submit"/>
 	</form:form>
+	
 </div>
 </body>
 </html>
