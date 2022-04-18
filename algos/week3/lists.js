@@ -32,6 +32,7 @@ class List {
             while(runner.next != null){
                 runner = runner.next;
             }
+
             runner.next=newNode;
         }
         return value;
@@ -46,7 +47,6 @@ class List {
         /* Your Code Here */
         for(var i=0; i < arr.length; i++){
             
-
             let newerNode=new Node(arr[i]);
             this.next = newerNode;
         }
@@ -61,13 +61,74 @@ class List {
         newNode.next = temp;
     }
 
-    Iterate(list){
+    reverse(){
+        var runner = this.head.next;
+        var walker = this.head;
+
+        if(this.head == null){
+            return "empty";
+        }
+
+        while(runner != null){
+            var temp = runner.next;
+            runner.next = walker;
+
+            walker = runner;
+            runner = temp;
+        }
+
+        this.head.next = null;
+        this.head = walker;
+    }
+
+    removeNegatives() {
+        var runner = this.head;
+        var walker = runner;
+        var temp;
+
+        //first value
+        if(this.head.value < 0){
+            temp = this.head;
+            this.head = this.head.next;
+            temp.next = null;
+            return;
+        }
+        
+        // middle number
+        while(runner.next != null){
+            if(runner.value < 0){
+                if(runner.next != null){
+                    temp = walker;
+                    walker.next = runner.next;
+                }
+            }
+            walker = runner;
+            runner = runner.next;
+        }
+
+        // last value
+        if(runner.value < 0){
+            walker.next = null;
+        }
+    }
+    /**
+ * Determines whether the list has a loop in it which would result in
+ * infinitely traversing unless otherwise avoided. A loop is when a node's
+ * next points to a node that is behind it.
+ * @returns {boolean} Whether the list has a loop or not.
+ */
+    hasLoop(){
+        console.log("Here");
+    }
+
+    iterate(list){
         if(list.head != null){
             var runner = this.head;
             while(runner.next != null){
-                console.log(this.value);
+                console.log(runner.value);
                 runner = runner.next;
             }
+            console.log(runner.value);
         }
     }
 };
@@ -75,20 +136,34 @@ class List {
 let test_data1=123;
 let test_data2=234;
 let test_data6=678;
-let test_data3=345;
+let test_data3=-345;
 let test_data4=[111,222,333,444,555];
 let test_data5=[666,777,888,999,1010];
 
 /* Create our list */
 let list=new List();
 
+
 /* Is it empty: */
-// console.log(list.IsEmpty());
 
 /* Insert nodes into the list: */
 list.PushBack(test_data1);
 list.PushBack(test_data2);
+list.PushBack(test_data6);
 list.PushBack(test_data3);
+
+//rEVERSE
+// list.reverse();
+
+//removeNegatives
+// list.removeNegatives();
+
+// hasLoop
+list.iterate(list);
+console.log(" ==================== ");
+list.hasLoop();
+list.iterate(list);
+
 
 /* Insert array of nodes into the list: */
 // list.PushBackN(test_data4);
@@ -96,4 +171,3 @@ list.PushBack(test_data3);
 // console.log(list.PushBackN(test_data5));
 
 /* Iterate our list, so we can see our node values */
-list.Iterate(list.Iterate());
