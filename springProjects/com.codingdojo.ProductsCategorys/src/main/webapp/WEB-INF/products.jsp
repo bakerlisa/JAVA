@@ -28,6 +28,11 @@
 	</nav>
 	
 		<h1>Products</h1>
+		<ul>
+			<c:forEach var="prod" items="${products }">
+				<li><a href="/product/${prod.id }">${prod.name }</a></li>
+			</c:forEach>
+		</ul>
 		
 	</div>
 </body>

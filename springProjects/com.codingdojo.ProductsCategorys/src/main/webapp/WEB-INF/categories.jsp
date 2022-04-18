@@ -29,6 +29,11 @@
 	</nav>
 		<h1>Categories</h1>
 		
+		<ul>
+			<c:forEach var="cat" items="${categories }">
+				<li><a href="/category/${cat.id }">${cat.name }</a></li>
+			</c:forEach>
+		</ul>
 	</div>
 </body>
 </html>

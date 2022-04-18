@@ -92,7 +92,7 @@ public class HomeController {
 	// ADDING - new song
 	@PostMapping("/api/add/license")
 	public String addLicenseForm(Model model, @Valid @ModelAttribute("license") License license, BindingResult result) {
-		System.out.println(license);
+	
 		if(result.hasErrors()) {
 			model.addAttribute("people", personSer.allPeople());
 			return "addLicense.jsp";

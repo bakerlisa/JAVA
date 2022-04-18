@@ -1,10 +1,12 @@
 package com.codingdojo.ProductsCategorys.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import com.codingdojo.ProductsCategorys.models.Category;
+import com.codingdojo.ProductsCategorys.models.CategoryProduct;
 import com.codingdojo.ProductsCategorys.repositories.CategoryRepository;
 
 @Service
@@ -18,4 +20,19 @@ public class CategoryService {
 	public List<Category> allCategorys(){
 		return catRepo.findAll();
 	}
+	
+	public Category addCategoryForm(Category category) {
+		return catRepo.save(category);
+	}
+	
+	public Category singleCategory(Long id) {
+		Optional<Category> optCat = catRepo.findById(id);
+		if(optCat.isPresent()) {
+			return optCat.get();
+		}else {
+			return null;
+		}
+	}
+	
+	
 }
