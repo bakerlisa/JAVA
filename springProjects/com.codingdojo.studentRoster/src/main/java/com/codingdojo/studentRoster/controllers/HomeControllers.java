@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.studentRoster.models.Dorm;
 import com.codingdojo.studentRoster.models.Student;
@@ -74,8 +76,10 @@ public class HomeControllers {
 	}
 	
 	@GetMapping("/dorm/{id}")
-	public String findDorm(Model model, @PathVariable("id") Long id) {
+	public String findDorm(Model model, @PathVariable("id") Long id, @ModelAttribute("student") Student student) {
 		Dorm dorm = dormServ.findDorm(id);
+		List<Student> students = studentServ.allStudents();
+		model.addAttribute("students",students);
 		model.addAttribute("dorm",dorm);
 		return "dorm.jsp";
 	}
@@ -144,6 +148,14 @@ public class HomeControllers {
 			studentServ.editStudentFrom(student);
 			return "redirect:/students";
 		}
+	}
+	
+	@PostMapping("/api/edit/dorm/student")
+	public String editStudentDorm(Model model, RedirectAttributes redirectAttributes, @RequestParam("id")Long id, @RequestParam("dorm")Long dormID) {
+		Dorm dorm = dormServ.findDorm(dormID);
+		studentServ.editStudentDormFrom(id,dorm);
+		redirectAttributes.addFlashAttribute("message", "Student has benn added");
+		return "redirect:/dorms";
 	}
 	
 	@DeleteMapping("/delete/student/{id}")
