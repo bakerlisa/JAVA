@@ -88,8 +88,8 @@ let list=new List();
 
 /* Insert nodes into the list: */
 list.PushBack(test_data1);
-// list.PushBack(test_data2);
-// list.PushBack(test_data3);
+list.PushBack(test_data2);
+list.PushBack(test_data6);
 
 /* Insert array of nodes into the list: */
 // list.PushBackN(test_data4);
