@@ -61,6 +61,10 @@ class List {
         newNode.next = temp;
     }
 
+    hasLoop(){
+        console.log("Here");
+    }
+
     reverse(){
         var runner = this.head.next;
         var walker = this.head;
@@ -111,15 +115,8 @@ class List {
             walker.next = null;
         }
     }
-    /**
- * Determines whether the list has a loop in it which would result in
- * infinitely traversing unless otherwise avoided. A loop is when a node's
- * next points to a node that is behind it.
- * @returns {boolean} Whether the list has a loop or not.
- */
-    hasLoop(){
-        console.log("Here");
-    }
+
+    
 
     iterate(list){
         if(list.head != null){
@@ -153,16 +150,22 @@ list.PushBack(test_data6);
 list.PushBack(test_data3);
 
 //rEVERSE
-// list.reverse();
+    // list.iterate(list);
+    // console.log(" ==================== ");
+    // // list.reverse();
+    // list.iterate(list);
 
 //removeNegatives
-// list.removeNegatives();
+    list.iterate(list);
+    console.log(" ==================== ");
+    list.removeNegatives();
+    list.iterate(list);
 
 // hasLoop
-list.iterate(list);
-console.log(" ==================== ");
-list.hasLoop();
-list.iterate(list);
+    // list.iterate(list);
+    // console.log(" ==================== ");
+    // list.hasLoop();
+    // list.iterate(list);
 
 
 /* Insert array of nodes into the list: */
