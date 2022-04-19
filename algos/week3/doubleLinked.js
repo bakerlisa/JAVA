@@ -114,14 +114,14 @@ let list=new List();
     let test_data5=567;
 
     //EMPTY
-    // console.log(list.IsEmpty());
     
     // ADD TO BACK
-        list.addToBack(test_data1);
-        list.addToBack(test_data2);
-        list.addToBack(test_data3);
-        list.addToBack(test_data4);
-        list.addToBack(test_data5);
+    list.addToBack(test_data1);
+    list.addToBack(test_data2);
+    list.addToBack(test_data3);
+    list.addToBack(test_data4);
+    list.addToBack(test_data5);
+    console.log(list.IsEmpty());
             // list.iterate(list);
 
     // ADD TO FRONT
