@@ -2,6 +2,7 @@ package com.codingdojo.loginRegistration.controllers;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import javax.websocket.Session;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,21 +26,24 @@ public class HomeController {
 	
 	// ================ GENERAL ================
 	@GetMapping("/")
-	public String index(Model model) {
-		model.addAttribute("newUser", new User());
-		model.addAttribute("newLogin", new LoginUser());
-		return "index.jsp";
+	public String index(Model model,HttpSession session) {
+		if(session.getAttribute("user_id") != null ) {
+			return "dashboard.jsp";
+		}else {
+			model.addAttribute("newUser", new User());
+			model.addAttribute("newLogin", new LoginUser());
+			return "index.jsp";
+		}
+		
 	}
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model, HttpSession session) {
-//		if(session.getAttribute("user_id") != null ) {
-//			return "dashboard.jsp";
-//		}else {
-//			return "redirect:/";
-//		}
-		return "dashboard.jsp";
-		
+		if(session.getAttribute("user_id") != null ) {
+			return "dashboard.jsp";
+		}else {
+			return "redirect:/";
+		}
 	}
 	
 	// ================ LOGIN / REGISTER ================
@@ -63,7 +67,7 @@ public class HomeController {
             BindingResult result, Model model, HttpSession session) {
 		User user = userSer.login(newLogin, result);
 		if(result.hasErrors()) {
-			model.addAttribute("newLogin", new LoginUser());
+			model.addAttribute("newUser", new User());
 			return "index.jsp";
 		}
 		
@@ -71,34 +75,38 @@ public class HomeController {
 		return "redirect:/dashboard";
 	}
 	
+	@GetMapping("/logout")
+	public String dashboard(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 	// ================ PLANT ================
 	@GetMapping("/new/plant")
 	public String newPlant(Model model, HttpSession session) {
-//		if(session.getAttribute("user_id") != null ) {
-//			return "newPlant.jsp";
-//		}else {
-//			return "redirect:/";
-//		}
-		return "newPlant.jsp";
+		if(session.getAttribute("user_id") != null ) {
+			return "newPlant.jsp";
+		}else {
+			return "redirect:/";
+		}
+	
 	}
 	
 	@GetMapping("/edit/plant")
 	public String editPlant(Model model, HttpSession session) {
-//		if(session.getAttribute("user_id") != null ) {
-//			return "editPlant.jsp";
-//		}else {
-//			return "redirect:/";
-//		}
-		return "editPlant.jsp";
+		if(session.getAttribute("user_id") != null ) {
+			return "editPlant.jsp";
+		}else {
+			return "redirect:/";
+		}
 	}
 	
 	@GetMapping("/plant")
 	public String plant(Model model, HttpSession session) {
-//		if(session.getAttribute("user_id") != null ) {
-//			return "onePlant.jsp";
-//		}else {
-//			return "redirect:/";
-//		}
-		return "onePlant.jsp";
+		if(session.getAttribute("user_id") != null ) {
+			return "onePlant.jsp";
+		}else {
+			return "redirect:/";
+		}
 	}
 }

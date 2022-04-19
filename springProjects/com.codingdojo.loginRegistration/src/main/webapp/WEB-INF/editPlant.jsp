@@ -20,11 +20,11 @@
 <body>
 	<div class="container">
 	<nav>
-		<a href="/">Index</a> | 
 		<a href="/dashboard">Dash</a> | 
 		<a href="/new/plant">New Plant</a> | 
 		<a href="/edit/plant">Edit Plant</a> |
-		<a href="/plant">One Plant</a> 
+		<a href="/plant">One Plant</a> |
+		<a href="/logout">Logout</a> 
 	</nav>
 	
 		<h1>Edit Plant</h1>

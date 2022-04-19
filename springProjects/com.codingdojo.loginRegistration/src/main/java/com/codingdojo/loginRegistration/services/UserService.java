@@ -3,8 +3,10 @@ package com.codingdojo.loginRegistration.services;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
+
 
 import com.codingdojo.loginRegistration.models.LoginUser;
 import com.codingdojo.loginRegistration.models.User;
@@ -12,6 +14,8 @@ import com.codingdojo.loginRegistration.repositories.UserRepository;
 
 @Service
 public class UserService {
+	
+	@Autowired
 	private final UserRepository userRepo;
 	
 	public UserService(UserRepository userRepo) {
@@ -31,6 +35,7 @@ public class UserService {
 	
 	// method to register
 	public User register(User newUser, BindingResult result) {
+		
 		if(userRepo.findByEmail(newUser.getEmail()).isPresent()) {
 			result.rejectValue("email","Unquie","You better think of a new email");
 		}
@@ -42,6 +47,7 @@ public class UserService {
 		}else {
 			String hashed = BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt());
 			newUser.setPassword(hashed);
+			
 			return userRepo.save(newUser);
 		}
 	}
@@ -69,6 +75,4 @@ public class UserService {
 		}
 		
 	}
-	
-	
 }
