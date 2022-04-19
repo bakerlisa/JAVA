@@ -29,23 +29,46 @@
 	</nav>
 		<h1><span>Category - </span> ${category.name} </h1>
 		
-		<form method="post" action="/api/product/category">
+		<form:form method="post" action="/api/product/category" modelAttribute="categoryProduct">
 
-			<select name="product">
+			<form:select path="product">
 				<c:forEach var="prod" items="${products }">
-					<option value="${prod.id}">${prod.name }</option>
+					<form:option value="${prod.id}">${prod.name }</form:option>
 				</c:forEach>
-			</select>
+			</form:select>
 			
-			<input type="hidden" name="category"  value="${category.id}" />
+			<form:input type="hidden" path="category"  value="${category.id}" />
+			<%-- <form:input type="hidden" path="name"  value="${category.name}" /> --%>
 			
 			<input type="submit" class="submit"/>
-		</form> 
+		</form:form> 
 	
 	
-		<c:forEach var="item" items="${catsProds} ">
-			<p>${ item }</p>
-		</c:forEach>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<c:choose>
+  			<c:when test="${category.products.size() == 0}">
+				<p>No products</p>
+  			</c:when>
+  			<c:otherwise>
+  				${category.products.size() }
+  				<c:forEach var="prod" items="${category.products} ">
+					<%-- <p>${ prod.name }</p> --%>
+				</c:forEach>
+				
+			</c:otherwise>
+			
+		</c:choose>
 	</div>
 </body>
 </html>

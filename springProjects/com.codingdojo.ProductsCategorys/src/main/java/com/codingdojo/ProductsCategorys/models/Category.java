@@ -84,7 +84,7 @@ public class Category {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void category(Long id) {
 		this.id = id;
 	}
 

@@ -58,15 +58,18 @@ public class HomeController {
 	}
 	
 	@GetMapping("/category/{id}")
-	public String singleCategory(Model model, @PathVariable("id") Long id) {
-		
-		List<CategoryProduct> catsProds = catProdServ.getProductsOfCategory(id);
+	public String singleCategory(Model model, @PathVariable("id") Long id, @ModelAttribute("categoryProduct") CategoryProduct categoryProduct ) {
 		Category category = catServ.singleCategory(id);
 		List<Product> products = prodServ.allProducts();
 		
 		model.addAttribute("products",products);
 		model.addAttribute("category",category);
-		model.addAttribute("catsProds",catsProds);
+		System.out.println(category.getProducts().getClass().getSimpleName());
+		for(Product in category.getProducts()) {
+			Product.
+		}
+		
+//		System.out.println(category.getClass().getSimpleName() );
 		return "category.jsp";
 	}
 	
@@ -117,26 +120,23 @@ public class HomeController {
 	}
 	
 	@PostMapping("/api/add/product")
-	public String addProductForm(Model model, @Valid  @ModelAttribute("product") Product product,BindingResult result ) {
+	public String addProductForm(Model model, @Valid  @ModelAttribute("product") Product product, BindingResult result ) {
 		if(result.hasErrors()) {
 			return "addProduct.jsp";
 		}else {
 			prodServ.addProduct(product);
 			return "redirect:/products";
 		}
-		
 	}
 	
-	// ==================== Product / Category ==================== 
-		@PostMapping("/api/product/category")
-		public String addProductToCategoryForm(Model model, @RequestParam("product") Long proID, @RequestParam("category") Long catID ) {
-			
-			Product product = prodServ.singleProduct(proID);
-			Category category = catServ.singleCategory(catID);
-			
-			CategoryProduct newCatePro = new CategoryProduct(category,product);
-			catProdServ.addProductCategory(newCatePro);
-			return "redirect:/categories";
-		}
+	// ==================== Product / Category ==================== 	
+	@PostMapping("/api/product/category")
+	public String addProductToCategoryForm(Model model, @ModelAttribute("categoryProduct") CategoryProduct categoryProduct ) {
+		
+		catProdServ.addProductCategory(categoryProduct);
+		
+		
+		return "redirect:/categories";
+	}
 	
 }

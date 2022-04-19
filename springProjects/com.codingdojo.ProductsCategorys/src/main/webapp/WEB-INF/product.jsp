@@ -29,7 +29,7 @@
 	
 		<h1><span>Product - </span> ${product.name}</h1>
 		
-		<form method="post" action="/api/product/category">
+		<form method="post" action="/api/product/category" >
 			<select name="product">
 				<c:forEach var="cat" items="${categories }">
 					<option value="${cat.id}">${cat.name }</option>

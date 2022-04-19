@@ -13,5 +13,5 @@ import com.codingdojo.ProductsCategorys.models.Product;
 public interface CategoryProductRepository extends CrudRepository<CategoryProduct, Long>{
 	List<CategoryProduct> findAll();
 	
-	List<CategoryProduct> findAllProductByCategoryId(Long id);
+	List<CategoryProduct> findAllProductIdByCategoryId(Long id);
 }

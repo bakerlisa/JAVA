@@ -34,5 +34,19 @@ public class CategoryService {
 		}
 	}
 	
+//	public Category updateProduct(Category category) {
+//		Optional<Category> optCat = catRepo.findById(category.getId());
+//		if(optCat.isPresent()) {
+//			Category thisCat = optCat.get();
+//			
+//			thisCat.setName(category.getName());
+//			thisCat.setId(Integer.parseInt(category.getId()));
+////			thisCat.add(category.getProducts());
+//			
+//			return optCat.get();
+//		}else {
+//			return null;
+//		}
+//	}
 	
 }

@@ -93,15 +93,5 @@ public class CategoryProduct {
 	@PreUpdate
 	protected void onUpdate(){
 		this.updatedAt = new Date();
-	}
-	public void add(Category newCategory) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void add(Product newProduct) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	    
+	}   
 }

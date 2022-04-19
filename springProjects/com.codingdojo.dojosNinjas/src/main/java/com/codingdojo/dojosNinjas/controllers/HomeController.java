@@ -96,7 +96,6 @@ public class HomeController {
 			model.addAttribute("dojos", dojos);
 			return "addNinja.jsp";
 		}else {
-			System.out.println(ninja);
 			ninjaServ.createNinja(ninja);
 			return "redirect:/";
 		}

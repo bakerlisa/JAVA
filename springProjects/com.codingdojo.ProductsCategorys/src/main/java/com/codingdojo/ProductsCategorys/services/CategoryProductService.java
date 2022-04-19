@@ -21,8 +21,9 @@ public class CategoryProductService {
 	}
 	
 	public List<CategoryProduct> getProductsOfCategory(Long id) {
-		return catProdRepo.findAllProductByCategoryId(id);
+		return catProdRepo.findAllProductIdByCategoryId(id);
 	}
 	
+	public void count() { catProdRepo.count(); }
 	
 }
