@@ -19,6 +19,13 @@
 </head>
 <body>
 	<div class="container">
+	<nav>
+		<a href="/">Index</a> | 
+		<a href="/dashboard">Dash</a> | 
+		<a href="/new/plant">New Plant</a> | 
+		<a href="/edit/plant">Edit Plant</a> |
+		<a href="/plant">One Plant</a> 
+	</nav>
 		<h1>Welcome</h1>
 		<h3>Join our growing community</h3>
 		
@@ -28,10 +35,18 @@
 				<form:form method="post" action="/api/register" modelAttribute="newUser">
 					<div>
 						<span>
-							<form:label path="user">Username:</form:label>
-							<form:errors path="user" class="error"/>
+							<form:label path="firstName">First Name:</form:label>
+							<form:errors path="firstName" class="error"/>
 						</span>
-						<form:input path="user" type="text"/>
+						<form:input path="firstName" type="text"/>
+					</div>
+					
+					<div>
+						<span>
+							<form:label path="lastName">Last Name:</form:label>
+							<form:errors path="lastName" class="error"/>
+						</span>
+						<form:input path="lastName" type="text"/>
 					</div>
 					
 					<div>

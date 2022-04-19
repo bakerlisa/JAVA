@@ -21,7 +21,7 @@ a{color:var(--gold); text-decoration: none;}
 .container ul{display: flex; align-items:center; justify-content:center;}
 .container ul li{width: 33.33%;}
 
-.flex{display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+.flex{display:flex; align-items:start; justify-content:start; flex-wrap:wrap;}
 
 .col-2{width: 50%; padding-top: 50px;}
 .col-2:nth-child(1){padding-right:25px;}

@@ -25,15 +25,19 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	@NotNull
-	@Size(min=0,max=25,message="Username cannot be blank")
-	private String user;
+	@NotEmpty
+	@Size(min=2,max=25,message="First name cannot be blank")
+	private String firstName;
 	
-	@NotNull
+	@NotEmpty
+	@Size(min=2,max=25,message="Last Name cannot be blank")
+	private String lastName;
+	
+	@NotEmpty
 	@Email(message="Email cannot be blank")
-	private String Email;
+	private String email;
 	
-	@NotNull
+	@NotEmpty
 	@Size(min=8,max=128,message="password needs to be between 8-128 characters")
 	private String password;
 	
@@ -47,38 +51,70 @@ public class Users {
     private Date createdAt;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
+    
+    // Need to add one to many with plants
+    // remember getters and setters
+    // remember to update constructors
 
 	//CONSTRUCTORS
-	public Users(@NotNull @Size(min = 0, max = 25, message = "Username cannot be blank") String user,
-			@NotNull @javax.validation.constraints.Email(message = "Email cannot be blank") String email,
-			@NotNull @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
-			@NotEmpty(message = "Confirm Password is required!") @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm) {
-		super();
-		this.user = user;
-		Email = email;
-		this.password = password;
-		this.confirm = confirm;
-	}
-
 	public Users() {
 		super();
 	}
 	
+	public Users(@NotNull @Size(min = 2, max = 25, message = "First name cannot be blank") String firstName,
+			@NotNull @Size(min = 2, max = 25, message = "last Name cannot be blank") String lastName,
+			@NotEmpty @Email(message = "Email cannot be blank") String email,
+			@NotNull @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
+			@NotEmpty(message = "Confirm Password is required!") @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.confirm = confirm;
+	}
+
+	public Users(Long id, @NotNull @Size(min = 2, max = 25, message = "First name cannot be blank") String firstName,
+			@NotNull @Size(min = 2, max = 25, message = "last Name cannot be blank") String lastName,
+			@NotEmpty @Email(message = "Email cannot be blank") String email,
+			@NotNull @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
+			@NotEmpty(message = "Confirm Password is required!") @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
+			Date createdAt, Date updatedAt) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.confirm = confirm;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
+	
+	
 	// GETTERS / SETTERS
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
 	public String getEmail() {
-		return Email;
+		return email;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -97,6 +133,30 @@ public class Users {
 		this.confirm = confirm;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
