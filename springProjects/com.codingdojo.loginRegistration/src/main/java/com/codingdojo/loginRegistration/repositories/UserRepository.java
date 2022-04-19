@@ -6,11 +6,13 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.codingdojo.loginRegistration.models.Users;
+import com.codingdojo.loginRegistration.models.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<Users, Long>{
-	List<Users> findAll();
+public interface UserRepository extends CrudRepository<User, Long>{
 	
-	Optional<Users> findByEmail(String email);
+	List<User> findAll();
+	
+	Optional<User> findByEmail(String email);
+	
 }

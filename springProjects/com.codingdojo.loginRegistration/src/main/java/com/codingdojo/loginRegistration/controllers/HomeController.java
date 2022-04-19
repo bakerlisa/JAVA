@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codingdojo.loginRegistration.models.LoginUser;
-import com.codingdojo.loginRegistration.models.Users;
+import com.codingdojo.loginRegistration.models.User;
 import com.codingdojo.loginRegistration.services.UserService;
 
 @Controller
@@ -25,27 +25,28 @@ public class HomeController {
 	
 	// ================ GENERAL ================
 	@GetMapping("/")
-	public String index(Model model, @ModelAttribute("newUser") Users users, @ModelAttribute("newLogin") LoginUser loginUser) {
-		model.addAttribute("newUser", new Users());
+	public String index(Model model) {
+		model.addAttribute("newUser", new User());
 		model.addAttribute("newLogin", new LoginUser());
 		return "index.jsp";
 	}
 	
 	@GetMapping("/dashboard")
 	public String dashboard(Model model, HttpSession session) {
-		if(session.getAttribute("user_id") != null ) {
-			return "dashboard.jsp";
-		}else {
-			return "redirect:/";
-		}
+//		if(session.getAttribute("user_id") != null ) {
+//			return "dashboard.jsp";
+//		}else {
+//			return "redirect:/";
+//		}
+		return "dashboard.jsp";
 		
 	}
 	
-	
 	// ================ LOGIN / REGISTER ================
 	@PostMapping("/api/register")
-	public String register(@Valid @ModelAttribute("newUser") Users newUser, 
+	public String register(@Valid @ModelAttribute("newUser") User newUser, 
             BindingResult result, Model model, HttpSession session) {
+		
 		userSer.register(newUser, result);
 		
 		if(result.hasErrors()) {
@@ -60,7 +61,7 @@ public class HomeController {
 	@PostMapping("/api/login")
 	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
             BindingResult result, Model model, HttpSession session) {
-		Users user = userSer.login(newLogin, result);
+		User user = userSer.login(newLogin, result);
 		if(result.hasErrors()) {
 			model.addAttribute("newLogin", new LoginUser());
 			return "index.jsp";
@@ -73,28 +74,31 @@ public class HomeController {
 	// ================ PLANT ================
 	@GetMapping("/new/plant")
 	public String newPlant(Model model, HttpSession session) {
-		if(session.getAttribute("user_id") != null ) {
-			return "newPlant.jsp";
-		}else {
-			return "redirect:/";
-		}
+//		if(session.getAttribute("user_id") != null ) {
+//			return "newPlant.jsp";
+//		}else {
+//			return "redirect:/";
+//		}
+		return "newPlant.jsp";
 	}
 	
 	@GetMapping("/edit/plant")
 	public String editPlant(Model model, HttpSession session) {
-		if(session.getAttribute("user_id") != null ) {
-			return "editPlant.jsp";
-		}else {
-			return "redirect:/";
-		}
+//		if(session.getAttribute("user_id") != null ) {
+//			return "editPlant.jsp";
+//		}else {
+//			return "redirect:/";
+//		}
+		return "editPlant.jsp";
 	}
 	
 	@GetMapping("/plant")
 	public String plant(Model model, HttpSession session) {
-		if(session.getAttribute("user_id") != null ) {
-			return "onePlant.jsp";
-		}else {
-			return "redirect:/";
-		}
+//		if(session.getAttribute("user_id") != null ) {
+//			return "onePlant.jsp";
+//		}else {
+//			return "redirect:/";
+//		}
+		return "onePlant.jsp";
 	}
 }
