@@ -65,9 +65,9 @@ public class HomeController {
 		model.addAttribute("products",products);
 		model.addAttribute("category",category);
 		System.out.println(category.getProducts().getClass().getSimpleName());
-		for(Product in category.getProducts()) {
-			Product.
-		}
+//		for(Product in category.getProducts()) {
+//			Product.
+//		}
 		
 //		System.out.println(category.getClass().getSimpleName() );
 		return "category.jsp";
