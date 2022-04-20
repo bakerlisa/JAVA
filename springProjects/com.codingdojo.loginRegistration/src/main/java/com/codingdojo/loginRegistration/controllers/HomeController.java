@@ -26,7 +26,7 @@ public class HomeController {
 	
 	// ================ GENERAL ================
 	@GetMapping("/")
-	public String index(Model model,HttpSession session) {
+	public String index(Model model, HttpSession session) {
 		if(session.getAttribute("user_id") != null ) {
 			return "dashboard.jsp";
 		}else {

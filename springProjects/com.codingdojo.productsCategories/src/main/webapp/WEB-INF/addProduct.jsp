@@ -40,10 +40,10 @@
 			
 			<div>
 				<span>
-					<form:label path="description">Description:</form:label>
-					<form:errors path="description" class="error"/>
+					<form:label path="thoughts">Description:</form:label>
+					<form:errors path="thoughts" class="error"/>
 				</span>
-				<form:input path="description" type="text" />
+				<form:input path="thoughts" type="text" />
 			</div>
 			
 			<div>
