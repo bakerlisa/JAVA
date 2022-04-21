@@ -92,7 +92,7 @@ public class HomeController {
 				
 	// ================================ Book ================================
 	@GetMapping("/add/book")
-	public String addBook(Model model) {
+	public String addBook(Model model, @ModelAttribute("book")Book book) {
 		return "addBook.jsp";
 	}
 	@GetMapping("/update/book")
@@ -103,6 +103,16 @@ public class HomeController {
 	public String book(Model model) {
 		return "book.jsp";
 	}
+	@PostMapping("/api/add/book")
+	public String addBookForm(Model model, @Valid @ModelAttribute("book")Book book, BindingResult result ) {
+		if(result.hasErrors()) {
+			return "addBook.jsp";
+		}else {
+			bookSer.createBook(book);
+			return "redirect:/bookmarket";
+		}
+	}
+	
 	@DeleteMapping("/delete/book/{id}")
 	public String destroyBook( @PathVariable("id") Long id) {
 		return "redirect:/bookmarket";

@@ -19,6 +19,13 @@
 </head>
 <body>
 	<div class="container">
+		<nav>
+			<a href="/dashboard">Dashboard</a> |
+			<a href="/add/book">Add Book</a> |
+			<a href="/update/book">Update Book</a> |
+			<a href="/book">Book</a> |
+			<a href="/logout">Logout</a>
+		</nav>
 		<h1>Update book</h1>
 	</div>
 </body>
