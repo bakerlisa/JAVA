@@ -99,18 +99,6 @@ public class HomeController {
 		return "category.jsp";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@PostMapping("/api/add/product")
 	public String addProductForm(Model model,@Valid @ModelAttribute("product") Product product,BindingResult result) {
 		if(result.hasErrors()) {
