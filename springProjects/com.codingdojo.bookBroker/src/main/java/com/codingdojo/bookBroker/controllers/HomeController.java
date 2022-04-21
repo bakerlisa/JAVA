@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,10 +23,12 @@ import com.codingdojo.bookBroker.services.UserService;
 
 @Controller
 public class HomeController {
+	@Autowired
 	private final BookService bookSer;
 	private final UserService userSer;
 	
 	public HomeController(BookService bookSer,UserService userSer){
+		super();
 		this.bookSer = bookSer;
 		this.userSer = userSer;
 	}
@@ -90,13 +93,21 @@ public class HomeController {
 		return "redirect:/";
 	}
 				
-	// ================================ Book ================================
+	// ================================ Book ================================	
 	@GetMapping("/add/book")
-	public String addBook(Model model, @ModelAttribute("book")Book book) {
+	public String addBook(Model model, @ModelAttribute("book")Book book,HttpSession session) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		model.addAttribute("logged",userName);
 		return "addBook.jsp";
 	}
-	@GetMapping("/update/book")
-	public String updateBook(Model model) {
+	@GetMapping("/update/book/{id}")
+	public String updateBook(Model model,@PathVariable("id") Long id,@ModelAttribute("book")Book book,HttpSession session) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		model.addAttribute("logged",userName);
+		Book newBook = bookSer.singleBook(id);
+		model.addAttribute("newBook",newBook);
 		return "updateBook.jsp";
 	}
 	@GetMapping("/book")
@@ -106,16 +117,22 @@ public class HomeController {
 	@PostMapping("/api/add/book")
 	public String addBookForm(Model model, @Valid @ModelAttribute("book")Book book, BindingResult result ) {
 		if(result.hasErrors()) {
-			return "addBook.jsp";
+			return "updateBook.jsp";
 		}else {
 			bookSer.createBook(book);
 			return "redirect:/bookmarket";
 		}
 	}
-	
-	@DeleteMapping("/delete/book/{id}")
-	public String destroyBook( @PathVariable("id") Long id) {
+	@PostMapping("api/update/book")
+	public String updateBookForm(Model model, @Valid @ModelAttribute("book")Book book, BindingResult result) {
+		bookSer.editBook(book);
 		return "redirect:/bookmarket";
 	}
+	
+	@DeleteMapping("/delete/book/{id}")
+    public String destroy(@PathVariable("id") Long id) {
+		bookSer.deleteBook(id);
+        return "redirect:/bookmarket";
+    }
 	
 }

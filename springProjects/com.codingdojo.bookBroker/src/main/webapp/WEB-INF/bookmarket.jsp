@@ -20,14 +20,14 @@
 <body>
 	<div class="container">
 		<nav>
-			<a href="/dashboard">Dashboard</a> |
+			<a href="/bookmarket">Dashboard</a> |
 			<a href="/add/book">Add Book</a> |
 			<a href="/update/book">Update Book</a> |
 			<a href="/book">Book</a> |
 			<a href="/logout">Logout</a>
 		</nav>
 		
-		<h1>Book Broker </h1>
+		<h1>Welcome Back <span>${logged.firstName } ${logged.lastName }</span> </h1>
 		
 		<div class="booksTable">
 		<c:choose>
@@ -45,10 +45,15 @@
 					<div class="author">${bk.title }</div>
 					<div class="title">${bk.author }</div>
 					<div class="owner">${bk.user.firstName }</div>
-					
 					<c:choose>
 						<c:when test="${bk.user.id == logged.id }">
-								<div class="actions"> Edit | Delete</div>
+							${bk.id }
+							<div class="actions"> <a href="/update/book/${bk.id}">Edit</a> | 
+							<form action="/delete/book/${bk.id}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+</form>
+							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="actions">Borrow</div>

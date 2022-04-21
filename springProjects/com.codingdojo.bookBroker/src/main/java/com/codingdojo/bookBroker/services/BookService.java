@@ -1,11 +1,13 @@
 package com.codingdojo.bookBroker.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import com.codingdojo.bookBroker.models.Book;
 import com.codingdojo.bookBroker.repositories.BookRepository;
+
 
 @Service
 public class BookService {
@@ -21,5 +23,34 @@ public class BookService {
 	
 	public Book createBook(Book book) {
 		return bookrepo.save(book);
+	}
+	
+	public void deleteBook(Long id) {
+		bookrepo.deleteById(id);
+	}
+	
+	public Book singleBook(Long id) {
+		Optional<Book> optBook = bookrepo.findById(id);
+		if(optBook.isPresent()) {
+			return optBook.get();
+		}else {
+			return null;
+		}
+	}
+	
+	public Book editBook(Book book) {
+		Optional<Book> optBook = bookrepo.findById(book.getId());
+		if(optBook.isPresent()) {
+			Book thisBook = optBook.get();
+			
+			thisBook.setAuthor(book.getAuthor());
+			thisBook.setTitle(book.getTitle());
+			thisBook.setReview(book.getReview());
+			thisBook.setId(book.getId());
+			
+			return bookrepo.save(thisBook);
+		}else {
+			return null;
+		}
 	}
 }

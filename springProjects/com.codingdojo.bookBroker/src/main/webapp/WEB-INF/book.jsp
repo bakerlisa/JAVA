@@ -20,7 +20,7 @@
 <body>
 	<div class="container">
 		<nav>
-			<a href="/dashboard">Dashboard</a> |
+			<a href="/bookmarket">Dashboard</a> |
 			<a href="/add/book">Add Book</a> |
 			<a href="/update/book">Update Book</a> |
 			<a href="/book">Book</a> |
