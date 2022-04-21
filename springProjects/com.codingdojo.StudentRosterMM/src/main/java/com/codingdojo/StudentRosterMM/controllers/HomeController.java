@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.StudentRosterMM.models.Course;
 import com.codingdojo.StudentRosterMM.models.Student;
@@ -53,10 +54,10 @@ public class HomeController {
 	@GetMapping("/student/{id}")
 	public String student(Model model, @ModelAttribute("studentcourse") StudentCourse studentcourse, @PathVariable("id")Long id) {
 		Student student = stuSer.singleStudent(id);
-		List<Course> courses = coSer.allCourses();
+		List<Course> courses = coSer.allClassMembers(student);
 		model.addAttribute("courses",courses);
 		model.addAttribute("student",student);
-		return "students.jsp";
+		return "student.jsp";
 	}
 	
 	@GetMapping("/add/student")
@@ -93,7 +94,6 @@ public class HomeController {
 		return "class.jsp";
 	}
 	
-	
 	@GetMapping("/add/class")
 	public String addClass(Model model, @ModelAttribute("course") Course course) {
 		return "addClass.jsp";
@@ -109,6 +109,12 @@ public class HomeController {
 		}
 	}
 	
+	@GetMapping("/classes/create")
+	public String createQuesyClass(Model model, @RequestParam(value="name")String searchQuery) {
+		coSer.createClass(new Course(searchQuery));
+		return "redirect:/classes";
+	}
+	
 	// ============================= Student / Class =============================
 	@PostMapping("/api/add/studentcourse")
 	public String addStudentToCourse(Model model, @Valid @ModelAttribute("studentcourse") StudentCourse studentcourse, BindingResult result) {
@@ -118,5 +124,13 @@ public class HomeController {
 			stCoSer.createStudentClass(studentcourse);
 			return "redirect:/classes";
 		}
+	}
+	
+	@GetMapping("/students/{id}/add")
+	public String createQuesyClass(Model model, @PathVariable("id")Long id, @RequestParam(value="class")Long searchQuery) {
+		Student student = stuSer.singleStudent(id);
+		Course course = coSer.singleCourses(searchQuery);
+		stCoSer.createStudentClass(new StudentCourse(student,course));
+		return "redirect:/classes";
 	}
 }

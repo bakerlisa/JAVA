@@ -28,7 +28,8 @@ a{color:var(--gold); text-decoration: none;}
 .container{max-width:1000px; margin: 0 auto; position:relative; z-index: 10;}
 /* .container ul{display: flex; align-items:center; justify-content:center;}
 .container ul li{width: 33.33%; display: block;} */
-li{list-style-type:none; padding: 10px 25px; border:solid 1px var(--gold); display: inline-block;}
+:not(.courses) li{list-style-type:none; padding: 10px 25px; border:solid 1px var(--gold); display: inline-block;}
+.courses li{}
 
 .flex{display:flex; align-items:start; justify-content:start; flex-wrap:wrap;}
 

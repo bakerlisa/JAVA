@@ -30,12 +30,20 @@
 		
 		<h1 style="padding-bottom:0;">${course.subject } -  ${course.id } </h1>
 		<div class="flex">
+		<c:choose>
+  			<c:when test="${currentMembers.size() == 0}">
+				<h4 class="center">No students are currently sigend up for this class</h4>
+  			</c:when>
+  			
+  			<c:otherwise>
 			<h2>Student Roster</h2>
 			<ol class="classMemebers">
 				<c:forEach var="current" items="${currentMembers }">
 					<li>${current.name }</li>
 				</c:forEach>
 			</ol>
+			</c:otherwise>
+		</c:choose>
 		
 		<form:form method="post" action="/api/add/studentcourse" modelAttribute="studentcourse">
 			<div>

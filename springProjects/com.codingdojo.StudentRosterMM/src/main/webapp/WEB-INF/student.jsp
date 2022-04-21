@@ -28,22 +28,22 @@
 			<a href="/logout">Logout</a>
 		</nav>
 		
-		<h1 style="padding-bottom:0;"> All Students </h1>
+		<h1 style="padding-bottom:0;"> ${student.name } </h1>
 		<h3 style="padding:0;"><strong>Questions</strong>: find answers to mystery magic and mayhem! </h3>
 		<div class="flex">
 		
 		<c:choose>
-  			<c:when test="${students.size() == 0}">
-				<h4 class="center">you are not signed up for any classes</h4>
+  			<c:when test="${courses.size() == 0}">
+				<h4 class="center">You are not signed up for any classes</h4>
   			</c:when>
 
   			<c:otherwise>
   				<div class="elmp courset"> 
-  					<c:forEach var="stu" items="${students}">
-						<ol class="courses">
-							<li class=""><a href="/student/${stu.id}">${stu.name }</a></li>
+  					<c:forEach var="cour" items="${courses}">
+						<div class="elm">
+							<p class="qu"><a href="/class/${cour.id}">${cour.subject }</a></p>
 							
-						</ol>
+						</div>
 					</c:forEach>
 				</div>
 				
