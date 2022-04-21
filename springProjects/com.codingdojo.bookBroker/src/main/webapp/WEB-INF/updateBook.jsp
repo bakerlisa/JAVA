@@ -57,6 +57,10 @@
 			<input type="hidden" name="user" value="${logged.id }" />
 			<input type="submit" value="Update Book" class="submit" />
 		</form:form>
+		<form action="/delete/book/${newBook.id}" method="post" class="delete">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+</form>
 	</div>
 </body>
 </html>

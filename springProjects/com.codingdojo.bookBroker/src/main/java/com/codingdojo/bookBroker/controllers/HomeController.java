@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.bookBroker.models.Book;
+import com.codingdojo.bookBroker.models.Borrow;
 import com.codingdojo.bookBroker.models.LoginUser;
 import com.codingdojo.bookBroker.models.User;
 import com.codingdojo.bookBroker.services.BookService;
+import com.codingdojo.bookBroker.services.BorrowService;
 import com.codingdojo.bookBroker.services.UserService;
 
 @Controller
@@ -26,11 +29,13 @@ public class HomeController {
 	@Autowired
 	private final BookService bookSer;
 	private final UserService userSer;
+	private final BorrowService borrSer;
 	
-	public HomeController(BookService bookSer,UserService userSer){
+	public HomeController(BookService bookSer,UserService userSer, BorrowService borrSer){
 		super();
 		this.bookSer = bookSer;
 		this.userSer = userSer;
+		this.borrSer = borrSer;
 	}
 	
 	// ================================ GENERAL ================================
@@ -93,7 +98,7 @@ public class HomeController {
 		return "redirect:/";
 	}
 				
-	// ================================ Book ================================	
+	// ================================ BOOK ================================	
 	@GetMapping("/add/book")
 	public String addBook(Model model, @ModelAttribute("book")Book book,HttpSession session) {
 		Long loggedID = (Long) session.getAttribute("user_id");
@@ -134,5 +139,12 @@ public class HomeController {
 		bookSer.deleteBook(id);
         return "redirect:/bookmarket";
     }
+	
+	// ================================ BORROW ================================	
+	@GetMapping("/api/borrow")
+	public String borrowBook(Model model, @Valid @ModelAttribute("borrow")Borrow borrow,BindingResult result) {
+		
+		return "redirect:/bookmarket";
+	}
 	
 }

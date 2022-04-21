@@ -56,7 +56,14 @@
 							</div>
 						</c:when>
 						<c:otherwise>
-							<div class="actions">Borrow</div>
+							<div class="actions">
+							<form action="/api/borrow">
+								<input type="hidden" name="user" value="${ logged.id}"/>
+								<input type="hidden" name="book" value="${bk.id}" />
+								<input type="submit" value="Borrrow" />
+							</form>
+							
+							</div>
 						</c:otherwise>
 					</c:choose>
 						

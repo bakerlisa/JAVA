@@ -52,10 +52,14 @@ public class Book {
     @JoinColumn(name="user_id")
     private User user;
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
-    private User browwer;
-    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "borrow", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "book_id")
+    )
+    private List<User> borrowers;
+    	
     // ========================= CONSTRUCTORS =========================
     public Book() {
 		super();
