@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500&display=swap');
+
+:root{
+	--white:#fff;
+	--black:#000;
+	--red:red;
+	--gold:#C4A96E;
+	--gray:#ececec;
+}
+
+.gold{color:var(--gold); padding: 25px 0;}
+
+*{box-sizing:border-box; font-family: 'Akshar', sans-serif;margin: 0; padding: 0;}
+
+h1{margin: 0; font-size:60px; padding: 0px 0; text-align: center; font-family: 'Akshar', sans-serif;}
+	h1 a{font-family: 'Akshar', sans-serif;}
+	h1 span {font-family: 'Akshar', sans-serif; font-weight: 100;}
+h3{padding: 0px 0; text-align: center; font-size: 30px; font-weight: 100;}
+h4{font-size: 25px; text-align:center; display: block; width: 100%; padding-top: 25px; text-align: left;}
+	h4 span{text-transform: capitalize;}
+	
+.thoughts{border-bottom:solid 1px var(--black); padding: 10px 0;}
+.description{padding: 25px 0;}
+
+a{color:var(--gold); text-decoration: none;}
+	a:hover{cursor: pointer; color:var(--black);}
+
+.container{max-width:1000px; margin: 0 auto; position:relative; z-index: 10;}
+/* .container ul{display: flex; align-items:center; justify-content:center;}
+.container ul li{width: 33.33%; display: block;} */
+:not(.courses) li{list-style-type:none; padding: 10px 25px; border:solid 1px var(--gold); display: inline-block;}
+.courses li{}
+
+.flex{display:flex; align-items:start; justify-content:start; flex-wrap:wrap;}
+
+.col-2{width: 50%; padding-top: 50px;}
+.col-2:nth-child(1){padding-right:25px;}
+.col-2:nth-child(2){padding-left:25px;}
+
+/* Button */
+.button-wrp{display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+.button{width: 150px; margin: 25px 5px 0; padding: 10px; background-color: var(--black); text-align: center; border:solid 2px var(--black)}
+.button:hover{background-color:transparent;}
+
+/* NAV */
+nav{padding:  50px 0; text-align: right;  display: flex; align-items: center; justify-content: flex-end;flex-wrap: wrap;}
+nav a{text-decoration: none; color: var(--black); padding: 0 5px;}
+nav a:hover{cursor: pointer; color: var(--gold);}
+nav form{padding-left: 10px; display:flex;}
+nav form input{width: 50%;}
+/* FORM */
+form{margin:25px auto 0 auto; width: 100%;}
+form div{margin-bottom:15px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+form span{display:block; width: 250px; text-align:right; padding-right: 10px;}
+form input,form select{width: calc(100% - 250px); padding: 10px; color:var(--gold);}
+form input.submit{color:var(--black); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 25px; background-color: var(--gold); border:none; text-transform: uppercase; padding: 15px;}
+	form input.submit:hover{cursor: pointer; opacity:.9;}
+
+.delete input{background:transparent; border:none; display: initial; width: auto; padding: 0 5px; font-size: 16px; }
+.edit{padding: 0 5px;}
+
+.error{color:var(--red);}
+
+/* TABLE */
+.titles.elm{font-weight: 900; font-size: 18px; padding-top: 25px; padding-bottom: 15px;}
+
+.elm{display:flex; align-items:flex-start; justify-content:flex-start; flex-wrap:wrap; width: 100%;}
+.elm.titles{border-bottom:solid 1px var(--black); padding-top: 50px;}
+.elmpt{width: 100%;}
+.elmpt .elm:nth-child(even){background-color:var(--gray);}
+.elm .qu{width: 75%; padding: 10px;}
+.elm .tg{width: 25%; padding: 10px;}
+
+.note{font-style:italic; text-align: center; font-size: 20px; padding-top: 20px;}
+
+.center{text-align: center;}
+
+.singleSong{display: block; text-align: center; }
+.singleSong input{ padding: 20px; display: block; margin: 0 auto;}
+.singleSong input:hover{cursor: pointer; color:var(--black);}
+
+/* INDEX */
+.start{display: block; text-align: center;}
+
+/* PERSON */
+.person p{text-align: center; font-size: 20px;}
+
+/* NINJAS  */
+.ninja-wrp{display: flex;}
+.ninja-wrp p{width: 33.33%;}
+.ninjasWrp p{width: 33.33%;}
+
+/* cateWrp */
+.cateWrp{padding-top: 50px; display:flex; align-items:center; justify-content:start; flex-wrap:wrap;}
+.cateWrp p{font-size: 25px; width: 33.33%; text-align: center; padding: 10px;}
+
+
+.price{font-size: 22px; font-weight: 900; text-align: center;display: block; padding-top: 25px;}
+
+
+.urAnswer{padding-top: 50px;}
+
+.answers{font-size: 20px;padding: 10px 0; border-bottom:solid 1px var(--gray);}
+
+.instructions{font-style:italic; font-weight: 100;}
+
+.classMemebers{width: 100%;}
