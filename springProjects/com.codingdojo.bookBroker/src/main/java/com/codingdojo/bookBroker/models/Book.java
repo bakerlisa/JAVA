@@ -1,7 +1,6 @@
 package com.codingdojo.bookBroker.models;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -52,22 +49,26 @@ public class Book {
     @JoinColumn(name="user_id")
     private User user;
     
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "borrow", 
-        joinColumns = @JoinColumn(name = "user_id"), 
-        inverseJoinColumns = @JoinColumn(name = "book_id")
-    )
-    private List<User> borrowers;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id",referencedColumnName = "id", insertable = false, updatable = false)
+    private User browwer;
+   
     	
     // ========================= CONSTRUCTORS =========================
     public Book() {
 		super();
 	}
+    
+    public Book(Long id, User browwer) {
+		super();
+		this.id = id;
+		this.browwer = browwer;
+	}
+
 	public Book(Long id, @NotNull @Size(min = 2, max = 100, message = "Title cannot be blank") String title,
 			@NotNull @Size(min = 2, max = 100, message = "Author cannot be blank") String author,
 			@NotNull @Size(min = 2, max = 200, message = "review cannot be blank") String review, Date createdAt,
-			Date updatedAt, User user) {
+			Date updatedAt, User user, User browwer) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -76,16 +77,31 @@ public class Book {
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.user = user;
+		this.browwer = browwer;
 	}
+
 	public Book(@NotNull @Size(min = 2, max = 100, message = "Title cannot be blank") String title,
 			@NotNull @Size(min = 2, max = 100, message = "Author cannot be blank") String author,
-			@NotNull @Size(min = 2, max = 200, message = "review cannot be blank") String review, User user) {
+			@NotNull @Size(min = 2, max = 200, message = "review cannot be blank") String review, User user,
+			User browwer) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.review = review;
 		this.user = user;
+		this.browwer = browwer;
 	}
+
+	public Book(@NotNull @Size(min = 2, max = 100, message = "Title cannot be blank") String title,
+			@NotNull @Size(min = 2, max = 100, message = "Author cannot be blank") String author,
+			@NotNull @Size(min = 2, max = 200, message = "review cannot be blank") String review, User browwer) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.review = review;
+		this.browwer = browwer;
+	}
+
 	public Book(@NotNull @Size(min = 2, max = 100, message = "Title cannot be blank") String title,
 			@NotNull @Size(min = 2, max = 100, message = "Author cannot be blank") String author,
 			@NotNull @Size(min = 2, max = 200, message = "review cannot be blank") String review) {
@@ -94,8 +110,8 @@ public class Book {
 		this.author = author;
 		this.review = review;
 	}
-    
-    // ========================= GETTERS / SETTERS =========================
+
+	// ========================= GETTERS / SETTERS =========================
 	public Long getId() {
 		return id;
 	}
@@ -132,14 +148,24 @@ public class Book {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-    @PrePersist
+
+	public User getBrowwer() {
+		return browwer;
+	}
+
+	public void setBrowwer(User browwer) {
+		this.browwer = browwer;
+	}
+
+	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
     }

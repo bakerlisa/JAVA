@@ -57,11 +57,16 @@
 						</c:when>
 						<c:otherwise>
 							<div class="actions">
-							<form action="/api/borrow">
-								<input type="hidden" name="user" value="${ logged.id}"/>
-								<input type="hidden" name="book" value="${bk.id}" />
-								<input type="submit" value="Borrrow" />
-							</form>
+							<h1>${bk.browwer.id }</h1>
+							<c:choose>
+								<c:when test="${bk.browwer.id > 0 }">
+								<form:form method="post" action="/api/borrow" modelAttribute="borrow">
+									<input type="hidden" name="browwer" value="${ logged.id}"/>
+									<input type="hidden" name="id" value="${bk.id}" />
+									<input type="submit" value="Borrrow" />
+								</form:form>
+							</c:when>
+							</c:choose>
 							
 							</div>
 						</c:otherwise>
@@ -71,6 +76,21 @@
 			</c:otherwise>
 		</c:choose>
 		</div>
+		
+		<h2>Books Borrowed</h2>
+		<c:choose>
+  			<c:when test="${logged.borrowed.size() == 0 }">
+  				<h5>You're borrowing no books </h5>
+ 			 </c:when>
+
+  			<c:otherwise>
+  				<%-- <c:forEach var="borrow" items="${ logged.borrowed}">
+					<p>${borrow.title }</p>
+				</c:forEach> --%>
+  			</c:otherwise>
+		</c:choose>
+
+		
 		
 	</div>
 </body>

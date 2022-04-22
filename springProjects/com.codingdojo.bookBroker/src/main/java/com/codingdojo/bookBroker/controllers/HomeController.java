@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.bookBroker.models.Book;
 import com.codingdojo.bookBroker.models.Borrow;
@@ -40,7 +39,7 @@ public class HomeController {
 	
 	// ================================ GENERAL ================================
 	@GetMapping("/")
-	public String index(Model model, HttpSession session) {
+	public String index(Model model, HttpSession session,@ModelAttribute("borrow")Book borrow) {
 		if(session.getAttribute("user_id") != null ) {
 			return "bookmarket.jsp";
 		}else {
@@ -141,9 +140,9 @@ public class HomeController {
     }
 	
 	// ================================ BORROW ================================	
-	@GetMapping("/api/borrow")
-	public String borrowBook(Model model, @Valid @ModelAttribute("borrow")Borrow borrow,BindingResult result) {
-		
+	@PostMapping("/api/borrow")
+	public String borrowBook(Model model, @Valid @ModelAttribute("borrow")Book borrow,BindingResult result) {
+		bookSer.borrowBook(borrow);
 		return "redirect:/bookmarket";
 	}
 	

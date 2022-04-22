@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.codingdojo.bookBroker.models.Book;
+import com.codingdojo.bookBroker.models.User;
 import com.codingdojo.bookBroker.repositories.BookRepository;
 
 
@@ -46,6 +47,24 @@ public class BookService {
 			thisBook.setAuthor(book.getAuthor());
 			thisBook.setTitle(book.getTitle());
 			thisBook.setReview(book.getReview());
+			thisBook.setId(book.getId());
+			
+			return bookrepo.save(thisBook);
+		}else {
+			return null;
+		}
+	}
+	
+	public List<Book> findByBooksByUser(User user){
+		return bookrepo.findAllByUser(user);
+	}
+	
+	public Book borrowBook(Book book) {
+		Optional<Book> optBook = bookrepo.findById(book.getId());
+		if(optBook.isPresent()) {
+			Book thisBook = optBook.get();
+			
+			thisBook.setBrowwer(book.getBrowwer());
 			thisBook.setId(book.getId());
 			
 			return bookrepo.save(thisBook);

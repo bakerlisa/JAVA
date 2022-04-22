@@ -10,9 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -58,29 +57,36 @@ public class User {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
+    
     // RELATIPNSHIPS
     @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Book> books;
     
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "borrow", 
-        joinColumns = @JoinColumn(name = "user_id"), 
-        inverseJoinColumns = @JoinColumn(name = "book_id")
-    )
-    private List<Borrow> borrows;
-
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Book> borrowed;
+    
+    
 	//CONSTRUCTORS
     public User() {
 		super();
 	}
+    
+	
+
+	public User(Long id, List<Book> borrowed) {
+		super();
+		this.id = id;
+		this.borrowed = borrowed;
+	}
+
+
 
 	public User(Long id, @NotEmpty @Size(min = 2, message = "First name cannot be blank") String firstName,
 			@NotEmpty @Size(min = 2, message = "Last Name cannot be blank") String lastName,
 			@NotEmpty @Email(message = "Email cannot be blank") String email,
 			@NotEmpty @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
 			@NotEmpty @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
-			Date createdAt, Date updatedAt, List<Book> books, List<Borrow> borrows) {
+			Date createdAt, Date updatedAt, List<Book> books, List<Book> borrowed) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -91,7 +97,7 @@ public class User {
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.books = books;
-		this.borrows = borrows;
+		this.borrowed = borrowed;
 	}
 
 	public User(@NotEmpty @Size(min = 2, message = "First name cannot be blank") String firstName,
@@ -99,7 +105,7 @@ public class User {
 			@NotEmpty @Email(message = "Email cannot be blank") String email,
 			@NotEmpty @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
 			@NotEmpty @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
-			List<Book> books, List<Borrow> borrows) {
+			List<Book> books, List<Book> borrowed) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -107,22 +113,7 @@ public class User {
 		this.password = password;
 		this.confirm = confirm;
 		this.books = books;
-		this.borrows = borrows;
-	}
-
-	public User(@NotEmpty @Size(min = 2, message = "First name cannot be blank") String firstName,
-			@NotEmpty @Size(min = 2, message = "Last Name cannot be blank") String lastName,
-			@NotEmpty @Email(message = "Email cannot be blank") String email,
-			@NotEmpty @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
-			@NotEmpty @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
-			List<Book> books) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.password = password;
-		this.confirm = confirm;
-		this.books = books;
+		this.borrowed = borrowed;
 	}
 
 	public User(@NotEmpty @Size(min = 2, message = "First name cannot be blank") String firstName,
@@ -138,12 +129,22 @@ public class User {
 		this.confirm = confirm;
 	}
 
-	public User(List<Borrow> borrows) {
+	public User(@NotEmpty @Size(min = 2, message = "First name cannot be blank") String firstName,
+			@NotEmpty @Size(min = 2, message = "Last Name cannot be blank") String lastName,
+			@NotEmpty @Email(message = "Email cannot be blank") String email,
+			@NotEmpty @Size(min = 8, max = 128, message = "password needs to be between 8-128 characters") String password,
+			@NotEmpty @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
+			List<Book> borrowed) {
 		super();
-		this.borrows = borrows;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.confirm = confirm;
+		this.borrowed = borrowed;
 	}
+	
 
-    
 	// GETTERS / SETTERS
 	public Long getId() {
 		return id;
@@ -215,11 +216,13 @@ public class User {
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
-	public List<Borrow> getBorrows() {
-		return borrows;
+	
+	public List<Book> getBorrowed() {
+		return borrowed;
 	}
-	public void setBorrows(List<Borrow> borrows) {
-		this.borrows = borrows;
+
+	public void setBorrowed(List<Book> borrowed) {
+		this.borrowed = borrowed;
 	}
 
 	@PrePersist
@@ -230,18 +233,5 @@ public class User {
 	@PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();
-    }
-
-
-
-
-
-	
-
-
-
-
-
-	
-	
+    }	
 }
