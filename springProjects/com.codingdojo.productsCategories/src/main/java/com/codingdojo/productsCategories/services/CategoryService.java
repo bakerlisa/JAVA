@@ -37,5 +37,7 @@ public class CategoryService {
 	public List<Category> findCats(Product product){
 		return catRepo.findByProductsNotContains(product);
 	}
+	
+	public int test(){ return (int) catRepo.count(); }
 
 }

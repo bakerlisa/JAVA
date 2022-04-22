@@ -19,25 +19,18 @@
 </head>
 <body>
 <div class="container">
-	<h1>Login at Your own Risk</h1>
+	<h1>Joy Bundler</h1>
+	<p class="subtitle">Where names take on names, will your win?</p>
 	<div class="flex">
 			<div class="col-2">
 				<h2>Register</h2>
 				<form:form method="post" action="/api/register" modelAttribute="newUser">
 					<div>
 						<span>
-							<form:label path="firstName">First Name:</form:label>
+							<form:label path="fullName">Full Name:</form:label>
 						</span>
-						<form:input path="firstName" type="text"/>
-						<form:errors path="firstName" class="error"/>
-					</div>
-					
-					<div>
-						<span>
-							<form:label path="lastName">Last Name:</form:label>
-						</span>
-						<form:input path="lastName" type="text"/>
-						<form:errors path="lastName" class="error"/>
+						<form:input path="fullName" type="text"/>
+						<form:errors path="fullName" class="error"/>
 					</div>
 					
 					<div>

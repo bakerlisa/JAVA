@@ -25,15 +25,15 @@ h3{padding: 0px 0; text-align: center; font-size: 30px; font-weight: 100;}
 h4{font-size: 25px; text-align:center; display: block; width: 100%; padding-top: 25px; text-align: left;}
 	h4 span{text-transform: capitalize;}
 	
-.thoughts{border-bottom:solid 1px var(--black); padding: 10px 0;}
-.description{padding: 25px 0;}
-
+.subtitle{text-align: center; padding-top: 10px; font-size: 18px;}
+	
 a{color:var(--pink); text-decoration: none;}
 	a:hover{cursor: pointer; color:var(--black);}
 
 .container{max-width:1000px; margin: 0 auto; position:relative; z-index: 10;}
 :not(.courses) li{list-style-type:none; padding: 10px 25px; border:solid 1px var(--pink); display: inline-block;}
-.courses li{}
+
+hr{width: 100%; display: block; margin: 25px 0;}
 
 .flex{display:flex; align-items:start; justify-content:start; flex-wrap:wrap;}
 
@@ -43,9 +43,17 @@ a{color:var(--pink); text-decoration: none;}
 
 /* Button */
 .button-wrp{display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
-.button{width: 150px; margin: 25px 5px 0; padding: 10px; background-color: var(--black); text-align: center; border:solid 2px var(--black)}
+.button{width: 150px; margin:  0; padding: 10px; background-color: var(--black); text-align: center; border:solid 2px var(--black)}
 .button:hover{background-color:transparent;}
-
+	/* delete */
+	.delete input{background:var(--black); color:var(--pink); border:solid 2px var(--black); display: initial; width: auto; padding: 10px 25px; font-size: 16px; }
+	.delete input:hover{cursor: pointer; background-color:transparent; color:var(--black);}
+	/* edit */
+	.edit{padding: 0 5px; background-color:var(--pink); color:var(--white);  border:solid 2px var(--pink);  padding: 10px 25px; font-size: 16px; }
+	.edit:hover{cursor: pointer; background-color:transparent; color:var(--pink);}
+	/* cancel */
+	.cancel{margin: 25px 0; background-color:var(--gray); color:var(--pink); border:solid 2px var(--pink);  padding: 10px 25px; font-size: 16px;}
+	.cancel:hover{cursor: pointer; background:var(--pink); color:var(--white);}
 /* NAV */
 nav{padding:  50px 0; text-align: right;  display: flex; align-items: center; justify-content: flex-end;flex-wrap: wrap;}
 nav a{text-decoration: none; color: var(--black); padding: 0 5px;}
@@ -60,52 +68,23 @@ form input,form select{width: calc(100% - 250px); padding: 10px; color:var(--pin
 form input.submit{color:var(--white); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 25px; background-color: var(--pink); border:none; text-transform: uppercase; padding: 15px;}
 	form input.submit:hover{cursor: pointer; opacity:.9;}
 
-.delete input{background:transparent; border:none; display: initial; width: auto; padding: 0 5px; font-size: 16px; }
-.edit{padding: 0 5px;}
-
 .error{color:var(--red); width: 100%; text-align:left; line-height:16px; padding-left:250px;}
 
 /* TABLE */
-.titles.elm{font-weight: 900; font-size: 18px; padding-top: 25px; padding-bottom: 15px;}
-
-.elm{display:flex; align-items:flex-start; justify-content:flex-start; flex-wrap:wrap; width: 100%;}
-.elm.titles{border-bottom:solid 1px var(--black); padding-top: 50px;}
-.elmpt{width: 100%;}
-.elmpt .elm:nth-child(even){background-color:var(--gray);}
-.elm .qu{width: 75%; padding: 10px;}
-.elm .tg{width: 25%; padding: 10px;}
-
-.note{font-style:italic; text-align: center; font-size: 20px; padding-top: 20px;}
-
-.center{text-align: center;}
-
-.singleSong{display: block; text-align: center; }
-.singleSong input{ padding: 20px; display: block; margin: 0 auto;}
-.singleSong input:hover{cursor: pointer; color:var(--black);}
-
-/* INDEX */
-.start{display: block; text-align: center;}
-
-/* PERSON */
-.person p{text-align: center; font-size: 20px;}
-
-/* NINJAS  */
-.ninja-wrp{display: flex;}
-.ninja-wrp p{width: 33.33%;}
-.ninjasWrp p{width: 33.33%;}
+.elm{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; width: 100%; border-bottom:solid 1px var(--yellow); padding: 25px 0;}
+.elm p{width: 20%; padding: 10px;}
+.elm .name{font-size: 20px; color:var(--black); font-weight: 900;}
+.elm form{width: 150px; margin: 0;}
 
 /* cateWrp */
 .cateWrp{padding-top: 50px; display:flex; align-items:center; justify-content:start; flex-wrap:wrap;}
 .cateWrp p{font-size: 25px; width: 33.33%; text-align: center; padding: 10px;}
 
 
-.price{font-size: 22px; font-weight: 900; text-align: center;display: block; padding-top: 25px;}
+.dash h2{padding-top: 50px; width:100%;}
 
+.singleName p{font-size: 25px;}
+.singleName .name{text-align: center;}
 
-.urAnswer{padding-top: 50px;}
-
-.answers{font-size: 20px;padding: 10px 0; border-bottom:solid 1px var(--gray);}
-
-.instructions{font-style:italic; font-weight: 100;}
-
-.classMemebers{width: 100%;}
+.total{color:var(--pink); font-size:16px; padding-top: 25px;}
+.voted{padding: 25px 0; color: var(--purple);}

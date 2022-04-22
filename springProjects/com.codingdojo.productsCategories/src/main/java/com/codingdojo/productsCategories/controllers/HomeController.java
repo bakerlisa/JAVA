@@ -75,10 +75,6 @@ public class HomeController {
 		return "addProduct.jsp";
 	}
 	
-	
-	
-	
-	
 	@GetMapping("/product/{id}")
 	public String singleProduct(Model model, @PathVariable("id") Long id, @ModelAttribute("ProductCategory") CategoryProduct ProductCategory) {
 		Product product = prodSer.singleProduct(id);
@@ -93,7 +89,7 @@ public class HomeController {
 	public String singleCategory(Model model, @PathVariable("id") Long id, @ModelAttribute("ProductCategory") CategoryProduct ProductCategory) {
 		Category category = catSer.singleCategory(id);
 		List<Product> product = prodSer.findProds(category);
-
+		System.out.println(catSer.test());
 		model.addAttribute("category",category);
 		model.addAttribute("product",product);
 		return "category.jsp";
@@ -122,4 +118,6 @@ public class HomeController {
 		catProSer.saveCategory(ProductCategory);
 		return "redirect:/products";
 	}
+	
+
 }

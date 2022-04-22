@@ -15,20 +15,45 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container dash">
 		<nav>
 			<a href="/dashboard">Dashboard</a> |
-			<a href="/add/item">Add Item</a> |
-			<a href="/item">Item</a> |
+			<a href="/add/name">Add Name</a> |
 			<a href="/logout">Logout</a>
 		</nav>
-	<h1>Welcome Welcome Welcome!</h1>
-	<h3><u>Main Event</u>: ${logged.firstName } ${logged.lastName } @ 7pm MST</h3>
+	<h1>Welcome  <span>${logged.fullName }!</span></h1>
+	<h3><u>Main Event</u>: Name vs. Name  @ 7pm MST</h3>
+	<p class="subtitle">You don't want your kid to get bullied because you picked the wrong name? VOTE now!</p>
 	<div class="flex">
+	<h2>Baby Names:</h2>
+	<c:choose>
+  		<c:when test="${names.size() == 0 }">
+  			<p>We have no names at the moment, add one!</p>
+  		</c:when>
+
+  		<c:otherwise>
+
+			<c:forEach var="nm" items="${names }">
+				<div class="elm">	
+				<form:form method="post" action="/api/vote"  modelAttribute="vote" >
+					<input type="hidden" name=name value="${ nm.id}" />
+					<input type="hidden" name="user" value="${ logged.id}" />
+					<input class="button vote" type="submit" type="Vote!!" value="upvote">
+				</form:form>
+					
+					<p class="name"><a href="/name/${nm.id}">${nm.givenname }</a></p>
+					<p><strong>Gender:</strong> ${nm.gender }</p>
+					<p><strong>Orgin:</strong> ${nm.orgin }</p>
+					<p>${ nm.user.size() }</p>
+				</div>
+			</c:forEach>
+  		</c:otherwise>
+	</c:choose>
+	
 	</div>
 </div>
+<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

@@ -49,4 +49,8 @@ public class CategoryService {
 //		}
 //	}
 	
+	public int test() {
+		return (int) catRepo.count();
+	}
+	
 }
