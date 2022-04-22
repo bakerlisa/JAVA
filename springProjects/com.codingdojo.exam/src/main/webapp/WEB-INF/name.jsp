@@ -45,7 +45,7 @@
 		<form:form method="post" action="/api/vote"  modelAttribute="vote" >
 			<input type="hidden" name=name value="${ name.id}" />
 			<input type="hidden" name="user" value="${ userName.id}" />
-			<input class="button vote yes" type="submit" type="Vote!!" value="upvote">
+			<input class="button vote yes" type="submit" value="Vote!!">
 		</form:form>
 	</c:if>
 	

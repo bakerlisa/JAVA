@@ -81,10 +81,12 @@ form input.submit{color:var(--white); align-self:end; width: 200px; display:bloc
 .cateWrp p{font-size: 25px; width: 33.33%; text-align: center; padding: 10px;}
 
 
-.dash h2{padding-top: 50px; width:100%;}
+.dash h2{padding-top: 50px; width:100%; display: flex; align-items: center; justify-content: space-between;}
 
 .singleName p{font-size: 25px;}
 .singleName .name{text-align: center;}
 
 .total{color:var(--pink); font-size:16px; padding-top: 25px;}
 .voted{padding: 25px 0; color: var(--purple);}
+.mess{text-align:left; font-size: 12px; color:var(--pink); padding-top: 5px;}
+.size{text-align: right;}
