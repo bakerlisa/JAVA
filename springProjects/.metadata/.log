@@ -3283,3 +3283,84 @@ java.io.FileNotFoundException: /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 11:12:53.381
 !MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:38.233
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:38.238
+!MESSAGE classpath=21 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:38.238
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.exam_joy_bundler false 21
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:38.239
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:38.272
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:39.724
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:39.741
+!MESSAGE classpath=21 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:39.743
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.exam_joy_bundler false 21
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:39.746
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:39.774
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:42.033
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:42.041
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:42.043
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.exam_joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:42.044
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:43:42.057
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.172
+!MESSAGE exists = false open = true => deleted = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.174
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.exam_joy_bundler true 0
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.175
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.177
+!MESSAGE classpath=21 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.178
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.joy_bundler false 21
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.178
+!MESSAGE executing callback sts4.classpath.XfKArOkx 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:36.584
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:38.947
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:38.949
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:38.950
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:38.950
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:38.961
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
