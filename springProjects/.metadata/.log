@@ -3364,3 +3364,553 @@ java.io.FileNotFoundException: /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:44:38.961
 !MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:56:47.474
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:56:47.484
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:56:47.486
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:56:47.486
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:56:47.535
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:57:59.962
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:57:59.969
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:57:59.971
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.exam_joy_bundler false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:57:59.971
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 13:58:00.002
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:16:47.089
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:16:47.095
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:16:47.097
+!MESSAGE buffering callback sts4.classpath.XfKArOkx com.codingdojo.exam_joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:16:47.098
+!MESSAGE executing callback sts4.classpath.XfKArOkx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:16:47.129
+!MESSAGE executing callback sts4.classpath.XfKArOkx SUCCESS [done]
+!SESSION 2022-04-23 14:17:49.234 -----------------------------------------------
+eclipse.buildId=4.14.0.202203131612
+java.version=17.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -keyring /Users/lisabroadhead/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -keyring /Users/lisabroadhead/.eclipse_keyring
+
+!ENTRY org.eclipse.jface 2 0 2022-04-23 14:18:07.008
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-23 14:18:07.008
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@628b9af5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@137db13f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-23 14:18:07.008
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a3c3a04,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78ca8258,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.jface 2 0 2022-04-23 14:18:17.044
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-23 14:18:17.044
+!MESSAGE A conflict occurred for COMMAND+D:
+Binding(COMMAND+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7a16602e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(COMMAND+D,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.match_pair_outward,Match Pair Outward,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18c847cc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.urischeme 4 0 2022-04-23 14:18:22.078
+!MESSAGE /Volumes/Spring Tool Suite 4/SpringToolSuite4.app/Contents/Info.plist: Read-only file system
+!STACK 0
+java.nio.file.FileSystemException: /Volumes/Spring Tool Suite 4/SpringToolSuite4.app/Contents/Info.plist: Read-only file system
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:484)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3008)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3056)
+	at org.eclipse.urischeme.internal.registration.FileProvider.newWriter(FileProvider.java:51)
+	at org.eclipse.urischeme.internal.registration.RegistrationMacOsX.changePlistFile(RegistrationMacOsX.java:149)
+	at org.eclipse.urischeme.internal.registration.RegistrationMacOsX.handleSchemes(RegistrationMacOsX.java:55)
+	at org.eclipse.urischeme.AutoRegisterSchemeHandlersJob.run(AutoRegisterSchemeHandlersJob.java:94)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 2 2 2022-04-23 14:18:45.864
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:19:56.722
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:19:56.726
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@37da25c9[org.springframework.tooling.boot.ls:1.32.0.202203131529(id=561)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:19:56.728
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:19:56.852
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:00.676
+!MESSAGE Boot LS startup time from start to initialized: 3886ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.028
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ygoSIFmFisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.031
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.032
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.034
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.034
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ygoSIFmF => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.035
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.052
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.053
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.exam_joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.053
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.057
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.058
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.DojoOverflow false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.059
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.061
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.062
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.PlantKeeper false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.062
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.070
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.071
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.ProductsCategorys false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.071
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.073
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.074
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.ProjectManager false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.074
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.076
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.077
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.StudentRosterMM false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.077
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.079
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.081
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.bookBroker false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.081
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.083
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.084
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.bookClubAssigment false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.084
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.087
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.088
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.books false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.089
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.091
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.092
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.booksDemo false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.092
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.095
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.096
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.booksTwo false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.096
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.098
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.099
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.counter false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.099
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.101
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.101
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.daikichi false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.102
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.103
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.104
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.daikichiTwo false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.104
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.107
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.108
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.date false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.108
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.111
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.111
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.dojosNinjas false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.112
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.116
+!MESSAGE classpath=98 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.117
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.exam false 98
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.118
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.120
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.122
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.exam_two false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.123
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.125
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.126
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.fruityLoops false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.127
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.129
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.131
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.fullCrud false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.132
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.133
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.134
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.helloHumna false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.134
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.136
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.137
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.hoppersHat false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.137
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.140
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.140
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.140
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.142
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.143
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.language false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.143
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.145
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.146
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.loginRegistration false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.146
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.150
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.151
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.lookfy false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.151
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.154
+!MESSAGE classpath=120 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.154
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.lookfyTwo false 120
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.155
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.157
+!MESSAGE classpath=112 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.158
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.mvc false 112
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.158
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.160
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.160
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.ninjaGold2 false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.161
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.162
+!MESSAGE classpath=85 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.163
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.omikuji false 85
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.163
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.165
+!MESSAGE classpath=109 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.166
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.practice false 109
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.166
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.168
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.169
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.productsCategories false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.169
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.171
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.172
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.relationships false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.172
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.174
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.175
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.safeTravels false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.175
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.177
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.178
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.studentRoster false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.179
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.180
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.180
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF demo false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.181
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.182
+!MESSAGE classpath=82 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.183
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF groupSrpingDemo false 82
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:01.183
+!MESSAGE executing callback sts4.classpath.ygoSIFmF 37 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:20:02.143
+!MESSAGE executing callback sts4.classpath.ygoSIFmF SUCCESS [done]
+
+!ENTRY org.eclipse.jface 2 0 2022-04-23 14:20:20.548
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-04-23 14:20:20.548
+!MESSAGE A conflict occurred for COMMAND+SHIFT+/:
+Binding(COMMAND+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.addblockcommentcommand,Add Block Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@690b36c8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(COMMAND+SHIFT+/,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.toggle_comment,Toggle Comment,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@117caabe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.lsp4e 2 0 2022-04-23 14:22:04.828
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:41:04.485
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:41:04.494
+!MESSAGE classpath=113 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:41:04.497
+!MESSAGE buffering callback sts4.classpath.ygoSIFmF com.codingdojo.exam_joy_bundler false 113
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:41:04.497
+!MESSAGE executing callback sts4.classpath.ygoSIFmF 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-04-23 14:41:04.535
+!MESSAGE executing callback sts4.classpath.ygoSIFmF SUCCESS [done]
