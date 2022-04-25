@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lato:wght@100;300;400;700;900&display=swap');
+
+:root{
+	--white:#fff;
+	--black:#000;
+	--red:red;
+	--pink:#A6035D;
+	--salmon:#F25C5C;
+	--gray:#ececec;
+	--purple:#493D73;
+	--yellow:#D9C148;
+	--orange:#F2884B;
+}
+
+.gold{color:var(--pink); padding: 25px 0;}
+
+*{box-sizing:border-box; font-family: 'Lato', sans-serif; margin: 0; padding: 0;}
+
+h1{margin: 0; font-size:60px; padding: 0px 0; text-align: center;  font-family: 'Lato', sans-serif; font-weight: 900;}
+	h1 a{font-family:  'Lato', sans-serif;}
+	h1 span {font-family: 'Righteous', cursive; font-weight: 100;}
+h3{padding: 0px 0; text-align: center; font-size: 30px; font-weight: 100;}
+h4{font-size: 25px; text-align:center; display: block; width: 100%; padding-top: 25px; text-align: left;}
+	h4 span{text-transform: capitalize;}
+.logo{;font-family: 'Archivo Black', sans-serif;}
+	
+.subtitle{text-align: center; padding-top: 10px; font-size: 18px;}
+	
+a{color:var(--pink); text-decoration: none;}
+	a:hover{cursor: pointer; color:var(--black);}
+
+.container{max-width:1000px; margin: 0 auto; position:relative; z-index: 10;}
+:not(.courses) li{list-style-type:none; padding: 10px 25px; border:solid 1px var(--pink); display: inline-block;}
+
+hr{width: 100%; display: block; margin: 25px 0;}
+
+.flex{display:flex; align-items:start; justify-content:start; flex-wrap:wrap;}
+
+.col-2{width: 50%; padding-top: 50px;}
+.col-2:nth-child(1){padding-right:25px;}
+.col-2:nth-child(2){padding-left:25px;}
+
+/* Button */
+.button-wrp{display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+.button{width: 150px; margin:  0; padding: 10px; background-color: var(--black); text-align: center; border:solid 2px var(--black)}
+.button:hover{background-color:transparent;}
+	/* delete */
+	.delete input{background:var(--black); color:var(--pink); border:solid 2px var(--black); display: initial; width: auto; padding: 10px 25px; font-size: 16px; }
+	.delete input:hover{cursor: pointer; background-color:transparent; color:var(--black);}
+	/* edit */
+	.edit{padding: 0 5px; background-color:var(--pink); color:var(--white);  border:solid 2px var(--pink);  padding: 10px 25px; font-size: 16px; }
+	.edit:hover{cursor: pointer; background-color:transparent; color:var(--pink);}
+	/* cancel */
+	.cancel{margin: 25px 0; background-color:var(--gray); color:var(--pink); border:solid 2px var(--pink);  padding: 10px 25px; font-size: 16px;}
+	.cancel:hover{cursor: pointer; background:var(--pink); color:var(--white);}
+/* NAV */
+nav{padding:  50px 0; text-align: right;  display: flex; align-items: center; justify-content: flex-end;flex-wrap: wrap;}
+nav a{text-decoration: none; color: var(--black); padding: 0 5px;}
+nav a:hover{cursor: pointer; color: var(--pink);}
+nav form{padding-left: 10px; display:flex;}
+nav form input{width: 50%;}
+/* FORM */
+form{margin:25px auto 0 auto; width: 100%;}
+form div{margin-bottom:15px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+form span{display:block; width: 250px; text-align:right; padding-right: 10px;}
+form input,form select{width: calc(100% - 250px); padding: 10px; color:var(--pink);}
+form input.submit{color:var(--white); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 25px; background-color: var(--pink); border:none; text-transform: uppercase; padding: 15px;}
+	form input.submit:hover{cursor: pointer; opacity:.9;}
+
+.error{color:var(--red); width: 100%; text-align:left; line-height:16px; padding-left:250px;}
+
+/* TABLE */
+.elm{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; width: 100%; border-bottom:solid 1px var(--yellow); padding: 25px 0;}
+.elm p{width: 20%; padding: 10px;}
+.elm .name{font-size: 20px; color:var(--black); font-weight: 900;}
+.elm form{width: 150px; margin: 0;}
+
+/* cateWrp */
+.cateWrp{padding-top: 50px; display:flex; align-items:center; justify-content:start; flex-wrap:wrap;}
+.cateWrp p{font-size: 25px; width: 33.33%; text-align: center; padding: 10px;}
+
+
+.dash h2{padding-top: 50px; width:100%; display: flex; align-items: center; justify-content: space-between;}
+
+.singleName p{font-size: 25px;}
+.singleName .name{text-align: center;}
+
+.total{color:var(--pink); font-size:16px; padding-top: 25px;}
+.voted{padding: 25px 0; color: var(--purple);}
+.mess{text-align:left; font-size: 12px; color:var(--pink); padding-top: 5px;}
+.size{text-align: right;}
