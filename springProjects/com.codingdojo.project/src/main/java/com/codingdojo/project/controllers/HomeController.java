@@ -87,7 +87,6 @@ public class HomeController {
 		
 	// ================================ SETTINGS ===============================
 	
-	
 	@GetMapping("/settings")
 	public String settings() {
 		return "settings.jsp";
