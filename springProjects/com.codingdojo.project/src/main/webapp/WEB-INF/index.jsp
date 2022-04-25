@@ -13,81 +13,68 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Smugator</title>
-  <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-      rel="stylesheet" 
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-      crossorigin="anonymous">
-
+	<title>Smugetor - Login and Registor</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="home">
-    <div class="container"> <!-- Beginning of Container -->
-        <h1>Smugator</h1>
-        <p>[ smug - a - tor] Definition: an app to track your expenses, in order for you to have more money to spend on more stuff</p>
+        <h1 class="logo">Smugetor</h1>
+        <p class="define">[ smug - e - tor]</p>
+        <p class="definition">Tired of feeling like a fish out of water? Tired of missing birthdays and holidays, because it doesn't fit your budget? Are budget's too strict? Try Smugetor, the budget that lets you smuge your budge a bit</p>
+        <div class="button-wrapper">
+        		<div class="btn btn-orange" onClick="onPopup('registorWrap')">Login</div>
+        		<div class="btn btn-green" onClick="onPopup('loginWrap')">Register</div>
+        </div>
         
-        <div class="flex">
-			<div class="col-2">
-				<h2>Register</h2>
-				<form:form method="post" action="/api/register" modelAttribute="newUser">
+        <div  class="registorWrap ${register }">
+			
+				<i class="fa fa-times" aria-hidden="true" onClick="onPopupRemove('registorWrap')"></i>
+				<h2>Become a Smuget Lord</h2>
+				<form:form method="post" action="/api/register" modelAttribute="newUser" >
 					<div>
-						<span>
-							<form:label path="fullName">Full Name:</form:label>
-						</span>
-						<form:input path="fullName" type="text"/>
-						<form:errors path="fullName" class="error"/>
+						<form:input path="firstName" type="text" placeholder="First Name:" />
+						<form:errors path="firstName" class="error" />
+					</div>
+					<div>
+						<form:input path="lastName" type="text"  placeholder="Last Name:" />
+						<form:errors path="lastName" class="error" />
 					</div>
 					
 					<div>
-						<span>
-							<form:label path="email">Email:</form:label>
-						</span>
-						<form:input path="email" type="email"/>
-						<form:errors path="email" class="error"/>
+						<form:input path="email" type="email" placeholder="Email:" />
+						<form:errors path="email" class="error" />
 					</div>
 					
 					<div>
-						<span>
-							<form:label path="password">Password:</form:label>
-						</span>
-						<form:input path="password" type="password"/>
-						<form:errors path="password" class="error"/>
+						<form:input path="password" type="password" placeholder="Password:"/>
+						<form:errors path="password" class="error" />
 					</div>
 					
 					<div>
-						<span>
-							<form:label path="confirm">Confirm Password:</form:label>
-						</span>
-						<form:input path="confirm" type="password"/>
-						<form:errors path="confirm" class="error"/>
+						<form:input path="confirm" type="password" placeholder="Confirm Password:" />
+						<form:errors path="confirm" class="error" />
 					</div>
 					
 					<input type="submit" value="Register" class="submit" />
 				</form:form>
 			</div>
-			<div class="col-2" >
-				<h2>Login</h2>
+			<div  class="loginWrap ${login }">
+				<i class="fa fa-times" aria-hidden="true" onClick="onPopupRemove('loginWrap')"></i>
+				<h2>Already a Smuget Lord!</h2>
 				
 				<form:form method="post" action="/api/login" modelAttribute="newLogin">
 					<div>
-						<span>
-							<form:label path="email">Email:</form:label>
-						</span>
-						<form:input path="email" type="email"/>
+						<form:input path="email" type="email" placeholder="Email:" />
 						<form:errors path="email" class="error"/>
 					</div>
 					<div>
-						<span>
-							<form:label path="password">Password:</form:label>
-						</span>
-						<form:input path="password" type="password"/>
+						<form:input path="password" type="password" placeholder="Password:"/>
 						<form:errors path="password" class="error"/>
 					</div>
 					
 					<input type="submit" value="Login" class="submit" />
 				</form:form>
 			</div>
-		</div>
-    </div> <!-- End of Container -->
+	<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

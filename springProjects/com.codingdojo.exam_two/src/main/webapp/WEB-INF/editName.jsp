@@ -17,12 +17,14 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<div class="container">
-	<nav>
+<nav>
 		<a href="/dashboard">Dashboard</a> |
 		<a href="/add/name">Add Name</a> |
-		<a href="/logout">Logout</a>
+		<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
 	</nav>
+	
+<div class="container">
+	
 		
 	<h1>Editing: ${currentName.givenname }</h1>
 	<h3>I agree this wasn't the best of names :)</h3>

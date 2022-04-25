@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Smugetor</title>
+<title>Smugetor - Personal Settings</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/app.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,8 +21,9 @@
 <body>
     <div class="container"> <!-- Beginning of Container -->
     <nav>
+		<a href="/dashboard" class="logo">SMUGETOR</a>
     	<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
-    	<a href="/edit/budget">Edit Smuget(s)</a>
+    	<a href="/edit/smuget">Edit Smuget(s)</a>
     </nav>
         <h1>Personal Settings</h1>
       	

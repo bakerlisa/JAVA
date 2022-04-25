@@ -13,22 +13,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Smugetor</title>
+<title>Smugetor - Personal Dashboard</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/app.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <div class="container"> <!-- Beginning of Container -->
-    <nav>
-    	<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
-    	<a href="/edit/smuget">Edit Smuget(s)</a>
+<body class="dash">
+	<nav>
+    	<div>		
+    		<a href="/dashboard" class="logo">SMUGETOR</a>
+    		<span>${logged.firstName } ${logged.lastName }</span>
+    	</div>
+    	<div class="navWrp">
+    		<a href="/edit/smuget">Edit Smuget(s)</a>
+    		<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
+    		<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    	</div>
     </nav>
-        <h1>Dash</h1>
+    <h1>Dash</h1>
+    <div class="container"> <!-- Beginning of Container -->
+        
       	
         
         
 		
     </div> <!-- End of Container -->
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

@@ -2,14 +2,13 @@
 
 :root{
 	--white:#fff;
-	--black:#000;
-	--red:red;
-	--pink:#A6035D;
-	--salmon:#F25C5C;
 	--gray:#ececec;
-	--purple:#493D73;
-	--yellow:#D9C148;
-	--orange:#F2884B;
+	--dk_gray:#777777;
+	--black:#1A160B;
+	--red:#731702;
+	--orange:#fb9c22;
+	--purple:#2B182E;
+	--green:#1C6929;
 }
 
 .gold{color:var(--pink); padding: 25px 0;}
@@ -22,7 +21,7 @@ h1{margin: 0; font-size:60px; padding: 0px 0; text-align: center;  font-family: 
 h3{padding: 0px 0; text-align: center; font-size: 30px; font-weight: 100;}
 h4{font-size: 25px; text-align:center; display: block; width: 100%; padding-top: 25px; text-align: left;}
 	h4 span{text-transform: capitalize;}
-.logo{;font-family: 'Archivo Black', sans-serif;}
+.logo{font-family: 'Archivo Black', sans-serif; color:var(--orange); font-size:100px; padding: 25px; text-align:left;}
 	
 .subtitle{text-align: center; padding-top: 10px; font-size: 18px;}
 	
@@ -54,20 +53,23 @@ hr{width: 100%; display: block; margin: 25px 0;}
 	.cancel{margin: 25px 0; background-color:var(--gray); color:var(--pink); border:solid 2px var(--pink);  padding: 10px 25px; font-size: 16px;}
 	.cancel:hover{cursor: pointer; background:var(--pink); color:var(--white);}
 /* NAV */
-nav{padding:  50px 0; text-align: right;  display: flex; align-items: center; justify-content: flex-end;flex-wrap: wrap;}
-nav a{text-decoration: none; color: var(--black); padding: 0 5px;}
-nav a:hover{cursor: pointer; color: var(--pink);}
+nav{padding:  25px; text-align: right;  display: flex; align-items: center; justify-content: space-between;flex-wrap: wrap; background-color:var(--black);}
+nav a{text-decoration: none; color: var(--black); padding: 0 5px; color:var(--white);}
+nav span{display: block; color: var(--white); text-align:left; letter-spacing:1px; padding-top: 5px;}
+nav a:hover{cursor: pointer; color: var(--orange);}
 nav form{padding-left: 10px; display:flex;}
 nav form input{width: 50%;}
+nav .logo{font-size:25px; padding: 0;}
 /* FORM */
 form{margin:25px auto 0 auto; width: 100%;}
-form div{margin-bottom:15px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
-form span{display:block; width: 250px; text-align:right; padding-right: 10px;}
-form input,form select{width: calc(100% - 250px); padding: 10px; color:var(--pink);}
-form input.submit{color:var(--white); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 25px; background-color: var(--pink); border:none; text-transform: uppercase; padding: 15px;}
+form div{margin-bottom:10px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
+form span{display:block; width: 100%;  text-align:left;}
+form input,form select{width: 100%; padding: 15px; font-size: 12px;}
+form input.submit{color:var(--black); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 10px; background-color: var(--orange); border:none; text-transform: uppercase; padding: 15px; font-family: 'Lato', sans-serif;}
 	form input.submit:hover{cursor: pointer; opacity:.9;}
+	form ::placeholder {color: var(--black);font-size: 1.5em;}
 
-.error{color:var(--red); width: 100%; text-align:left; line-height:16px; padding-left:250px;}
+.error{color:var(--red); width: 100%; text-align:left; line-height:16px; }
 
 /* TABLE */
 .elm{display:flex; align-items:flex-start; justify-content:center; flex-wrap:wrap; width: 100%; border-bottom:solid 1px var(--yellow); padding: 25px 0;}
@@ -75,17 +77,33 @@ form input.submit{color:var(--white); align-self:end; width: 200px; display:bloc
 .elm .name{font-size: 20px; color:var(--black); font-weight: 900;}
 .elm form{width: 150px; margin: 0;}
 
-/* cateWrp */
-.cateWrp{padding-top: 50px; display:flex; align-items:center; justify-content:start; flex-wrap:wrap;}
-.cateWrp p{font-size: 25px; width: 33.33%; text-align: center; padding: 10px;}
-
-
-.dash h2{padding-top: 50px; width:100%; display: flex; align-items: center; justify-content: space-between;}
-
-.singleName p{font-size: 25px;}
-.singleName .name{text-align: center;}
-
-.total{color:var(--pink); font-size:16px; padding-top: 25px;}
-.voted{padding: 25px 0; color: var(--purple);}
-.mess{text-align:left; font-size: 12px; color:var(--pink); padding-top: 5px;}
-.size{text-align: right;}
+/* HOME / INDEX */
+.home{background-image: url("/img/godlfish.png"); background-size:cover; background-position:top center; height: 100vh;}
+.home h1{text-align:left;}
+.home .define{color:var(--orange); padding: 0 33px; margin-top:-40px; font-size: 35px;}
+.home .container{postion:relative; height: 100vh; }
+.home .definition{color: var(--white); padding: 10px 0 0 33px; max-width: 560px; font-weight: 300;}
+	.registorWrap, .loginWrap{max-width:600px; width: 100%; margin:0 auto; padding: 25px; color:var(--white); background-color:var(--purple); border-radius:10px; position:absolute; top: 50%; transform:translateY(-50%); left: 0; right: 0;}
+	.registorWrap{ position: absolute; }
+	.loginWrap{ position: absolute; }
+	.fa-times{cursor: pointer; font-size:30px !important; position:absolute; top: -35px;right: -25px;}
+	.fa-times:hover{color:var(--orange);}
+	/* registorWrap */
+	.registorWrap{display: none;}
+	.registorWrap h2{text-align: center;}
+	.registorWrap.active{display: block;}
+	/* loginWrap */
+	.loginWrap{display: none;}
+	.loginWrap h2{text-align: center;}
+	.loginWrap.active{display: block;}
+	/* login / register button */
+	.home .button-wrapper{display: flex; position:absolute; bottom:25px; left:0px; width: 100%; padding: 25px 25px 0; text-align:right; align-items: end; justify-content: flex-end;}
+	.home .button-wrapper .btn{background-color:var(--orange); padding: 10px 25px; border:solid 2px var(--orange); border-radius:10px; text-align:center; max-width:150px; margin: 0 10px; transition: all .25s ease-in;}
+	.home .button-wrapper .btn-green{background-color:var(--white); border:solid 2px var(--white); color: var(--orange);}
+	
+	.home .button-wrapper .btn:hover{cursor: pointer; color:var(--orange); background-color:transparent; transition: all .25s ease-in;}
+	
+/* dash */
+.dash{background-image: url("/img/monkey.jpg");}
+.dash h1{text-align:left; padding: 50px 25px; font-size:100px;}
+	
