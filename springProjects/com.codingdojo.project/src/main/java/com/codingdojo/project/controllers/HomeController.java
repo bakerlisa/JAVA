@@ -78,18 +78,22 @@ public class HomeController {
 		session.setAttribute("user_id", user.getId());
 		return "redirect:/dashboard";
 	}
-						
+	
 	@GetMapping("/logout")
 	public String dashboard(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
 	}
+		
+	// ================================ SETTINGS ===============================
+	
 	
 	@GetMapping("/settings")
 	public String settings() {
 		return "settings.jsp";
 	}
 	
+	// ================================ EDIT ===============================
 	@GetMapping("/edit/smuget")
 	public String editSmuget() {
 		return "editSmuget.jsp";

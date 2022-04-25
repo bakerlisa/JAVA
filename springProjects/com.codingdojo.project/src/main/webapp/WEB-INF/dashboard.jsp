@@ -29,14 +29,21 @@
     		<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
     	</div>
     </nav>
-    <h1>Dash</h1>
-    <div class="container"> <!-- Beginning of Container -->
-        
-      	
-        
-        
-		
-    </div> <!-- End of Container -->
+    
+    <div class="banner">
+    	<div class="txtWrp">	
+    		<h1>Dash</h1>
+    		<p class="subtitle">Quit monkeying around. <br/>Start getting more for less</p>
+    	</div>
+ 	</div>
+ 	
+ 	<div class="container">
+ 		<h2>Current Budget</h2>
+ 	</div>
+ 	
+    <footer>
+    	<p>Smugetor™ 2022 - Coding Dojo, Java Stack Project - by: Lisa Broadhead </p>
+    </footer>
     <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

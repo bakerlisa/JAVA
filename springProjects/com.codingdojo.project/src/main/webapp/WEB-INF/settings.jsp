@@ -18,18 +18,21 @@
 	<script type="text/javascript" src="/js/app.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <div class="container"> <!-- Beginning of Container -->
-    <nav>
-		<a href="/dashboard" class="logo">SMUGETOR</a>
-    	<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
-    	<a href="/edit/smuget">Edit Smuget(s)</a>
-    </nav>
-        <h1>Personal Settings</h1>
-      	
-        
-        
-		
-    </div> <!-- End of Container -->
+<body class="settings">
+	<div class="banner">
+		<nav>
+    		<div>		
+    			<a href="/dashboard" class="logo">SMUGETOR</a>
+    			<span>${logged.firstName } ${logged.lastName }</span>
+    		</div>
+    		<div class="navWrp">
+    			<a href="/edit/smuget">Edit Smuget(s)</a>
+    			<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
+    			<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    		</div>
+    	</nav>
+    	<h1>Personal Settings</h1>
+    </div>
+
 </body>
 </html>

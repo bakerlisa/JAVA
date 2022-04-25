@@ -16,7 +16,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
+<body class="edit">
 <nav>
 		<a href="/dashboard">Dashboard</a> |
 		<a href="/add/name">Add Name</a> |
