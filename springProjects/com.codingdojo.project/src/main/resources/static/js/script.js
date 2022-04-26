@@ -1,4 +1,10 @@
 function onPopup(element){
+	if(document.querySelector('.loginWrap.active')){
+		document.querySelector('.loginWrap.active').classList.remove('active');
+	}
+	if(document.querySelector('.registorWrap.active')){
+		document.querySelector('.registorWrap.active').classList.remove('active');
+	}
 	var ele = document.querySelector('.'+element);
 	
 	if(ele.classList.contains('active')){
@@ -16,4 +22,5 @@ function onPopupRemove(element){
 	}else{
 		ele.classList.add('active');
 	}
+	
 }

@@ -9,9 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -61,7 +58,9 @@ public class User {
     
     
     // ================================ RELATIPNSHIPS ================================
-
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Budget> budgets;
+    
 
     // ================================ CONSTRUCTORS ================================
     public User() {
@@ -146,6 +145,14 @@ public class User {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public List<Budget> getBudgets() {
+		return budgets;
+	}
+
+	public void setBudgets(List<Budget> budgets) {
+		this.budgets = budgets;
 	}
 
 	@PrePersist

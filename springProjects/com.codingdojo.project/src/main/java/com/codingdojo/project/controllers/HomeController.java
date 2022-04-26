@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.codingdojo.project.models.Budget;
 import com.codingdojo.project.models.LoginUser;
 import com.codingdojo.project.models.User;
+import com.codingdojo.project.services.BudgetService;
 import com.codingdojo.project.services.UserService;
 
 
@@ -23,10 +25,12 @@ import com.codingdojo.project.services.UserService;
 public class HomeController {
 	@Autowired
 	private final UserService userSer;
+	private final BudgetService budSer;
 	
-	public HomeController(UserService userSer){
+	public HomeController(UserService userSer, BudgetService budSer){
 		super();
 		this.userSer = userSer;
+		this.budSer = budSer;
 	}
 	
 	// ================================ GENERAL ================================
@@ -46,12 +50,15 @@ public class HomeController {
 		if(session.getAttribute("user_id") != null ) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
+			Budget budget = budSer.oneBudget(loggedID);
 			model.addAttribute("logged",userName);
+			model.addAttribute("budget",budget);
 				return "dashboard.jsp";
 			}else {
 				return "redirect:/";
 			}
 		}
+	
 	// ================================ LOGIN / REGISTRATION ================================
 	@PostMapping("/api/register")
 	public String register(@Valid @ModelAttribute("newUser") User newUser,BindingResult result, Model model, HttpSession session) {					
@@ -93,6 +100,14 @@ public class HomeController {
 	}
 	
 	// ================================ EDIT ===============================
+	@GetMapping("/new/smuget")
+	public String newSmuget(Model model, @ModelAttribute("budget") Budget budget) {
+		return "newSmuget.jsp";
+	}
+	@GetMapping("/api/add/budget")
+	public String addBudget(Model model, @Valid @ModelAttribute("budget") Budget budget) {
+		return "redirect:/dashboard";
+	}
 	@GetMapping("/edit/smuget")
 	public String editSmuget() {
 		return "editSmuget.jsp";

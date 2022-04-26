@@ -39,6 +39,18 @@
  	
  	<div class="container">
  		<h2>Current Budget</h2>
+ 		
+ 		<c:choose>
+  			<c:when test="${budget}">
+				${logged.lastName }
+				
+  			</c:when>
+  
+  			<c:otherwise>
+  				<h4>No Smugets...</h4>
+  				<a href="/new/smuget" class="button">Create a Smuget!</a>
+  			</c:otherwise>
+		</c:choose>
  	</div>
  	
     <footer>

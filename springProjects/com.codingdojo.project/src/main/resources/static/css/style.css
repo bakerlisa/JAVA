@@ -40,7 +40,7 @@ hr{width: 100%; display: block; margin: 25px 0;}
 
 /* Button */
 .button-wrp{display:flex; align-items:center; justify-content:center; flex-wrap:wrap;}
-.button{width: 150px; margin:  0; padding: 10px; background-color: var(--black); text-align: center; border:solid 2px var(--black)}
+.button{width: 150px; margin:  0; padding: 10px; background-color: var(--black); color:var(--orange); text-align: center; border:solid 2px var(--black); display: block;}
 .button:hover{background-color:transparent;}
 	/* delete */
 	.delete input{background:var(--black); color:var(--pink); border:solid 2px var(--black); display: initial; width: auto; padding: 10px 25px; font-size: 16px; }
@@ -115,8 +115,19 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .dash .banner{background-image: url("/img/monkey.jpg");}
 .dash h1{text-align:left; padding: 125px 25px 0; font-size:150px; color:var(--white); }
 .dash .subtitle{text-align:left; color:var(--white); margin-top: -15px; padding: 0 25px; font-size: 33px;}
+.dash h4{text-align: center; padding-bottom: 25px;}
+.dash .button{margin: 0 auto;}
 
 /* settings */
 .settings{background-image: url("/img/bear.jpg");}
 .settings h1{text-align:left; padding: 50px 25px;}
+
+/* Edit */
+.new .banner{background-image: url("/img/cow.jpg");}
+.new .txtWrp{ bottom:200px;}
+.new .txtWrp h1{text-align: left; width: 100%; display: block; font-size:85px;}
+.new .subtitle{text-align:left; padding: 0; font-size: 24px;}
+
+
+
 	

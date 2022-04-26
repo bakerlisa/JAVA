@@ -1,0 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+   <!-- c:out ; c:forEach ; c:if -->
+ <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+   <!-- Formatting (like dates) -->
+ <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+   <!-- form:form -->
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
+   <!-- for rendering errors on PUT routes -->
+ <%@ page isErrorPage="true" %>   
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Smugetor - Edit your Smuget</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/app.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="new">
+	<nav>
+    	<div>		
+    		<a href="/dashboard" class="logo">SMUGETOR</a>
+    		<span>${logged.firstName } ${logged.lastName }</span>
+    	</div>
+    	<div class="navWrp">
+    		<a href="/edit/smuget">Edit Smuget(s)</a>
+    		<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
+    		<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    	</div>
+    </nav>
+    
+     <div class="banner">
+    	<div class="txtWrp">	
+    		<h1>New Smuget</h1>
+    		<p class="subtitle">Glad to hear you've stopped picking your nose<br/> to start a smuget!</p>
+    	</div>
+ 	</div>
+ 	
+ 	<div class="container">
+ 		<h2>New Smuget</h2>
+ 		
+ 		<form:form action="/api/add/budget" method="post" modelAttribute="budget">
+ 			<div>
+ 				<span>
+ 					<form:label path="name">Dub your Smuget:</form:label>
+ 					<form:errors path="name" class="error"/>
+ 				</span>
+ 				<form:input path="name" type="text" />
+ 			</div>
+ 			
+ 			<div>
+ 				<span>
+ 					<form:label path="income">Income:</form:label>
+ 					<form:errors path="income" class="error"/>
+ 				</span>
+ 				<form:input path="income" type="text" />
+ 			</div>
+ 			
+ 			<input type="submit" value="Create" class="submit"/>
+ 		</form:form>
+ 	</div>
+	
+	 <footer>
+    	<p>Smugetor™ 2022 - Coding Dojo, Java Stack Project - by: Lisa Broadhead </p>
+    </footer>
+</body>
+</html>
