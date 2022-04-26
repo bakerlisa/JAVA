@@ -24,4 +24,8 @@ public class BudgetService {
 		}
 	}
 	
+	public Budget createBudget(Budget budget) {
+		return budRepo.save(budget);
+	}
+	
 }

@@ -14,8 +14,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Smugetor - Personal Dashboard</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body class="dash">
 	<nav>
@@ -24,9 +24,11 @@
     		<span>${logged.firstName } ${logged.lastName }</span>
     	</div>
     	<div class="navWrp">
-    		<a href="/edit/smuget">Edit Smuget(s)</a>
-    		<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
-    		<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    		<a href="/edit/smuget" class="tooltip"><i class="fa-solid fa-pencil"></i><span class="tooltiptext">Edit Smuget(s)</span></a>
+    		<a href="/new/smuget" class="tooltip"><i class="fa-solid fa-circle-dollar-to-slot"></i><span class="tooltiptext">New Budget</span></a>
+    		<a href="/history" class="tooltip"><i class="fa-solid fa-timeline"></i><span class="tooltiptext">Past Budgets</span></a>
+    		<a href="/settings" class="tooltip"><i class="fa fa-cog" aria-hidden="true"></i><span class="tooltiptext">Settings</span></a>
+    		<a href="/logout" class="tooltip"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="tooltiptext">Logout</span></a>
     	</div>
     </nav>
     
@@ -41,21 +43,59 @@
  		<h2>Current Budget</h2>
  		
  		<c:choose>
-  			<c:when test="${budget}">
-				${logged.lastName }
-				
-  			</c:when>
+  			<c:when test="${budget.name.length() > 0}">
+				<h4>${budget.name} - <span>$${budget.income}</span></h4>
+				<c:set var="salary" scope="session" value="0"/>
+				<c:if test = "${budget.expenses.size() > 0}">
+         			<div class="expenseWrp title">	
+         				<p class="icon"></p>
+         				<p class="expense">Expense</p>
+         				<p class="amount">Amount</p>
+         				<p class="action">Action</p>
+         			</div>
+         			
+         			<c:forEach var="expense" items="${ budget.expenses}">
+         				<div class="expenseWrp">	
+         					<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+         					<p class="expense type"><a href="/expense/edit/${expense.id }">${expense.type }</a></p>
+         					<p class="amount cost">$${expense.cost }</p>
+         					<p class="action"><a href="/expense/edit/${expense.id }"><i class="fa-solid fa-pencil"></i></a></p>
+         					<c:set var="salary" scope="session" value="${ salary + expense.cost }"/>
+         				</div>
+         			</c:forEach>
+     			</c:if>	
+     			
+     			<div class="expenseWrp totals">
+     				<p class="icon"><!-- <i class="fa-solid fa-equals"></i> --></p>
+     				<p class="expense">Unspent:</p>
+     				<c:choose>	
+     					<c:when test="${budget.income - salary > 0}">
+     						<p class="amount positive">$${budget.income - salary}</p>
+     					</c:when>
+     					
+     					<c:otherwise>
+     						<p class="amount negative">$${budget.income - salary}</p>
+     					</c:otherwise>
+     				</c:choose>
+     			</div>
+     			<div class="button-wrp">
+     				<a href="/temporary/${budget.id }" class="button temporary">Create Temporary Expense!</a>
+					<a href="/expense/${budget.id }" class="button recurring">Create Recurring Expense!</a>
+				</div>
+  			</c:when> 
   
   			<c:otherwise>
   				<h4>No Smugets...</h4>
-  				<a href="/new/smuget" class="button">Create a Smuget!</a>
+  				<a href="/new/smuget" class="button create">Create Smuget!</a>
   			</c:otherwise>
 		</c:choose>
+		
  	</div>
  	
     <footer>
     	<p>Smugetor™ 2022 - Coding Dojo, Java Stack Project - by: Lisa Broadhead </p>
     </footer>
     <script type="text/javascript" src="/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/402ff570bf.js" crossorigin="anonymous"></script>
 </body>
 </html>

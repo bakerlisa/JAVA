@@ -16,23 +16,33 @@
 <title>Smugetor - Personal Settings</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/app.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body class="settings">
-	<div class="banner">
 		<nav>
-    		<div>		
-    			<a href="/dashboard" class="logo">SMUGETOR</a>
-    			<span>${logged.firstName } ${logged.lastName }</span>
-    		</div>
-    		<div class="navWrp">
-    			<a href="/edit/smuget">Edit Smuget(s)</a>
-    			<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
-    			<a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
-    		</div>
-    	</nav>
+    	<div>		
+    		<a href="/dashboard" class="logo">SMUGETOR</a>
+    		<span>${logged.firstName } ${logged.lastName }</span>
+    	</div>
+    	<div class="navWrp">
+    		<a href="/edit/smuget" class="tooltip"><i class="fa-solid fa-pencil"></i><span class="tooltiptext">Edit Smuget(s)</span></a>
+    		<a href="/new/smuget" class="tooltip"><i class="fa-solid fa-circle-dollar-to-slot"></i><span class="tooltiptext">New Budget</span></a>
+    		<a href="/history" class="tooltip"><i class="fa-solid fa-timeline"></i><span class="tooltiptext">Past Budgets</span></a>
+    		<a href="/settings" class="tooltip"><i class="fa fa-cog" aria-hidden="true"></i><span class="tooltiptext">Settings</span></a>
+    		<a href="/logout" class="tooltip"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="tooltiptext">Logout</span></a>
+    	</div>
+    </nav>
+    
+    <div class="banner">
     	<h1>Personal Settings</h1>
     </div>
-
+    	
+    <div class="container">
+    	
+    </div>
+    
+ 	<footer>
+    	<p>Smugetor™ 2022 - Coding Dojo, Java Stack Project - by: Lisa Broadhead </p>
+    </footer>
 </body>
 </html>

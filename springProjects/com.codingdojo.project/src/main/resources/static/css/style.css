@@ -19,7 +19,7 @@ h1{margin: 0; font-size:60px; padding: 0px 0; text-align: center;  font-family: 
 h2{font-size:50px; text-align: center;}
 h3{padding: 0px 0; text-align: center; font-size: 30px; font-weight: 100;}
 h4{font-size: 25px; text-align:center; display: block; width: 100%; padding-top: 25px; text-align: left;}
-	h4 span{text-transform: capitalize;}
+	h4 span{text-transform: capitalize; font-weight: 300;}
 .logo{font-family: 'Archivo Black', sans-serif; color:var(--orange); font-size:100px; padding: 25px; text-align:left;}
 	
 .subtitle{text-align: center; padding-top: 10px; font-size: 18px;}
@@ -55,6 +55,7 @@ hr{width: 100%; display: block; margin: 25px 0;}
 /* NAV */
 nav{padding:  25px; text-align: right;  display: flex; align-items: center; justify-content: space-between;flex-wrap: wrap; background-color:var(--black); position:fixed; width: 100%; z-index:100;}
 nav a{text-decoration: none; color: var(--black); padding: 0 5px; color:var(--white);}
+nav i{font-size: 18px; padding-left:20px;}
 nav span{display: block; color: var(--white); text-align:left; letter-spacing:1px; padding-top: 0px;}
 nav a:hover{cursor: pointer; color: var(--orange);}
 nav form{padding-left: 10px; display:flex;}
@@ -69,6 +70,11 @@ form input,form select{width: 100%; padding: 15px; font-size: 12px;}
 form input.submit{color:var(--black); align-self:end; width: 200px; display:block; margin-left: auto; text-align: center; margin-top: 10px; background-color: var(--orange); border:none; text-transform: uppercase; padding: 15px; font-family: 'Lato', sans-serif;}
 	form input.submit:hover{cursor: pointer; opacity:.9;}
 	form ::placeholder {color: var(--black);font-size: 1.5em;}
+form label{display: block; width: 100%; padding-bottom: 5px;}
+form .wrp{display:flex; justify-content:space-between;}
+form .wrp button{width: 100px; background-color:var(--purple); color: var(--white); border:none; padding:16px 0; transition:all .25s ease-in;}
+form .wrp button:hover{cursor: pointer; opacity:.5; transition:all .25s ease-in;}
+form .wrp input{width: calc(50% - 65px);}
 
 .error{color:var(--red); width: 100%; text-align:left; line-height:16px; }
 
@@ -113,10 +119,26 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 	
 /* dash */
 .dash .banner{background-image: url("/img/monkey.jpg");}
+.dash .container{padding: 50px 100px;}
 .dash h1{text-align:left; padding: 125px 25px 0; font-size:150px; color:var(--white); }
 .dash .subtitle{text-align:left; color:var(--white); margin-top: -15px; padding: 0 25px; font-size: 33px;}
 .dash h4{text-align: center; padding-bottom: 25px;}
-.dash .button{margin: 0 auto;}
+.dash h5{font-size: 25px;}
+.dash .button-wrp{display: flex; align-items:flex-end; justify-content:end; flex-wrap:wrap;}
+.dash .temporary{background-color:transparent; border-color:var(--purple); color:var(--purple); width: 250px; margin-right: 10px;}
+.dash .expenseWrp{display:flex; align-items:start; justify-content:start; flex-wrap:wrap; padding: 10px;}
+.dash .expenseWrp.title{font-size:18px; font-weight: 600; padding-bottom: 10px; margin-bottom: 10px; border-bottom:solid 1px var(--gray);}
+.dash .expenseWrp .icon{width: 50px;}
+.dash .expenseWrp .expense{width: calc(75% - 75px);}
+.dash .expenseWrp .expense a:hover{color:var(--orange);}
+.dash .expenseWrp .amount{width: calc(25% - 75px); text-align: right;}
+	.dash .create{margin: 0 auto;}
+	.dash .expenseWrp .amount.positive{color:var(--green);}
+	.dash .expenseWrp .amount.negative{color:var(--red);}
+.dash .recurring{margin-right: 0; background-color:var(--purple); color: var(--white); width: 250px;}
+.dash .totals{font-size:18px; font-weight: 600; padding-bottom: 10px; padding-bottom: 10px; padding-top: 20px; margin-bottom: 10px; margin-top:25px; border-top:solid 1px var(--gray);}
+.dash .action{width: 100px; text-align: right;}
+	.dash .action:hover i{cursor: pointer; color:var(--orange);}
 
 /* settings */
 .settings{background-image: url("/img/bear.jpg");}
@@ -128,6 +150,23 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .new .txtWrp h1{text-align: left; width: 100%; display: block; font-size:85px;}
 .new .subtitle{text-align:left; padding: 0; font-size: 24px;}
 
+/* expense */
+.expense .banner{background-image: url("/img/cat.jpg");}
+.expense .banner .txtWrp{position: absolute; top: 100px; right: 50p;  font-size: 100px; text-align:left; color:var(--white);}
+.expense .banner .txtWrp h1{font-size:100px; text-align:left;}
+.expense .banner .txtWrp .subtitle{text-align:left; font-size:25px;}
+.expense h4{text-align: center; padding-bottom: 25px; font-weight: 300; padding-top: 10px;}
+.expense form .submit{width: 100px; margin: 0; padding: 17px 0; background-color:var(--purple); color:var(--white);}
 
+/* Tooltip */
+.tooltip{position: relative; display: inline-block; border-bottom: 1px dotted black;}
+.tooltip .tooltiptext{visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; right: 0px; bottom:-40px;}
+.tooltip:hover .tooltiptext{visibility: visible;}
 
+/* Temporary */
+.temp .banner{background-image: url("/img/baboon.jpg");}
+.temp .subtitle{text-align: right;}
+.temp .txtWrp{bottom: 225px;}
+.temp .subtitle{font-size: 25px;}
+.temp .txtWrp h1{font-size: 75px;}
 	

@@ -15,15 +15,15 @@
 <meta charset="UTF-8">
 	<title>Smugetor - Login and Registor</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body class="home">
         <h1 class="logo">Smugetor</h1>
         <p class="define">[ smug - e - tor]</p>
         <p class="definition">Tired of feeling like a fish out of water? Tired of missing birthdays and holidays, because it doesn't fit your budget? Are budget's too strict? Try Smugetor, the budget that lets you smuge your budge a bit</p>
         <div class="button-wrapper">
-        		<div class="btn btn-orange" onClick="onPopup('registorWrap')">Login</div>
-        		<div class="btn btn-green" onClick="onPopup('loginWrap')">Register</div>
+        		<div class="btn btn-orange" onClick="onPopup('loginWrap')">Login</div>
+        		<div class="btn btn-green" onClick="onPopup('registorWrap')">Register</div>
         </div>
         
         <div  class="registorWrap ${register }">

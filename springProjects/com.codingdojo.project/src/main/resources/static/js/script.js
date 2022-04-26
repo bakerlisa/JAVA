@@ -1,3 +1,4 @@
+// INDEX - POPUP
 function onPopup(element){
 	if(document.querySelector('.loginWrap.active')){
 		document.querySelector('.loginWrap.active').classList.remove('active');
@@ -23,4 +24,11 @@ function onPopupRemove(element){
 		ele.classList.add('active');
 	}
 	
+}
+
+//addExpense
+
+function addExpense(event){
+	event.preventDefault();
+	// var newInput ='<input type="hidden" 
 }

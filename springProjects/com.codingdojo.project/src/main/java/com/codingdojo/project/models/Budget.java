@@ -1,8 +1,7 @@
 package com.codingdojo.project.models;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -34,13 +34,8 @@ public class Budget {
 	
 	private double total;
 	
-	@NotEmpty(message="You must input an income")
+	@NotNull(message="You must input an income")
 	private double income;
-	
-	private HashMap<String, Double> expense;
-	
-	private ArrayList<String> expenseType;
-	
 	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -53,56 +48,50 @@ public class Budget {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
+    
+    @OneToMany(mappedBy="budget", fetch = FetchType.LAZY)
+    private List<Expense> expenses;
+    
+    @OneToMany(mappedBy="budget", fetch = FetchType.LAZY)
+    private List<Temporary> temporary;
 
     // ================================ CONSTRUCTORS ================================
     public Budget() {
 		super();
 	}
     public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			double total, @NotEmpty(message = "You must input an income") double income,
-			HashMap<String, Double> expense, ArrayList<String> expenseType, Date createdAt, Date updatedAt, User user) {
+			double total, @NotEmpty(message = "You must input an income") double income, Date createdAt, Date updatedAt,
+			User user, List<Expense> expenses) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.total = total;
 		this.income = income;
-		this.expense = expense;
-		this.expenseType = expenseType;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.user = user;
+		this.expenses = expenses;
 	}
 
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name, double total,
-			@NotEmpty(message = "You must input an income") double income, HashMap<String, Double> expense,
-			ArrayList<String> expenseType, User user) {
+			@NotEmpty(message = "You must input an income") double income, User user, List<Expense> expenses) {
 		super();
 		this.name = name;
 		this.total = total;
 		this.income = income;
-		this.expense = expense;
-		this.expenseType = expenseType;
 		this.user = user;
+		this.expenses = expenses;
 	}
 
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name, double total,
-			@NotEmpty(message = "You must input an income") double income, HashMap<String, Double> expense,
-			ArrayList<String> expenseType) {
+			@NotEmpty(message = "You must input an income") double income) {
 		super();
 		this.name = name;
 		this.total = total;
 		this.income = income;
-		this.expense = expense;
-		this.expenseType = expenseType;
 	}
     
     // ================================ GETTERS / SETTERS ================================
-	
-	@PreUpdate
-    protected void onUpdate(){
-        this.updatedAt = new Date();
-    }
-	
 	public Long getId() {
 		return id;
 	}
@@ -127,18 +116,6 @@ public class Budget {
 	public void setIncome(double income) {
 		this.income = income;
 	}
-	public HashMap<String, Double> getExpense() {
-		return expense;
-	}
-	public void setExpense(HashMap<String, Double> expense) {
-		this.expense = expense;
-	}
-	public ArrayList<String> getExpenseType() {
-		return expenseType;
-	}
-	public void setExpenseType(ArrayList<String> expenseType) {
-		this.expenseType = expenseType;
-	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -157,13 +134,19 @@ public class Budget {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public List<Expense> getExpenses() {
+		return expenses;
+	}
+	public void setExpenses(List<Expense> expenses) {
+		this.expenses = expenses;
+	}
+	@PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
     }
-
-	
-	
-	
 
 }

@@ -11,13 +11,13 @@
  <%@ page isErrorPage="true" %>   
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Smugetor - Edit your Smuget</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/app.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Smugetor - Edit your Smuget</title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link href="/fontawesome/css/all.css" rel="stylesheet">
+	</head>
+
 <body class="new">
 	<nav>
     	<div>		
@@ -34,7 +34,7 @@
      <div class="banner">
     	<div class="txtWrp">	
     		<h1>New Smuget</h1>
-    		<p class="subtitle">Glad to hear you've stopped picking your nose<br/> to start a smuget!</p>
+    		<p class="subtitle">Glad to hear you've stopped picking your nose<br/> and started a smuget!</p>
     	</div>
  	</div>
  	
@@ -44,7 +44,7 @@
  		<form:form action="/api/add/budget" method="post" modelAttribute="budget">
  			<div>
  				<span>
- 					<form:label path="name">Dub your Smuget:</form:label>
+ 					<form:label path="name">Dub thy Smuget:</form:label>
  					<form:errors path="name" class="error"/>
  				</span>
  				<form:input path="name" type="text" />
@@ -52,18 +52,21 @@
  			
  			<div>
  				<span>
- 					<form:label path="income">Income:</form:label>
+ 					<form:label path="income">Monthly Income:</form:label>
  					<form:errors path="income" class="error"/>
  				</span>
  				<form:input path="income" type="text" />
  			</div>
  			
- 			<input type="submit" value="Create" class="submit"/>
+ 			<input type="hidden" name="user" value="${userName.id }" />
+ 			<input type="submit" value="Next" class="submit"/>
  		</form:form>
  	</div>
 	
 	 <footer>
     	<p>Smugetor™ 2022 - Coding Dojo, Java Stack Project - by: Lisa Broadhead </p>
     </footer>
+    
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

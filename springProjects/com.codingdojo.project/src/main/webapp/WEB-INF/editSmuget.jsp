@@ -16,16 +16,16 @@
 <title>Smugetor - Edit your Smuget</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/app.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="/fontawesome/css/all.css" rel="stylesheet">
 </head>
-<body>
+<body class="expense">
     <div class="container"> <!-- Beginning of Container -->
    <nav>
     	<a href="/dashboard" class="logo">SMUGETOR</a>
     	<a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
     	<a href="/edit/smuget">Edit Smuget(s)</a>
     </nav>
-        <h1>Edit Smuget</h1>
+        <h1>Add Expense </h1>
       	
         
         
