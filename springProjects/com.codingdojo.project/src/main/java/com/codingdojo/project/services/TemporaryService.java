@@ -35,14 +35,14 @@ public class TemporaryService {
 		}
 	}
 	
-	public Temporary updateExpense(Temporary temporary) {
+	public Temporary updateTemporary(Temporary temporary) {
 		Optional<Temporary> optTemp = tempRepo.findById(temporary.getId());
 		
 		if(optTemp.isPresent()) {
 			Temporary thisTemp = optTemp.get();
 			
-			thisTemp.setCost(temporary.getCost()); 
 			thisTemp.setType(temporary.getType());
+			thisTemp.setCost(temporary.getCost()); 
 			thisTemp.setTag(temporary.getTag());
 			thisTemp.setBudget(temporary.getBudget());
 			

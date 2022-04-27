@@ -174,12 +174,12 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .temp .subtitle{font-size: 25px;}
 .temp .txtWrp h1{font-size: 75px;}
 
-/* edit */
-.editBud form input{width: 100%;}
-.editBud form span div{width: calc(33.33% - 20px);}
-.editBud .banner{background-image: url("/img/GOOSE.jpg");}
-.editBud .txtWrp{left:25px; right: initial; top:125px; text-align:left;}
-.editBud .subtitle{text-align: left;}
+/* editExpense / editTemp */
+.editBud form input, .editTemp form input{width: 100%;}
+.editBud form span div, .editTemp form span div{width: calc(33.33% - 20px);}
+.editBud .banner, .editTemp .banner{background-image: url("/img/GOOSE.jpg");}
+.editBud .txtWrp, .editTemp .txtWrp{left:25px; right: initial; top:125px; text-align:left;}
+.editBud .subtitle, .editTemp .subtitle{text-align: left;}
 
 /* editTemp */
 .editTemp .banner{background-image: url("/img/giraffe.jpg");}

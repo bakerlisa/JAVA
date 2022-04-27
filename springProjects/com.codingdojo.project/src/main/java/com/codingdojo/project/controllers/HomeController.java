@@ -209,31 +209,31 @@ public class HomeController {
 		}
 	}
 	
-	@GetMapping("/temporary/edit/{expID}/{budID}")
-	public String editTemporary(Model model, HttpSession session, @PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result) {
+	@GetMapping("/temporary/edit/{tempID}/{budID}")
+	public String editTemporary(Model model, HttpSession session, @PathVariable("tempID") Long tempID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("temporary") Temporary temporary,BindingResult result) {
 		Long loggedID = (Long) session.getAttribute("user_id");
 		User userName = userSer.oneUser(loggedID);
 		Budget bud = budSer.oneBudget(budID);
-		Expense exp = expSer.oneExpense(expID);
-		model.addAttribute("exp",exp);
+		Temporary temp = tempSer.oneTemp(tempID);
+		model.addAttribute("temp",temp);
 		model.addAttribute("bud",bud);
 		model.addAttribute("userName",userName);
 		return "editTemporary.jsp";
 	}
 	
-	@PostMapping("/api/update/temporary/{expID}/{budID}")
-	public String updateTemporary(Model model, HttpSession session,@PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result ) {
+	@PostMapping("/api/update/temporary/{tempID}/{budID}")
+	public String updateTemporary(Model model, HttpSession session,@PathVariable("tempID") Long tempID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("temporary") Temporary temporary,BindingResult result ) {
 		if(result.hasErrors()) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
 			Budget bud = budSer.oneBudget(budID);
-			Expense exp = expSer.oneExpense(expID);
-			model.addAttribute("exp",exp);
+			Temporary temp = tempSer.oneTemp(tempID);
+			model.addAttribute("temp",temp);
 			model.addAttribute("bud",bud);
 			model.addAttribute("userName",userName);
 			return "editTemporary.jsp";
 		}else {
-			expSer.updateExpense(expense);
+			tempSer.updateTemporary(temporary);
 			return "redirect:/dashboard";
 		}
 	}

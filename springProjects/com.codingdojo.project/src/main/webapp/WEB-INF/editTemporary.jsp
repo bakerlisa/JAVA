@@ -40,16 +40,16 @@
     </div>
     
     <div class="container"> <!-- Beginning of Container -->
-		<h2>Edit Temporary Payment: <span>${exp.type }</span></h2>
+		<h2>Edit Temporary Payment: <span>${temp.type }</span></h2>
 		<p class="red">Changing here, changes <strong>ONLY</strong> this months instance.  </p>
-        <form:form method="post" action="/api/update/expense/${exp.id }/${bud.id}" modelAttribute="expense">
+        <form:form method="post" action="/api/update/temporary/${temp.id }/${bud.id}" modelAttribute="temporary">
  			<span class="wrp flex">	
  				<div>
- 					<form:input type="text" path="type" placeholder="Expense..."  value="${exp.type }" />
+ 					<form:input type="text" path="type" placeholder="Expense..."  value="${temp.type }" />
  					<form:errors class="error" path="type"/>
  				</div>
  				<div>	
- 					<form:input type="number" path="cost" step="0.01" placeholder="$..." value="${exp.cost }" />
+ 					<form:input type="number" path="cost" step="0.01" placeholder="$..." value="${temp.cost }" />
  					<form:errors class="error" path="cost"/>
  				</div>
  				<div>
@@ -58,12 +58,12 @@
  						<option value="inactive">Inactive</option>
  					</form:select>
  				</div>
- 				<form:input type="hidden" path="id"  value="${exp.id }"/>
+ 				<form:input type="hidden" path="id"  value="${temp.id }"/>
  				<form:input type="hidden" path="budget"  value="${bud.id }"/>
  				<input class="submit" type="submit" value="Edit" />
  			</span>
  		</form:form> 
- 		<form action="/delete/expense/${exp.id}" method="post" class="delete">
+ 		<form action="/delete/temporary/${temp.id}" method="post" class="delete">
     		<input type="hidden" name="_method" value="delete">
     		<input type="submit" value="Delete">
 		</form>
