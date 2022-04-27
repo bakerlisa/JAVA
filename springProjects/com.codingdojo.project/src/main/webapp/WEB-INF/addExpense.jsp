@@ -42,7 +42,8 @@
         
 	<div class="container"> 
 		<h2>Recurring Monthly Expenses</h2>
-		<h4>${budget.name }</h4>
+		<h4>${budget.name}</h4>
+		
 		<form:form method="post" action="/api/add/expense/${budget.id}" modelAttribute="expense">
  			<span class="wrp flex">	
  				<form:input type="text" path="type" placeholder="Expense..." />

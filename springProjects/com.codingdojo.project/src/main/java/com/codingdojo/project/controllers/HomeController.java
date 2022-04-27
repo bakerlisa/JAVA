@@ -1,7 +1,5 @@
 package com.codingdojo.project.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -9,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -147,16 +146,45 @@ public class HomeController {
 		
 	}
 	
-	@GetMapping("/expense/edit/{budID}")
-	public String editBudget(@PathVariable("budID") Long budID) {
-		Budget bud = budSer.oneBudget(budID);
-		return "editSmuget.jsp";
-	}
-	
 	@GetMapping("/edit/smuget")
 	public String editSmuget() {
 		return "editSmuget.jsp";
 	}
+	
+	@GetMapping("/expense/edit/{expID}/{budID}")
+	public String editBudget(Model model, HttpSession session, @PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		Budget bud = budSer.oneBudget(budID);
+		Expense exp = expSer.oneExpense(expID);
+		model.addAttribute("exp",exp);
+		model.addAttribute("bud",bud);
+		model.addAttribute("userName",userName);
+		return "editSmuget.jsp";
+	}
+	
+	@PostMapping("/api/update/expense/{expID}/{budID}")
+	public String updateExpense(Model model, HttpSession session,@PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result ) {
+		if(result.hasErrors()) {
+			Long loggedID = (Long) session.getAttribute("user_id");
+			User userName = userSer.oneUser(loggedID);
+			Budget bud = budSer.oneBudget(budID);
+			Expense exp = expSer.oneExpense(expID);
+			model.addAttribute("exp",exp);
+			model.addAttribute("bud",bud);
+			model.addAttribute("userName",userName);
+			return "editSmuget.jsp";
+		}else {
+			expSer.updateExpense(expense);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@DeleteMapping("/delete/expense/{expID}")
+	 public String destroyExpense(@PathVariable("expID") Long expID) {
+		expSer.deleteExpense(expID);
+        return "redirect:/dashboard";
+    }
 	
 	// ================================ Temporary ===============================
 	@GetMapping("/temporary/{budID}")
@@ -170,11 +198,51 @@ public class HomeController {
 		return "newTemporary.jsp";
 	}
 	
-	@PostMapping("/api/add/temporary")
-	public String createTemporaryForm(Model model,@Valid  @ModelAttribute("temporary") Temporary temporary,HttpSession session) {
-		tempSer.createTemp(temporary);
-		return "redirect:/dashboard";
+	@PostMapping("/api/add/temporary/{budID}")
+	public String createTemporaryForm(Model model,@PathVariable("budID") Long budID,@Valid  @ModelAttribute("temporary") Temporary temporary,BindingResult result,HttpSession session) {
+		if(result.hasErrors()) {
+			Budget bud = budSer.oneBudget(budID);
+			return "redirect:/expense/"+bud.getId(); 
+		}else {
+			tempSer.createTemp(temporary);
+			return "redirect:/dashboard";
+		}
 	}
+	
+	@GetMapping("/temporary/edit/{expID}/{budID}")
+	public String editTemporary(Model model, HttpSession session, @PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		Budget bud = budSer.oneBudget(budID);
+		Expense exp = expSer.oneExpense(expID);
+		model.addAttribute("exp",exp);
+		model.addAttribute("bud",bud);
+		model.addAttribute("userName",userName);
+		return "editTemporary.jsp";
+	}
+	
+	@PostMapping("/api/update/temporary/{expID}/{budID}")
+	public String updateTemporary(Model model, HttpSession session,@PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result ) {
+		if(result.hasErrors()) {
+			Long loggedID = (Long) session.getAttribute("user_id");
+			User userName = userSer.oneUser(loggedID);
+			Budget bud = budSer.oneBudget(budID);
+			Expense exp = expSer.oneExpense(expID);
+			model.addAttribute("exp",exp);
+			model.addAttribute("bud",bud);
+			model.addAttribute("userName",userName);
+			return "editTemporary.jsp";
+		}else {
+			expSer.updateExpense(expense);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@DeleteMapping("/delete/temporary/{tempID}")
+	 public String destroyTemporary(@PathVariable("tempID") Long tempID) {
+		tempSer.deleteTemporary(tempID);
+       return "redirect:/dashboard";
+   }
 	
 	// ================================ History ===============================
 	@GetMapping("/history")

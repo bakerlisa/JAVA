@@ -34,8 +34,6 @@ public class Temporary {
 	@Min(0)
 	private double cost;
 	
-	@NotNull
-	@Size(min=2,max=100)
 	private String tag;
 	
 	@Column(updatable=false)

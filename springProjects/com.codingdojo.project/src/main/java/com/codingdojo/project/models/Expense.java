@@ -35,6 +35,8 @@ public class Expense {
 	@Min(0)
 	private double cost;
 	
+	private String tag;
+	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
@@ -51,7 +53,7 @@ public class Expense {
 		super();
 	}
 	public Expense(Long id, @NotNull @Size(min = 2, max = 100, message = "Expense needs a name") String type,
-			@NotEmpty(message = "Cost cannot be empty") double cost, Date createdAt, Date updatedAt, Budget budget) {
+			@NotEmpty(message = "Cost cannot be empty") double cost, Date createdAt, Date updatedAt, Budget budget,String tag) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -59,13 +61,22 @@ public class Expense {
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.budget = budget;
+		this.tag = tag;
 	}
 	public Expense(@NotNull @Size(min = 2, max = 100, message = "Expense needs a name") String type,
-			@NotEmpty(message = "Cost cannot be empty") double cost, Budget budget) {
+			@NotEmpty(message = "Cost cannot be empty") double cost, Budget budget, String tag) {
 		super();
 		this.type = type;
 		this.cost = cost;
 		this.budget = budget;
+		this.tag = tag;
+	}
+	public Expense(@NotNull @Size(min = 2, max = 100, message = "Expense needs a name") String type,
+			@NotEmpty(message = "Cost cannot be empty") double cost, String tag) {
+		super();
+		this.type = type;
+		this.cost = cost;
+		this.tag = tag;
 	}
 	public Expense(@NotNull @Size(min = 2, max = 100, message = "Expense needs a name") String type,
 			@NotEmpty(message = "Cost cannot be empty") double cost) {
@@ -111,8 +122,13 @@ public class Expense {
 	public void setBudget(Budget budget) {
 		this.budget = budget;
 	}
-	
-	 @PreUpdate
+	 public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+	@PreUpdate
 	    protected void onUpdate(){
 	        this.updatedAt = new Date();
 	    }

@@ -54,15 +54,32 @@
          				<p class="action">Action</p>
          			</div>
          			
-         			<c:forEach var="expense" items="${ budget.expenses}">
-         				<div class="expenseWrp">	
-         					<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-         					<p class="expense type"><a href="/expense/edit/${expense.id }">${expense.type }</a></p>
-         					<p class="amount cost">$${expense.cost }</p>
-         					<p class="action"><a href="/expense/edit/${expense.id }"><i class="fa-solid fa-pencil"></i></a></p>
-         					<c:set var="salary" scope="session" value="${ salary + expense.cost }"/>
-         				</div>
+         			<c:forEach var="temp" items="${ budget.temporary}">
+         				<c:if test = "${temp.tag != 'inactive'}">		
+         					<div class="expenseWrp">	
+         						<div class="icon"><!-- <i class="fa-solid fa-arrows-rotate"></i> --></div>
+         						<p class="expense type"><a href="/temporary/edit/${temp.id }/${budget.id}">${temp.type }</a></p>
+         						<p class="amount cost">$${temp.cost }</p>
+         						<p class="action"><a href="/temporary/edit/${temp.id }/${budget.id}"><i class="fa-solid fa-pencil"></i></a></p>
+         						<c:set var="salary" scope="session" value="${ salary + temp.cost }"/>
+         					</div>
+         				</c:if>
          			</c:forEach>
+         			
+         			<c:forEach var="expense" items="${ budget.expenses}">
+         				<c:if test = "${expense.tag != 'inactive'}">	
+         					<div class="expenseWrp">	
+         						<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+         						<p class="expense type"><a href="/expense/edit/${expense.id }/${budget.id}">${expense.type }</a></p>
+         						<p class="amount cost">$${expense.cost }</p>
+         						<p class="action"><a href="/expense/edit/${expense.id }/${budget.id}"><i class="fa-solid fa-pencil"></i></a></p>
+         						<c:set var="salary" scope="session" value="${ salary + expense.cost }"/>
+         					</div>
+         				</c:if>
+         			</c:forEach>
+         			
+         			
+         			
      			</c:if>	
      			
      			<div class="expenseWrp totals">
@@ -82,6 +99,7 @@
      				<a href="/temporary/${budget.id }" class="button temporary">Create Temporary Expense!</a>
 					<a href="/expense/${budget.id }" class="button recurring">Create Recurring Expense!</a>
 				</div>
+				
   			</c:when> 
   
   			<c:otherwise>

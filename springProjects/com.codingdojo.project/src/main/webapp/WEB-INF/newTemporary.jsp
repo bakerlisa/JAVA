@@ -43,7 +43,7 @@
  	<div class="container">
  		<h2>Temp Expense</h2>
  		
- 		<form:form action="/api/add/temporary" method="post" modelAttribute="temporary">
+ 		<form:form action="/api/add/temporary/${budget.id }" method="post" modelAttribute="temporary">
  			<div>
  				<span>
  					<form:label path="type">Purchase Label:</form:label>
@@ -60,7 +60,7 @@
  				<form:input path="cost" type="text" />
  			</div>
  			<input type="hidden" name="budget" value="${logged.id }" />
- 			<input type="submit" value="Next" class="submit"/>
+ 			<input type="submit" value="Add" class="submit"/>
  		</form:form>
  	</div>
 	

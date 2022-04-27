@@ -140,6 +140,12 @@ public class Budget {
 	public void setExpenses(List<Expense> expenses) {
 		this.expenses = expenses;
 	}
+	public List<Temporary> getTemporary() {
+		return temporary;
+	}
+	public void setTemporary(List<Temporary> temporary) {
+		this.temporary = temporary;
+	}
 	@PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();
@@ -148,5 +154,6 @@ public class Budget {
     protected void onCreate(){
         this.createdAt = new Date();
     }
+	
 
 }
