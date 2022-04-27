@@ -24,7 +24,6 @@
     		<span>${logged.firstName } ${logged.lastName }</span>
     	</div>
     	<div class="navWrp">
-    		<a href="/edit/smuget" class="tooltip"><i class="fa-solid fa-pencil"></i><span class="tooltiptext">Edit Smuget(s)</span></a>
     		<a href="/new/smuget" class="tooltip"><i class="fa-solid fa-circle-dollar-to-slot"></i><span class="tooltiptext">New Budget</span></a>
     		<a href="/history" class="tooltip"><i class="fa-solid fa-timeline"></i><span class="tooltiptext">Past Budgets</span></a>
     		<a href="/settings" class="tooltip"><i class="fa fa-cog" aria-hidden="true"></i><span class="tooltiptext">Settings</span></a>

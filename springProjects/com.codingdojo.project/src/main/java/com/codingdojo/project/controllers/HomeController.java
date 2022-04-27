@@ -101,10 +101,31 @@ public class HomeController {
 	// ================================ SETTINGS ===============================
 	
 	@GetMapping("/settings")
-	public String settings() {
+	public String settings(Model model, @ModelAttribute("user") User user,@ModelAttribute("password") User pass,HttpSession session) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		model.addAttribute("logged",userName);
 		return "settings.jsp";
 	}
 	
+	@PostMapping("/api/update/user")
+	public String updateSettings(Model model, @Valid @ModelAttribute("user") User user,BindingResult result) {
+		if(result.hasErrors()) {
+			return "settings.jsp";
+		}else {
+			userSer.updateUserSettings(user);
+			return "redirect:/dashboard";
+		}
+	}
+	@PostMapping("/api/update/password")
+	public String updatePassword(Model model, @Valid @ModelAttribute("password") User pass,BindingResult result) {
+		if(result.hasErrors()) {
+			return "settings.jsp";
+		}else {
+			userSer.updatePasswordSettings(pass);
+			return "redirect:/dashboard";
+		}
+	}
 	// ================================ budget ===============================
 	@GetMapping("/new/smuget")
 	public String newSmuget(Model model, @ModelAttribute("budget") Budget budget,HttpSession session) {
@@ -144,11 +165,6 @@ public class HomeController {
 			return "redirect:/dashboard";
 		}
 		
-	}
-	
-	@GetMapping("/edit/smuget")
-	public String editSmuget() {
-		return "editSmuget.jsp";
 	}
 	
 	@GetMapping("/expense/edit/{expID}/{budID}")

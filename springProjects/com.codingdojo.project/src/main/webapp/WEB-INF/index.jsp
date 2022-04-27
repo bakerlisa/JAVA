@@ -27,7 +27,6 @@
         </div>
         
         <div  class="registorWrap ${register }">
-			
 				<i class="fa fa-times" aria-hidden="true" onClick="onPopupRemove('registorWrap')"></i>
 				<h2>Become a Smuget Lord</h2>
 				<form:form method="post" action="/api/register" modelAttribute="newUser" >

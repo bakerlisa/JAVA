@@ -5,7 +5,7 @@
 	--gray:#ececec;
 	--dk_gray:#777777;
 	--black:#1A160B;
-	--red:#731702;
+	--red:#ff2f00;
 	--orange:#fb9c22;
 	--purple:#2B182E;
 	--green:#1C6929;
@@ -145,13 +145,15 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 	.dash .action:hover i{cursor: pointer; color:var(--orange);}
 
 /* settings */
-.settings{background-image: url("/img/bear.jpg");}
-.settings h1{text-align:left; padding: 50px 25px;}
+.settings .banner{background-image: url("/img/giraffe.jpg");}
+.settings h1{font-size:75px;}
+.settings p{font-size:26px; }
+.settings .txtWrp{ 	color:var(--white); bottom:initial; top:125px; left:25px; right: initial}
 
 /* Edit */
 .new .banner{background-image: url("/img/cow.jpg");}
 .new .txtWrp{ bottom:200px;}
-.new .txtWrp h1{text-align: left; width: 100%; display: block; font-size:85px;}
+.new .txtWrp h1{text-align: left; width: 100%; display: block; font-size:85px; }
 .new .subtitle{text-align:left; padding: 0; font-size: 24px;}
 
 /* expense */
@@ -182,9 +184,10 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .editBud .subtitle, .editTemp .subtitle{text-align: left;}
 
 /* editTemp */
-.editTemp .banner{background-image: url("/img/giraffe.jpg");}
+.editTemp .banner{background-image: url("/img/bear.jpg");}
 .editTemp .banner .txtWrp{right:initial; bottom:initial; top:325px; left:25px;}
 .editTemp .subtitle{text-align:left;}
+.editTemp .red{text-align: center;}
 
 
 

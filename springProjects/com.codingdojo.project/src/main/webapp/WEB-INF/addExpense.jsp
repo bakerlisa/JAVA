@@ -25,7 +25,7 @@
     		<span>${logged.firstName } ${logged.lastName }</span>
     	</div>
     	<div class="navWrp">
-    		<a href="/edit/smuget">Edit Smuget(s)</a>
+    		<a href="/new/smuget" class="tooltip"><i class="fa-solid fa-circle-dollar-to-slot"></i><span class="tooltiptext">New Budget</span></a>
     		<a href="/history" class="tooltip"><i class="fa-solid fa-timeline"></i><span class="tooltiptext">Past Budgets</span></a>
     		<a href="/settings" class="tooltip"><i class="fa fa-cog" aria-hidden="true"></i><span class="tooltiptext">Settings</span></a>
     		<a href="/logout" class="tooltip"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="tooltiptext">Logout</span></a>
@@ -36,7 +36,7 @@
  	<div class="banner">
  		<div class="txtWrp">
         	<h1>Add Expenses</h1>
-       		<p class="subtitle">Stop with the laziness because no ones buying. Add an expense </p>
+       		<p class="subtitle">Stop being lazy. Everyone's busy and tired, Smugetor will help </p>
        	</div>
      </div> 	
         

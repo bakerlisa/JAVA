@@ -97,6 +97,17 @@ public class User {
 		this.confirm = confirm;
 	}
 
+	
+	public User(Long id, @NotEmpty @Size(min = 2, message = "First name cannot be blank") String firstName,
+			@NotEmpty @Size(min = 2, message = "Last name cannot be blank") String lastName,
+			@NotEmpty @Email(message = "Email cannot be blank") String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
 	// ================================ GETTERS / SETTERS ================================
 	public Long getId() {
 		return id;
@@ -110,7 +121,7 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
+	public String hashed() {
 		return password;
 	}
 	public void setPassword(String password) {
@@ -149,6 +160,10 @@ public class User {
 
 	public List<Budget> getBudgets() {
 		return budgets;
+	}
+
+	public String getPassword() {
+		return password;
 	}
 
 	public void setBudgets(List<Budget> budgets) {

@@ -60,7 +60,6 @@ public class UserService {
 		
 		Optional<User> potentiallUser = userRepo.findByEmail(newLogin.getEmail());
 		if(!potentiallUser.isPresent()) {
-			System.out.println("not present");
 			result.rejectValue("email","notFound","Email not found");
 			return null;
 		}
@@ -78,5 +77,44 @@ public class UserService {
 		}	
 	}
 	
+	public User updateUserSettings(User user) {
+		Optional<User> optUser = userRepo.findById(user.getId());
+		
+		if(optUser.isPresent()) {
+			User thisUser = optUser.get();
+			
+			thisUser.setFirstName(user.getFirstName());
+			thisUser.setLastName(user.getLastName());
+			thisUser.setEmail(user.getEmail());
+			thisUser.setId(user.getId());
+			thisUser.setPassword(user.getPassword());
+			thisUser.setConfirm(user.getConfirm());
+			
+			return userRepo.save(thisUser);
+		}else {
+			return null;
+		} 
+	}
+	
+	public User updatePasswordSettings(User user) {
+		Optional<User> optUser = userRepo.findById(user.getId());
+		
+		if(optUser.isPresent()) {
+			User thisUser = optUser.get();
+			
+			thisUser.setFirstName(user.getFirstName());
+			thisUser.setLastName(user.getLastName());
+			thisUser.setEmail(user.getEmail());
+			thisUser.setId(user.getId());
+			
+			String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+			thisUser.setPassword(hashed);
+			thisUser.setConfirm(user.getConfirm());
+			
+			return userRepo.save(thisUser);
+		}else {
+			return null;
+		} 
+	}
 	
 }
