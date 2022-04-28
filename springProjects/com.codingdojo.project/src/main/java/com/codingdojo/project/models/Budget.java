@@ -40,7 +40,6 @@ public class Budget {
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
-	
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
@@ -146,6 +145,7 @@ public class Budget {
 	public void setTemporary(List<Temporary> temporary) {
 		this.temporary = temporary;
 	}
+	
 	@PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();
@@ -154,6 +154,5 @@ public class Budget {
     protected void onCreate(){
         this.createdAt = new Date();
     }
-	
 
 }

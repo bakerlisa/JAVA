@@ -172,22 +172,34 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 /* Temporary */
 .temp .banner{background-image: url("/img/baboon.jpg");}
 .temp .subtitle{text-align: right;}
-.temp .txtWrp{bottom: 225px;}
-.temp .subtitle{font-size: 25px;}
-.temp .txtWrp h1{font-size: 75px;}
+.temp .txtWrp{bottom: 225px; }
+.temp .subtitle{font-size: 25px; }
+.temp .txtWrp h1{font-size: 75px; }
 
 /* editExpense / editTemp */
 .editBud form input, .editTemp form input{width: 100%;}
 .editBud form span div, .editTemp form span div{width: calc(33.33% - 20px);}
 .editBud .banner, .editTemp .banner{background-image: url("/img/GOOSE.jpg");}
 .editBud .txtWrp, .editTemp .txtWrp{left:25px; right: initial; top:125px; text-align:left;}
-.editBud .subtitle, .editTemp .subtitle{text-align: left;}
+.editBud .subtitle, .editTemp .subtitle{text-align: left;  }
 
 /* editTemp */
+.editTemp .banner:before{content:''; height:100%; width:100%; background:rgba(0,0,0,.25); position: absolute; top: 0;left: 0;}
 .editTemp .banner{background-image: url("/img/bear.jpg");}
-.editTemp .banner .txtWrp{right:initial; bottom:initial; top:325px; left:25px;}
+.editTemp .banner .txtWrp{right:initial; bottom:initial; top:125px; left:25px; color:var(--white); }
+.editTemp h1{text-shadow: 5px 5px 10px black; color:var(--white);}
+.editTemp .banner .txtWrp p{font-size:35px; text-shadow: 5px 5px 10px black; color:var(white);}
 .editTemp .subtitle{text-align:left;}
 .editTemp .red{text-align: center;}
+.editTemp .submit{max-width:200px;}
 
-
-
+/* history */
+.history .banner{background-image: url("/img/chicken.jpg");}
+.history .banner .txtWrp{position: absolute; top: 125px; left:25px; right: initial;}
+.history .banner  h1{font-size:150px; color:var(--white); text-shadow: 5px 5px 10px black; }
+.history .banner p{font-size:30px; text-align:left; color:var(--white); text-shadow: 5px 5px 10px black; padding-top:0;}
+	/* search */
+	.search-budget{display: flex;}
+	.search-budget select{margin-right:10px;}
+	.search-budget .year{margin-left: 10px;}
+	.search-budget .submit{margin-left: 10px; width: 100%; margin-top: 0; padding: 16px;}

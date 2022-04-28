@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.project.models.Budget;
 import com.codingdojo.project.models.Expense;
@@ -57,6 +58,7 @@ public class HomeController {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
 			Budget budget = budSer.oneBudget(loggedID);
+			System.out.println("ID: " + userName);
 			model.addAttribute("logged",userName);
 			model.addAttribute("budget",budget);
 				return "dashboard.jsp";
@@ -265,4 +267,5 @@ public class HomeController {
 	public String history(Model model) {
 		return "history.jsp";
 	}
+
 }

@@ -35,7 +35,7 @@
     <div class="banner">
     	<div class="txtWrp">
     		<h1>Edit Temporary Expense </h1>
-    		<p class="subtitle"> I say good chap? Be very careful making edits</p>
+    		<p class="subtitle"> Uff..it's hot, life is hard, but Smugetor is not</p>
     	</div>
     </div>
     

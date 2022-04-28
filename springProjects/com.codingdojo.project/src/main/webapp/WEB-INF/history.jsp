@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link href="/fontawesome/css/all.css" rel="stylesheet">
 </head>
-<body class="dash">
+<body class="history">
 	<nav>
     	<div>		
     		<a href="/dashboard" class="logo">SMUGETOR</a>
@@ -34,12 +34,30 @@
     <div class="banner">
     	<div class="txtWrp">	
     		<h1>History</h1>
-    		<p class="subtitle">Quit monkeying around. <br/>Start getting more for less</p>
+    		<p class="subtitle">Stop fussing. It's only bad if<br/> you didn't follow the budget </p>
     	</div>
  	</div>
  	
  	<div class="container">
- 		
+ 		<h2>Search by Month and Year</h2>
+ 		<form method="post" action="/api/search" class="search-budget">
+ 			<select name="month">
+ 				<option value="01">January</option>
+ 				<option value="02">February</option>
+ 				<option value="03">March</option>
+ 				<option value="04">April</option>
+ 				<option value="05">May</option>
+ 				<option value="06">June</option>
+ 				<option value="07">July</option>
+ 				<option value="08">August</option>
+ 				<option value="09">September</option>
+ 				<option value="10">October</option>
+ 				<option value="11">November</option>
+ 				<option value="12">December</option>
+ 			</select>
+ 			<input type="number" name="year" class="year" placeholder="Year..." />
+ 			<input type="submit" value="Search" class="submit"/>
+ 		</form>
  	</div>
  	
     <footer>

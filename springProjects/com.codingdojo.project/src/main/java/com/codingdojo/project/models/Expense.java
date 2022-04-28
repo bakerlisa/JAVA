@@ -1,5 +1,6 @@
 package com.codingdojo.project.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -37,11 +38,14 @@ public class Expense {
 	
 	private String tag;
 	
+	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
+    
+//    private SimpleDateFormat month =  new SimpleDateFormat("MM"); 
     
     // ================================ RELATIPNSHIPS ================================
     @ManyToOne(fetch = FetchType.LAZY)
@@ -131,10 +135,11 @@ public class Expense {
 	@PreUpdate
 	    protected void onUpdate(){
 	        this.updatedAt = new Date();
-	    }
-		@PrePersist
+	}
+	@PrePersist
 	    protected void onCreate(){
 	        this.createdAt = new Date();
-	    }
+	}
+	
 	
 }
