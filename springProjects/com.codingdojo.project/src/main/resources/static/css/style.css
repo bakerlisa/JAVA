@@ -17,7 +17,7 @@
 
 h1{margin: 0; font-size:60px; padding: 0px 0; text-align: center;  font-family: 'Lato', sans-serif; font-weight: 900;}
 	h1 a{font-family:  'Lato', sans-serif;}
-	h1 span {font-family: 'Righteous', cursive; font-weight: 100;}
+	h1 span {font-family: 'Lato', sans-serif; font-weight: 300;}
 h2{font-size:50px; text-align: center;}
 	h2 span{font-weight: 300; display: block;}
 h3{padding: 0px 0; text-align: center; font-size: 30px; font-weight: 100;}
@@ -181,7 +181,6 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .expense form .submit{width: 100px; margin: 0; padding: 17px 0; background-color:var(--purple); color:var(--white);}
 .expense li{width: 100%; padding: 0 0 10px 0;}
 
-
 /* Tool tip */
 .tooltip{position: relative; display: inline-block; border-bottom: 1px dotted black;}
 .tooltip .tooltiptext{visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; right: 0px; bottom:-40px;}
@@ -238,6 +237,21 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 			.budgetsIndv:hover{cursor: pointer; background-color:var(--purple); color:var(--white); transition:all .25s ease-in;}
 			.budgetsIndv:hover .title{color:var(--white); transition:all .25s ease-in;}
 	
+/* indvhistory */
+.indvhistory .container{padding-top: 125px;}
+.indvhistory .back:hover{color:var(--orange);}
+.indvhistory .date{text-align: center; padding: 25px 0; font-size: 20px;}
+.indvhistory .expenseWrp{display:flex; align-items:start; justify-content:start; flex-wrap:wrap; padding: 10px;}
+.indvhistory .expenseList{max-width:600px; margin: 0 auto;}
+.indvhistory .title{font-size:18px; font-weight: 600; padding-bottom: 10px; margin-bottom: 10px; border-bottom:solid 1px var(--gray);}
+.indvhistory .icon{width: 50px;}
+.indvhistory .expense{width: calc(66.66% - 25px);}
+.indvhistory .expense a:hover{color:var(--orange);}
+.indvhistory .amount{width: calc(33.33% - 25px); text-align: right;}
+.indvhistory .expenseWrp.totals{max-width:600px; margin: 0 auto; font-size:18px; font-weight: 600; padding-top: 10px; margin-top: 10px; border-top:solid 1px var(--gray);}
+	.amount.negative{color:var(--red);}
+	.amount.positive{color:var(--green);}
+
 /* clear */
 .clear .banner{background-image: url("/img/squirel.png"); }
 .clear .banner h1{color:var(--white);}

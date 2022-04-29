@@ -143,7 +143,7 @@ public class HomeController {
 		if(result.hasErrors()) {
 			return "newSmuget.jsp";
 		}else {
-			if(budget.getTag().equals("on")) {
+			if(budget.getTag() != null) {
 				budSer.removeCurrentActive("on");
 			}
 			budget.setOutcome(budget.getIncome());
@@ -273,13 +273,17 @@ public class HomeController {
 		model.addAttribute("logged",userName);
 		return "history.jsp";
 	}
-	@GetMapping("/history/{butID}")
-	public String indvHistory(Model model,HttpSession session) {
+	@GetMapping("/history/{budID}")
+	public String indvHistory(Model model,HttpSession session, @PathVariable("budID") Long budID) {
+		
 		Long loggedID = (Long) session.getAttribute("user_id");
 		User userName = userSer.oneUser(loggedID);
+		Budget budget = budSer.oneBudget(budID);
 		model.addAttribute("logged",userName);
+		model.addAttribute("budget",budget);
 		return "indvHistory.jsp";
 	}
+	
 
 	// ================================ Clear ===============================
 	@GetMapping("/clear")

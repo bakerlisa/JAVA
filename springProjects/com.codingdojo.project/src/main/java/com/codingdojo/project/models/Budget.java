@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -33,6 +33,7 @@ public class Budget {
 	private String name;
 	
 	@NotNull(message="You must input an income")
+	@Min(1)
 	private double income;
 	
 	private double outcome;

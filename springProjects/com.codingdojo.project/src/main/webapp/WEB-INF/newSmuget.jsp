@@ -47,20 +47,20 @@
  			<div>
  				<span>
  					<form:label path="name">Dub thy Smuget:</form:label>
- 					<form:errors path="name" class="error"/>
  				</span>
  				<form:input path="name" type="text" />
+ 				<form:errors path="name" class="error"/>
  			</div>
  			
  			<div>
  				<span>
  					<form:label path="income">Monthly Income:</form:label>
- 					<form:errors path="income" class="error"/>
  				</span>
  				<form:input path="income" type="text" />
+ 				<form:errors path="income" class="error"/>
  			</div>
  			<div class="checkbox">
- 				<input type="checkbox" name="tag" />
+ 				<input type="checkbox" name="tag" checked />
  				<label name="tag">Activate Budget:</label>	
  			</div>
  			<div class="current">

@@ -60,15 +60,12 @@
  		</form>
  		
  		<div class="pervious">
- 			<%java.text.DateFormat df = new java.text.SimpleDateFormat("EEEE "); %>
-			<%java.text.DateFormat df1 = new java.text.SimpleDateFormat("d "); %>
-			<%java.text.DateFormat df2 = new java.text.SimpleDateFormat("MMMM, y "); %>
  		
  			<div class="allBudWrp">
  				<c:choose>
   					<c:when test="${logged.budgets.size() > 0}">
  						<c:forEach var="bud" items="${logged.budgets }">
- 								<div class="budgetsIndv">	
+ 							<div class="budgetsIndv">	
  								<a class="title" href="/history/${bud.id }">${bud.name }</a>
  								<p class="amount">
  									<c:choose>

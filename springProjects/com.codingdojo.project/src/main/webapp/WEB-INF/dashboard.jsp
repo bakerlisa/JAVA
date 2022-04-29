@@ -70,7 +70,6 @@
          						</c:forEach>
          						
          						<!--  Monlthy expenses -->
-         						
          						<c:forEach var="expense" items="${ bud.expenses}">
          							<div class="expenseWrp">	
          								<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>

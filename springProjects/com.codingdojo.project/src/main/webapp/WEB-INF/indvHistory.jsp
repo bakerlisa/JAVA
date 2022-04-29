@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link href="/fontawesome/css/all.css" rel="stylesheet">
 </head>
-<body class="history">
+<body class="indvhistory">
 	<nav>
     	<div>		
     		<a href="/dashboard" class="logo">SMUGETOR</a>
@@ -32,35 +32,49 @@
     </nav>
  	
  	<div class="container">
- 		<h2>History For:</h2>
- 		
- 		<div class="pervious">		
- 			<div class="allBudWrp">
- 				<c:choose>
-  					<c:when test="${logged.budgets.size() > 0}">
- 						<c:forEach var="bud" items="${logged.budgets }">
- 								<div class="budgetsIndv">	
- 								<a class="title" href="/history/${bud.id }">${bud.name }</a>
- 								<p class="amount">
- 									<c:choose>
-  										<c:when test="${bud.outcome > 0 }">
-											<i class="fa-solid fa-caret-up"></i>
-  										</c:when>
-  										
-  										<c:otherwise>
-  											<i class="fa-solid fa-caret-down"></i>
-										</c:otherwise>
-									</c:choose>
- 									Budget: $${bud.income }
- 								</p>
- 								<p><fmt:formatDate value="${bud.createdAt }" pattern="MMMMM"/> <fmt:formatDate value="${bud.createdAt }" pattern="y"/> </p>
- 							</div>
- 						</c:forEach>
- 					</c:when>
- 				</c:choose>
- 			</div>
- 		
+ 		<a href="/history" class="back"> < Back</a>
+ 		<h1>History - <span>${budget.name }</span></h1>
+ 		<p class="date"><fmt:formatDate value="${budget.createdAt }" pattern="MMMMM"/> <fmt:formatDate value="${budget.createdAt }" pattern="y"/> </p>
+ 		<div class="expenseList">
+ 			<div class="expenseWrp title">	
+         		<p class="icon"></p>
+         		<p class="expense">Expense</p>
+         		<p class="amount">Amount</p>
+        	</div>
+         
+ 			<!--  Temporary expenses -->
+         	<c:forEach var="temp" items="${ budget.temps}">
+         		<div class="expenseWrp">
+         			<div class="icon"></div>	
+         			<p class="expense type">${temp.type} </p>
+         			<p class="amount cost">$${temp.cost }</p>
+         		</div>
+         	</c:forEach>
+         						
+         	<!--  Monlthy expenses -->
+         	<c:forEach var="expense" items="${ budget.expenses}">
+         		<div class="expenseWrp">	
+         			<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+         			<p class="expense type">${expense.type }</p>
+         			<p class="amount cost">$${expense.cost }</p>
+         		</div>					
+         	</c:forEach>	
  		</div>
+ 		
+ 		<div class="expenseWrp totals">
+     		<p class="icon"></p>
+     		<p class="expense">Unspent:</p>
+     		<c:choose>	
+     			<c:when test="${budget.outcome > 0}">
+     				<p class="amount positive">$${budget.outcome}</p>
+     			</c:when>
+     					
+     			<c:otherwise>
+     				<p class="amount negative">$${budget.outcome}</p>
+     			</c:otherwise>
+     		</c:choose>
+     	</div>
+ 		
  	</div>
  	
     <footer>
