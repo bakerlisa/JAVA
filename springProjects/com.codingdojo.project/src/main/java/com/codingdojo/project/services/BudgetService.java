@@ -16,8 +16,6 @@ public class BudgetService {
 		this.budRepo = budRepo;
 	}
 	
-	
-	
 	public Budget oneBudget(Long id) {
 		Optional<Budget> optBud = budRepo.findById(id);;
 		if(optBud.isPresent()) {
