@@ -64,7 +64,7 @@
  				</c:forEach>
  			</ul>
  		</div>
- 		<a href="/" class="button">Full Smuget</a>
+ 		<a href="/dashboard" class="button">Full Smuget</a>
     </div> <!-- End of Container -->
     
      <footer>

@@ -210,23 +210,18 @@ public class HomeController {
 	@GetMapping("/temporary/{budID}")
 	public String createTemporary(Model model,@PathVariable("budID") Long budID, @ModelAttribute("temporary") Temporary temporary,HttpSession session) {
 		Long loggedID = (Long) session.getAttribute("user_id");
-		User userName = userSer.oneUser(loggedID);
-		Budget budget = budSer.oneBudget(loggedID);
-		model.addAttribute("logged",userName);
+		Budget budget = budSer.oneBudget(budID);
 		model.addAttribute("budget",budget);
-		Budget bud = budSer.oneBudget(budID);
 		return "newTemporary.jsp";
 	}
 	
 	@PostMapping("/api/add/temporary/{budID}")
 	public String createTemporaryForm(Model model,@PathVariable("budID") Long budID,@Valid  @ModelAttribute("temporary") Temporary temporary,BindingResult result,HttpSession session) {
-		if(result.hasErrors()) {
-			Budget bud = budSer.oneBudget(budID);
-			return "redirect:/expense/"+bud.getId(); 
-		}else {
+		Budget bud = budSer.oneBudget(budID);
+		if(!result.hasErrors()) {
 			tempSer.createTemp(temporary);
-			return "redirect:/dashboard";
 		}
+		return "redirect:/temporary/"+bud.getId();
 	}
 	
 	@GetMapping("/temporary/edit/{tempID}/{budID}")

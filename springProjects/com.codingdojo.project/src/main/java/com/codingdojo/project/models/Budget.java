@@ -60,16 +60,18 @@ public class Budget {
 	}
 
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, @NotNull String tag) {
+			@NotNull(message = "You must input an income") double income, String tag) {
 		super();
 		this.name = name;
 		this.income = income;
 		this.tag = tag;
 	}
 
+
+
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, @NotNull String tag, User user,
-			List<Expense> expenses, List<Temporary> temps) {
+			@NotNull(message = "You must input an income") double income, String tag, User user, List<Expense> expenses,
+			List<Temporary> temps) {
 		super();
 		this.name = name;
 		this.income = income;
@@ -79,9 +81,11 @@ public class Budget {
 		this.temps = temps;
 	}
 
+
+
 	public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, @NotNull String tag, Date createdAt,
-			Date updatedAt, User user, List<Expense> expenses, List<Temporary> temps) {
+			@NotNull(message = "You must input an income") double income, String tag, Date createdAt, Date updatedAt,
+			User user, List<Expense> expenses, List<Temporary> temps) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -93,6 +97,8 @@ public class Budget {
 		this.expenses = expenses;
 		this.temps = temps;
 	}
+
+
 
 	// ================================ GETTERS / SETTERS ================================
 	public Long getId() {
@@ -152,6 +158,7 @@ public class Budget {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
+	
 
 	@PreUpdate
     protected void onUpdate(){

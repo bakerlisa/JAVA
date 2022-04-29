@@ -58,11 +58,22 @@
  				</span>
  				<form:input path="cost" type="text" />
  			</div>
- 			<input type="hidden" name="budget" value="${logged.id }" />
+ 			<input type="hidden" name="budget" value="${budget.id }" />
  			<input type="submit" value="Add" class="submit"/>
  		</form:form>
- 	</div>
-	
+ 	
+			<div class="expenseList">
+ 				<h5>Current Recurring Expenses:</h5>
+ 			
+ 				<ul>
+ 					<c:forEach var="charge" items="${budget.temps }">
+ 						<li>${ charge.type} - $${charge.cost }</li>
+ 					</c:forEach>
+ 				</ul>
+ 			</div>
+ 			<a href="/dashboard" class="button">Full Smuget</a>
+ 		</div>
+ 	
 	 <footer>
     	<p>Smugetor™ 2022 - Coding Dojo, Java Stack Project - by: Lisa Broadhead </p>
     </footer>

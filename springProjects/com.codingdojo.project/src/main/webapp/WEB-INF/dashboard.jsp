@@ -39,15 +39,16 @@
  	</div>
  	
  	<div class="container">
- 		<h2>Current Budget</h2>
+ 		<h2>Current Budget </h2>
 		<c:set var="budgetsTrue" scope="session" value="false"/>
+  				
  		
  		<c:choose>
   				<c:when test="${logged.budgets.size() > 0}">
-  				
  					<c:forEach var="bud" items="${logged.budgets }">
  						<c:choose>
   							<c:when test="${bud.tag.equals('on')}">
+  							<c:set var="budgetID" scope="session" value="${bud.id}"/>
   								<c:set var="budgetsTrue" scope="session" value="true"/>
   								<h4>${bud.name } - <span>$${bud.income}</span></h4>
   								<c:set var="salary" scope="session" value="0"/>
@@ -63,24 +64,23 @@
          						<c:forEach var="temp" items="${ bud.temps}">
          							<div class="expenseWrp">	
          								<div class="icon"><!-- <i class="fa-solid fa-arrows-rotate"></i> --></div>
-         								<p class="expense type"><a href="/temporary/edit/${temp.id }/${budget.id}">${temp.type }</a></p>
+         								<p class="expense type"><a href="/temporary/edit/${temp.id }/${budgetID}">${temp.type }</a></p>
          								<p class="amount cost">$${temp.cost }</p>
-         								<p class="action"><a href="/temporary/edit/${temp.id }/${budget.id}"><i class="fa-solid fa-pencil"></i></a></p>
+         								<p class="action"><a href="/temporary/edit/${temp.id }/${budgetID}"><i class="fa-solid fa-pencil"></i></a></p>
          								<c:set var="salary" scope="session" value="${ salary + temp.cost }"/>
          							</div>
          						</c:forEach>
          						
          						<!--  Monlthy expenses -->
+         						
          						<c:forEach var="expense" items="${ bud.expenses}">
-         							<c:if test = "${expense.tag != 'inactive'}">	
-         								<div class="expenseWrp">	
-         									<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-         									<p class="expense type"><a href="/expense/edit/${expense.id }/${budget.id}">${expense.type }</a></p>
-         									<p class="amount cost">$${expense.cost }</p>
-         									<p class="action"><a href="/expense/edit/${expense.id }/${budget.id}"><i class="fa-solid fa-pencil"></i></a></p>
-         									<c:set var="salary" scope="session" value="${ salary + expense.cost }"/>
-         								</div>
-         							</c:if>
+         							<div class="expenseWrp">	
+         								<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+         								<p class="expense type"><a href="/expense/edit/${expense.id }/${budgetID}">${expense.type }</a></p>
+         								<p class="amount cost">$${expense.cost }</p>
+         								<p class="action"><a href="/expense/edit/${expense.id }/${budgetID}"><i class="fa-solid fa-pencil"></i></a></p>
+         								<c:set var="salary" scope="session" value="${ salary + expense.cost }"/>
+         							</div>					
          						</c:forEach>
          						
          						<!--  Generates Total -->
