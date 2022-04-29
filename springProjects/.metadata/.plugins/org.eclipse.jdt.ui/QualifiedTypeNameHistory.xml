@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.codingdojo.exam.models.Name"/>
     <fullyQualifiedTypeName name="java.beans.Transient"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="javax.persistence.Transient"/>
@@ -26,7 +25,6 @@
     <fullyQualifiedTypeName name="com.codingdojo.exam_joy_bundler.models.Name"/>
     <fullyQualifiedTypeName name="com.codingdojo.exam_joy_bundler.models.User"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="javax.persistence.Table"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="javax.persistence.Id"/>
@@ -49,15 +47,17 @@
     <fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
     <fullyQualifiedTypeName name="com.codingdojo.project.repositories.ExpenseRepository"/>
     <fullyQualifiedTypeName name="com.codingdojo.project.services.ExpenseService"/>
-    <fullyQualifiedTypeName name="com.codingdojo.project.models.Expense"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Min"/>
     <fullyQualifiedTypeName name="com.codingdojo.project.repositories.TemporaryRepository"/>
     <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
     <fullyQualifiedTypeName name="com.codingdojo.project.services.TemporaryService"/>
     <fullyQualifiedTypeName name="com.codingdojo.project.models.Temporary"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.codingdojo.project.models.Budget"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.codingdojo.project.models.Expense"/>
 </qualifiedTypeNameHistroy>

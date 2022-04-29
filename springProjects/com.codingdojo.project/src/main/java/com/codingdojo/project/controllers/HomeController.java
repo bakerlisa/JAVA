@@ -139,7 +139,8 @@ public class HomeController {
 	}
 	
 	@PostMapping("/api/add/budget")
-	public String addBudgetForm(Model model, @Valid @ModelAttribute("budget") Budget budget, BindingResult result) {
+	public String addBudgetForm(Model model, @Valid @ModelAttribute("budget") Budget budget, BindingResult result, @RequestParam("copy")Long copy) {
+		
 		if(result.hasErrors()) {
 			return "newSmuget.jsp";
 		}else {
@@ -148,6 +149,25 @@ public class HomeController {
 			}
 			budget.setOutcome(budget.getIncome());
 			Budget bud = budSer.createBudget(budget);
+			
+			System.out.println(copy != 0);
+			
+			if(copy != 0) {
+				Budget expenseCopy = budSer.oneBudget(copy);
+			
+				for(Expense expense : expenseCopy.getExpenses()){
+					Expense newExpense = new Expense();
+					newExpense.setBudget(bud);
+					newExpense.setCost(expense.getCost());
+					newExpense.setType(expense.getType());
+				
+					expSer.createExpense(newExpense);
+				
+					bud.setOutcome(bud.getOutcome() - newExpense.getCost());
+					budSer.updateIncome(bud);
+				}
+			}
+			
 			return "redirect:/expense/"+bud.getId(); 
 		}
 	}
@@ -273,6 +293,7 @@ public class HomeController {
 		model.addAttribute("logged",userName);
 		return "history.jsp";
 	}
+	
 	@GetMapping("/history/{budID}")
 	public String indvHistory(Model model,HttpSession session, @PathVariable("budID") Long budID) {
 		

@@ -59,10 +59,33 @@
  				<form:input path="income" type="text" />
  				<form:errors path="income" class="error"/>
  			</div>
+ 			
+ 			<c:choose>
+  				<c:when test="${userName.budgets.size() > 0}">
+   
+ 				<div>
+ 					<label for="copy">Copy previous budgets recurring Monthly payments:</label>
+ 					<select name="copy">
+ 						<option value="0">Leave Blank</option>
+ 						<c:forEach var="bud" items="${ userName.budgets }">
+ 							<option value="${bud.id}">${bud.name }</option>
+ 						</c:forEach>
+ 					</select>
+ 				</div>
+ 			</c:when>
+ 			
+ 			 <c:otherwise>
+ 			 	<input type="hidden" name="copy" value="0" />
+ 			 </c:otherwise>
+ 			 
+		</c:choose>
+ 			
+ 			
  			<div class="checkbox">
  				<input type="checkbox" name="tag" checked />
  				<label name="tag">Activate Budget:</label>	
  			</div>
+ 			
  			<div class="current">
  				<span class="title">Current active budget is: </span>
  				<c:forEach var="buds" items="${userName.budgets }">
