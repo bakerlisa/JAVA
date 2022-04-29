@@ -51,7 +51,6 @@
   							<c:set var="budgetID" scope="session" value="${bud.id}"/>
   								<c:set var="budgetsTrue" scope="session" value="true"/>
   								<h4>${bud.name } - <span>$${bud.income}</span></h4>
-  								<c:set var="salary" scope="session" value="0"/>
   								
   								<div class="expenseWrp title">	
          							<p class="icon"></p>
@@ -67,7 +66,6 @@
          								<p class="expense type"><a href="/temporary/edit/${temp.id }/${budgetID}">${temp.type }</a></p>
          								<p class="amount cost">$${temp.cost }</p>
          								<p class="action"><a href="/temporary/edit/${temp.id }/${budgetID}"><i class="fa-solid fa-pencil"></i></a></p>
-         								<c:set var="salary" scope="session" value="${ salary + temp.cost }"/>
          							</div>
          						</c:forEach>
          						
@@ -79,7 +77,7 @@
          								<p class="expense type"><a href="/expense/edit/${expense.id }/${budgetID}">${expense.type }</a></p>
          								<p class="amount cost">$${expense.cost }</p>
          								<p class="action"><a href="/expense/edit/${expense.id }/${budgetID}"><i class="fa-solid fa-pencil"></i></a></p>
-         								<c:set var="salary" scope="session" value="${ salary + expense.cost }"/>
+         						
          							</div>					
          						</c:forEach>
          						
@@ -88,12 +86,12 @@
      								<p class="icon"><!-- <i class="fa-solid fa-equals"></i> --></p>
      								<p class="expense">Unspent:</p>
      								<c:choose>	
-     									<c:when test="${bud.income - salary > 0}">
-     										<p class="amount positive">$${bud.income - salary}</p>
+     									<c:when test="${bud.outcome > 0}">
+     										<p class="amount positive">$${bud.outcome}</p>
      									</c:when>
      					
      									<c:otherwise>
-     										<p class="amount negative">$${bud.income - salary}</p>
+     										<p class="amount negative">$${bud.outcome}</p>
      									</c:otherwise>
      								</c:choose>
      							</div>

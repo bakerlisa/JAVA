@@ -162,9 +162,12 @@ public class HomeController {
 	public String addExpenseForm(Model model,@PathVariable("budID") Long budID,@Valid  @ModelAttribute("expense") Expense expense, BindingResult result) {
 		Budget budget = budSer.oneBudget(budID);
 		model.addAttribute("budget",budget);
+		
 		if(result.hasErrors()) {
 			return "redirect:/expense/"+budget.getId(); 
 		}else {
+			budget.setOutcome(budget.getOutcome() - expense.getCost());
+			budSer.updateIncome(budget);
 			expSer.createExpense(expense);
 			return "redirect:/expense/"+budget.getId(); 
 		}
@@ -183,17 +186,20 @@ public class HomeController {
 	}
 	
 	@PostMapping("/api/update/expense/{expID}/{budID}")
-	public String updateExpense(Model model, HttpSession session,@PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result ) {
+	public String updateExpense(Model model, HttpSession session,@PathVariable("expID") Long expID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("expense") Expense expense,BindingResult result,@RequestParam("old")Double old ) {
+		Budget bud = budSer.oneBudget(budID);
+		
 		if(result.hasErrors()) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
-			Budget bud = budSer.oneBudget(budID);
 			Expense exp = expSer.oneExpense(expID);
 			model.addAttribute("exp",exp);
 			model.addAttribute("bud",bud);
 			model.addAttribute("userName",userName);
 			return "editSmuget.jsp";
 		}else {
+			bud.setOutcome(bud.getOutcome() + old - expense.getCost());
+			budSer.updateIncome(bud);
 			expSer.updateExpense(expense);
 			return "redirect:/dashboard";
 		}
@@ -220,6 +226,8 @@ public class HomeController {
 		if(!result.hasErrors()) {
 			tempSer.createTemp(temporary);
 		}
+		bud.setOutcome(bud.getOutcome() - temporary.getCost());
+		budSer.updateIncome(bud);
 		return "redirect:/temporary/"+bud.getId();
 	}
 	
@@ -236,13 +244,16 @@ public class HomeController {
 	}
 	
 	@PostMapping("/api/update/temporary/{tempID}/{budID}")
-	public String updateTemporary(Model model, HttpSession session,@PathVariable("tempID") Long tempID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("temporary") Temporary temporary,BindingResult result ) {
+	public String updateTemporary(Model model, HttpSession session,@PathVariable("tempID") Long tempID,@PathVariable("budID") Long budID,@Valid @ModelAttribute("temporary") Temporary temporary,BindingResult result, @RequestParam("old")Double old ) {
+		Budget bud = budSer.oneBudget(budID);
 		if(result.hasErrors()) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
 			model.addAttribute("userName",userName);
 			return "editTemporary.jsp";
 		}else {
+			bud.setOutcome(bud.getOutcome() + old - temporary.getCost());
+			budSer.updateIncome(bud);
 			tempSer.updateTemporary(temporary);
 			return "redirect:/dashboard";
 		}
@@ -261,6 +272,13 @@ public class HomeController {
 		User userName = userSer.oneUser(loggedID);
 		model.addAttribute("logged",userName);
 		return "history.jsp";
+	}
+	@GetMapping("/history/{butID}")
+	public String indvHistory(Model model,HttpSession session) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		model.addAttribute("logged",userName);
+		return "indvHistory.jsp";
 	}
 
 	// ================================ Clear ===============================

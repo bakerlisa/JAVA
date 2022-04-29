@@ -70,7 +70,18 @@
  						<c:forEach var="bud" items="${logged.budgets }">
  								<div class="budgetsIndv">	
  								<a class="title" href="/history/${bud.id }">${bud.name }</a>
- 								<p class="amount">Budget: $${bud.income }</p>
+ 								<p class="amount">
+ 									<c:choose>
+  										<c:when test="${bud.outcome > 0 }">
+											<i class="fa-solid fa-caret-up"></i>
+  										</c:when>
+  										
+  										<c:otherwise>
+  											<i class="fa-solid fa-caret-down"></i>
+										</c:otherwise>
+									</c:choose>
+ 									Budget: $${bud.income }
+ 								</p>
  								<p><fmt:formatDate value="${bud.createdAt }" pattern="MMMMM"/> <fmt:formatDate value="${bud.createdAt }" pattern="y"/> </p>
  							</div>
  						</c:forEach>

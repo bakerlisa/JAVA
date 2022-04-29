@@ -22,7 +22,7 @@
 	<nav>
     	<div>		
     		<a href="/dashboard" class="logo">SMUGETOR</a>
-    		<span>${logged.firstName } ${logged.lastName }</span>
+    		<span>${userName.firstName } ${userName.lastName }</span>
     	</div>
     	<div class="navWrp">
     		<a href="/new/smuget" class="tooltip"><i class="fa-solid fa-circle-dollar-to-slot"></i><span class="tooltiptext">New Budget</span></a>
@@ -41,6 +41,7 @@
  	
  	<div class="container">
  		<h2>New Smuget</h2>
+ 	
  		
  		<form:form action="/api/add/budget" method="post" modelAttribute="budget">
  			<div>
@@ -71,7 +72,6 @@
  				</c:forEach>
  			</div>
 
- 			<input type="hidden" name="outcome" value="" />
  			<input type="hidden" name="user" value="${userName.id }" />
  			<input type="submit" value="Next" class="submit"/>
  		</form:form>

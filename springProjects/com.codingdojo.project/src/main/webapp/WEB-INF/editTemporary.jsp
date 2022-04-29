@@ -51,12 +51,8 @@
  					<form:input type="number" path="cost" step="0.01" placeholder="$..." value="${temp.cost }" />
  					<form:errors class="error" path="cost"/>
  				</div>
- 				<%-- <div>
- 					<form:select path="tag">
- 						<option value="active">Active</option>
- 						<option value="inactive">Inactive</option>
- 					</form:select>
- 				</div> --%>
+ 				
+				<input type="hidden" name="old" value="${temp.cost }" />
  				<form:input type="hidden" path="id"  value="${temp.id }"/>
  				<form:input type="hidden" path="budget"  value="${bud.id }"/>
  				<input class="submit" type="submit" value="Edit" />

@@ -36,7 +36,6 @@ public class Budget {
 	private double income;
 	
 	private double outcome;
-	
 	private String tag;
 	
 	@Column(updatable=false)

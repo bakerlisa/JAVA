@@ -8,7 +8,7 @@
 	--red:#ff2f00;
 	--orange:#fb9c22;
 	--purple:#2B182E;
-	--green:#1C6929;
+	--green:#30a544;
 }
 
 .red{color:var(--red);}
@@ -55,6 +55,10 @@ hr{width: 100%; display: block; margin: 25px 0;}
 	.cancel{margin: 25px 0; color:var(--pink);   font-size: 16px;}
 	.cancel:hover{cursor: pointer;  color:var(--orange);}
 
+/* fontawesome */
+.fa-caret-up{color:var(--green);}
+.fa-caret-down{color:var(--red);}
+
 /* NAV */
 nav{padding:  25px; text-align: right;  display: flex; align-items: center; justify-content: space-between;flex-wrap: wrap; background-color:var(--black); position:fixed; width: 100%; z-index:100;}
 nav > div{text-align:left;}
@@ -65,6 +69,7 @@ nav a:hover{cursor: pointer; color: var(--orange);}
 nav form{padding-left: 10px; display:flex;}
 nav form input{width: 50%;}
 nav .logo{font-size:25px; padding: 0;}
+	nav .logo:hover{color:var(--white);}
 
 /* FORM */
 form{margin:25px auto 0 auto; width: 100%;}
@@ -196,6 +201,7 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .editBud form .flex, .editTemp form .flex{justify-content:space-between;}
 .editBud form span div, .editTemp form span div{width: calc(50% - 20px);}
 .editBud .banner, .editTemp .banner{background-image: url("/img/GOOSE.jpg");}
+.editBud span div input, .editTemp span div input{width: 100%;} 
 .editBud .txtWrp, .editTemp .txtWrp{left:25px; right: initial; bottom:50px; text-align:left;}
 .editBud h1{font-size:75px;}
 .editBud p{font-size:24px;}

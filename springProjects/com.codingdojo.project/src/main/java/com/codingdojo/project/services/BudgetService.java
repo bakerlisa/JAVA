@@ -38,4 +38,18 @@ public class BudgetService {
 		}
 	}
 	
+	public Budget updateIncome(Budget budget) {
+		Optional<Budget> optBud = budRepo.findById(budget.getId());
+		if(optBud.isPresent()) {
+			Budget thisBud = optBud.get();
+			
+			thisBud.setIncome(budget.getIncome());
+			
+			return budRepo.save(thisBud);
+			
+		}else {
+			return null;
+		}
+	}
+	
 }
