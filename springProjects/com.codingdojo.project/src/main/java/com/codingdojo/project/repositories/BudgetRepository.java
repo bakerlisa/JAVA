@@ -18,5 +18,5 @@ public interface BudgetRepository extends CrudRepository<Budget, Long> {
 	Optional<Budget> findByTag(String active);
 	
 	
-	List<Budget> findByCreatedAtLike(String data);
+	List<Budget> findBySearchDateLike(String data);
 }

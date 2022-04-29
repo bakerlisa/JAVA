@@ -41,7 +41,7 @@
  	<div class="container">
  		<h2>Results: </h2>
  		<p>Work in progress!</p>
- 		
+ 		${allBugets.size()}
  		<div class="pervious">
  			<div class="allBudWrp">
  				<c:choose>

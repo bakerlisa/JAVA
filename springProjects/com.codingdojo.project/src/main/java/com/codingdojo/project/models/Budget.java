@@ -62,6 +62,8 @@ public class Budget {
 		super();
 	}
 
+	
+
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
 			@NotNull(message = "You must input an income") @Min(1) double income, double outcome, String tag,
 			String searchDate) {
@@ -87,6 +89,8 @@ public class Budget {
 		this.temps = temps;
 	}
 
+
+
 	public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
 			@NotNull(message = "You must input an income") @Min(1) double income, double outcome, String tag,
 			String searchDate, Date createdAt, Date updatedAt, User user, List<Expense> expenses,
@@ -104,6 +108,8 @@ public class Budget {
 		this.expenses = expenses;
 		this.temps = temps;
 	}
+
+
 
 	// ================================ GETTERS / SETTERS ================================
 	public Long getId() {

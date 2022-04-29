@@ -139,7 +139,7 @@ public class HomeController {
 	}
 	
 	@PostMapping("/api/add/budget")
-	public String addBudgetForm(Model model, @Valid @ModelAttribute("budget") Budget budget, BindingResult result, @RequestParam("copy")Long copy) {
+	public String addBudgetForm(Model model, @Valid @ModelAttribute("budget") Budget budget, BindingResult result, @RequestParam("copy")Long copy,HttpSession session) {
 		
 		if(result.hasErrors()) {
 			return "newSmuget.jsp";
@@ -151,17 +151,20 @@ public class HomeController {
 			Budget bud = budSer.createBudget(budget);
 			
 //			Date
-			int month = bud.getCreatedAt().getMonth();
-			int year = bud.getCreatedAt().getYear()+ 1900; 
+//			int ID = (int) session.getAttribute("user_id");
+//			int month = bud.getCreatedAt().getMonth() + 1;
+//			int year = bud.getCreatedAt().getYear()+ 1900; 
+//			
+//			if(month < 10) {
+//				int data = ID + year + 0 + month;
+//				budget.setSearchDate(data);
+//			}else {
+//				int data = ID + year + month;
+//				budget.setSearchDate(data);
+//			}
+		
 			
-			if(month < 10) {
-				String data = Integer.toString(year) + "/0" + Integer.toString(month);
-				budget.setSearchDate(data);
-			}else {
-				String data = Integer.toString(year) + "/" + Integer.toString(month);
-				budget.setSearchDate(data);
-			}
-			budSer.setSearchDate(budget);
+			budSer.updateBudgetSearchDate(budget);
 			
 			if(copy != 0) {
 				Budget expenseCopy = budSer.oneBudget(copy);
@@ -320,7 +323,8 @@ public class HomeController {
 	@PostMapping("/api/search")
 	public String search(Model model,@RequestParam("month")int month,@RequestParam("year")int year) {
 		String data = year + "/"+ month;
-		List<Budget> bugets = budSer.findSearchResults(data);
+		List<Budget> allBugets = budSer.findSearchResults(data);
+		model.addAttribute("allBugets",allBugets);
 		return "search.jsp";
 	}
 
