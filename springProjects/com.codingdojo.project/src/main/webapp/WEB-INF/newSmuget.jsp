@@ -70,10 +70,8 @@
  					</c:if>
  				</c:forEach>
  			</div>
- 			
 
-						
-
+ 			<input type="hidden" name="outcome" value="" />
  			<input type="hidden" name="user" value="${userName.id }" />
  			<input type="submit" value="Next" class="submit"/>
  		</form:form>

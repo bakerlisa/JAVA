@@ -146,6 +146,7 @@ public class HomeController {
 			if(budget.getTag().equals("on")) {
 				budSer.removeCurrentActive("on");
 			}
+			budget.setOutcome(budget.getIncome());
 			Budget bud = budSer.createBudget(budget);
 			return "redirect:/expense/"+bud.getId(); 
 		}

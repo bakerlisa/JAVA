@@ -62,36 +62,35 @@ public class Budget {
 	}
 
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, String tag) {
+			@NotNull(message = "You must input an income") double income, double outcome, String tag, User user,
+			List<Expense> expenses, List<Temporary> temps) {
 		super();
 		this.name = name;
 		this.income = income;
-		this.tag = tag;
-	}
-
-
-
-	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, String tag, User user, List<Expense> expenses,
-			List<Temporary> temps) {
-		super();
-		this.name = name;
-		this.income = income;
+		this.outcome = outcome;
 		this.tag = tag;
 		this.user = user;
 		this.expenses = expenses;
 		this.temps = temps;
 	}
 
-
+	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
+			@NotNull(message = "You must input an income") double income, double outcome, String tag) {
+		super();
+		this.name = name;
+		this.income = income;
+		this.outcome = outcome;
+		this.tag = tag;
+	}
 
 	public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, String tag, Date createdAt, Date updatedAt,
-			User user, List<Expense> expenses, List<Temporary> temps) {
+			@NotNull(message = "You must input an income") double income, double outcome, String tag, Date createdAt,
+			Date updatedAt, User user, List<Expense> expenses, List<Temporary> temps) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.income = income;
+		this.outcome = outcome;
 		this.tag = tag;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
@@ -99,8 +98,6 @@ public class Budget {
 		this.expenses = expenses;
 		this.temps = temps;
 	}
-
-
 
 	// ================================ GETTERS / SETTERS ================================
 	public Long getId() {
@@ -160,7 +157,13 @@ public class Budget {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
-	
+	public double getOutcome() {
+		return outcome;
+	}
+
+	public void setOutcome(double outcome) {
+		this.outcome = outcome;
+	}
 
 	@PreUpdate
     protected void onUpdate(){
