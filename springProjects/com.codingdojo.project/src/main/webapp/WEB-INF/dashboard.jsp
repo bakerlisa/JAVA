@@ -62,7 +62,58 @@
          						<!--  Temporary expenses -->
          						<c:forEach var="temp" items="${ bud.temps}">
          							<div class="expenseWrp">	
-         								<div class="icon"><!-- <i class="fa-solid fa-arrows-rotate"></i> --></div>
+         								<div class="icon">
+											<c:choose>
+												<c:when test="${temp.category.equals('birthday')}">
+													<i class="fa-solid fa-gift"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('clothing')}">
+													<i class="fa-solid fa-shirt"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('date')}">
+													<i class="fa-solid fa-champagne-glasses"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('education')}">
+													<i class="fa-solid fa-book"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('entertainment')}">
+													<i class="fa-solid fa-film"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('food')}">
+													<i class="fa-solid fa-apple-whole"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('kids')}">
+													<i class="fa-solid fa-children"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('miscellaneous')}">
+													<i class="fa-solid fa-cart-shopping"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('pet')}">
+													<i class="fa-solid fa-dog"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('tax')}">
+													<i class="fa-solid fa-sack-dollar"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('transportation')}">
+													<i class="fa-solid fa-car"></i>
+												</c:when>
+
+												<c:when test="${temp.category.equals('travel')}">
+													<i class="fa-solid fa-plane"></i>
+												</c:when>
+											</c:choose>
+
+										 </div>
          								<p class="expense type"><a href="/temporary/edit/${temp.id }/${budgetID}">${temp.type }</a></p>
          								<p class="amount cost">$${temp.cost }</p>
          								<p class="action"><a href="/temporary/edit/${temp.id }/${budgetID}"><i class="fa-solid fa-pencil"></i></a></p>

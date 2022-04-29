@@ -65,8 +65,8 @@
  				<c:choose>
   					<c:when test="${logged.budgets.size() > 0}">
  						<c:forEach var="bud" items="${logged.budgets }">
- 							<div class="budgetsIndv">	
- 								<a class="title" href="/history/${bud.id }">${bud.name }</a>
+ 							<a href="/history/${bud.id }" class="budgetsIndv">	
+ 								<p class="title" >${bud.name }</p>
  								<p class="amount">
  									<c:choose>
   										<c:when test="${bud.outcome > 0 }">
@@ -80,7 +80,7 @@
  									Budget: $${bud.income }
  								</p>
  								<p><fmt:formatDate value="${bud.createdAt }" pattern="MMMMM"/> <fmt:formatDate value="${bud.createdAt }" pattern="y"/> </p>
- 							</div>
+							</a>
  						</c:forEach>
  					</c:when>
  				</c:choose>

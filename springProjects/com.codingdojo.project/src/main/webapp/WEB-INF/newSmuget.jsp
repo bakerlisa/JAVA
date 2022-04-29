@@ -68,7 +68,16 @@
  					<select name="copy">
  						<option value="0">Leave Blank</option>
  						<c:forEach var="bud" items="${ userName.budgets }">
- 							<option value="${bud.id}">${bud.name }</option>
+							<c:choose>
+								<c:when test='${bud.tag.equals("on")}'>
+									<option class="current" value="${bud.id}">** ${bud.name }</option>
+								</c:when>
+
+								<c:otherwise>
+									<option value="${bud.id}">${bud.name }</option>
+								</c:otherwise>
+							  </c:choose>
+						 		
  						</c:forEach>
  					</select>
  				</div>

@@ -170,6 +170,7 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .new .checkbox{display:flex; align-items:center; justify-content:start ;}
 .new .checkbox input{width: 25px; height:20px;}
 .new .checkbox label{width: calc(100% - 25px); padding-left: 10px; padding-bottom:0;}
+.new option.current{font-weight:900; background-color:var(--black);}
 
 /* expense */
 .expense .banner{background-image: url("/img/cat.jpg");}
