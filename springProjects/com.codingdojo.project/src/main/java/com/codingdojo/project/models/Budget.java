@@ -38,6 +38,7 @@ public class Budget {
 	
 	private double outcome;
 	private String tag;
+	private String searchDate;
 	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -62,36 +63,41 @@ public class Budget {
 	}
 
 	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, double outcome, String tag, User user,
-			List<Expense> expenses, List<Temporary> temps) {
+			@NotNull(message = "You must input an income") @Min(1) double income, double outcome, String tag,
+			String searchDate) {
 		super();
 		this.name = name;
 		this.income = income;
 		this.outcome = outcome;
 		this.tag = tag;
+		this.searchDate = searchDate;
+	}
+
+	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
+			@NotNull(message = "You must input an income") @Min(1) double income, double outcome, String tag,
+			String searchDate, User user, List<Expense> expenses, List<Temporary> temps) {
+		super();
+		this.name = name;
+		this.income = income;
+		this.outcome = outcome;
+		this.tag = tag;
+		this.searchDate = searchDate;
 		this.user = user;
 		this.expenses = expenses;
 		this.temps = temps;
 	}
 
-	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, double outcome, String tag) {
-		super();
-		this.name = name;
-		this.income = income;
-		this.outcome = outcome;
-		this.tag = tag;
-	}
-
 	public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			@NotNull(message = "You must input an income") double income, double outcome, String tag, Date createdAt,
-			Date updatedAt, User user, List<Expense> expenses, List<Temporary> temps) {
+			@NotNull(message = "You must input an income") @Min(1) double income, double outcome, String tag,
+			String searchDate, Date createdAt, Date updatedAt, User user, List<Expense> expenses,
+			List<Temporary> temps) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.income = income;
 		this.outcome = outcome;
 		this.tag = tag;
+		this.searchDate = searchDate;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.user = user;
@@ -163,6 +169,14 @@ public class Budget {
 
 	public void setOutcome(double outcome) {
 		this.outcome = outcome;
+	}
+
+	public String getSearchDate() {
+		return searchDate;
+	}
+
+	public void setSearchDate(String searchDate) {
+		this.searchDate = searchDate;
 	}
 
 	@PreUpdate

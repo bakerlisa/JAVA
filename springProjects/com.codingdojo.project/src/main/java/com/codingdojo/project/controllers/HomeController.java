@@ -150,7 +150,18 @@ public class HomeController {
 			budget.setOutcome(budget.getIncome());
 			Budget bud = budSer.createBudget(budget);
 			
-			System.out.println(copy != 0);
+//			Date
+			int month = bud.getCreatedAt().getMonth();
+			int year = bud.getCreatedAt().getYear()+ 1900; 
+			
+			if(month < 10) {
+				String data = Integer.toString(year) + "/0" + Integer.toString(month);
+				budget.setSearchDate(data);
+			}else {
+				String data = Integer.toString(year) + "/" + Integer.toString(month);
+				budget.setSearchDate(data);
+			}
+			budSer.setSearchDate(budget);
 			
 			if(copy != 0) {
 				Budget expenseCopy = budSer.oneBudget(copy);
@@ -308,7 +319,8 @@ public class HomeController {
 	// ================================ Search ===============================
 	@PostMapping("/api/search")
 	public String search(Model model,@RequestParam("month")int month,@RequestParam("year")int year) {
-		List<Budget> bugets = budSer.findSearchResults(month,year);
+		String data = year + "/"+ month;
+		List<Budget> bugets = budSer.findSearchResults(data);
 		return "search.jsp";
 	}
 

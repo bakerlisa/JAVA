@@ -53,7 +53,21 @@ public class BudgetService {
 		}
 	}
 	
-	public List<Budget> findSearchResults(int month, int year){
-		return budRepo.getByYearAndMonth(month,year);
+	public List<Budget> findSearchResults(String data){
+		return budRepo.findByCreatedAtLike(data);
+	}
+	
+	public Budget setSearchDate(Budget budget) {
+		Optional<Budget> optBud = budRepo.findById(budget.getId());
+		if(optBud.isPresent()) {
+			Budget thisBud = optBud.get();
+			
+			thisBud.setSearchDate(budget.getSearchDate());
+			
+			return budRepo.save(thisBud);
+			
+		}else {
+			return null;
+		}
 	}
 }
