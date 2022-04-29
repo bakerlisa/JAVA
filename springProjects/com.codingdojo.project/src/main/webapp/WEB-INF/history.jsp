@@ -34,7 +34,7 @@
     <div class="banner">
     	<div class="txtWrp">	
     		<h1>All Budgets</h1>
-    		<p class="subtitle">Stop fussing. It's only bad if<br/> you didn't follow the budget </p>
+    		<p class="subtitle">Stop. No one needs you as an alarm anymore</p>
     	</div>
  	</div>
  	
@@ -59,7 +59,26 @@
  			<input type="submit" value="Search" class="submit"/>
  		</form>
  		
+ 		<div class="pervious">
+ 			<%java.text.DateFormat df = new java.text.SimpleDateFormat("EEEE "); %>
+			<%java.text.DateFormat df1 = new java.text.SimpleDateFormat("d "); %>
+			<%java.text.DateFormat df2 = new java.text.SimpleDateFormat("MMMM, y "); %>
  		
+ 			<div class="allBudWrp">
+ 				<c:choose>
+  					<c:when test="${logged.budgets.size() > 0}">
+ 						<c:forEach var="bud" items="${logged.budgets }">
+ 								<div class="budgetsIndv">	
+ 								<a class="title" href="/history/${bud.id }">${bud.name }</a>
+ 								<p class="amount">Budget: $${bud.income }</p>
+ 								<p><fmt:formatDate value="${bud.createdAt }" pattern="MMMMM"/> <fmt:formatDate value="${bud.createdAt }" pattern="y"/> </p>
+ 							</div>
+ 						</c:forEach>
+ 					</c:when>
+ 				</c:choose>
+ 			</div>
+ 		
+ 		</div>
  	</div>
  	
     <footer>

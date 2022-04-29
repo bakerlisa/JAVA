@@ -35,6 +35,8 @@ public class Budget {
 	@NotNull(message="You must input an income")
 	private double income;
 	
+	private double outcome;
+	
 	private String tag;
 	
 	@Column(updatable=false)

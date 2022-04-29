@@ -59,8 +59,6 @@ public class HomeController {
 		if(session.getAttribute("user_id") != null ) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
-		
-			
 			model.addAttribute("logged",userName);
 		
 				return "dashboard.jsp";
@@ -257,7 +255,10 @@ public class HomeController {
 	
 	// ================================ History ===============================
 	@GetMapping("/history")
-	public String history(Model model) {
+	public String history(Model model,HttpSession session) {
+		Long loggedID = (Long) session.getAttribute("user_id");
+		User userName = userSer.oneUser(loggedID);
+		model.addAttribute("logged",userName);
 		return "history.jsp";
 	}
 

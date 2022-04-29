@@ -215,13 +215,22 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 /* history */
 .history .banner{background-image: url("/img/chicken.jpg");}
 .history .banner .txtWrp{position: absolute; top: 125px; left:25px; right: initial;}
-.history .banner  h1{font-size:150px; color:var(--white); text-shadow: 5px 5px 10px black; }
+.history .banner  h1{font-size:100px; color:var(--white); text-shadow: 5px 5px 10px black; }
 .history .banner p{font-size:30px; text-align:left; color:var(--white); text-shadow: 5px 5px 10px black; padding-top:0;}
 	/* search */
 	.search-budget{display: flex;}
 	.search-budget select{margin-right:10px;}
 	.search-budget .year{margin-left: 10px;}
 	.search-budget .submit{margin-left: 10px; width: 100%; margin-top: 0; padding: 16px;}
+	/* budgetsIndv */
+	.allBudWrp{display:flex; align-items:start; justify-content:center; flex-wrap:wrap; padding: 25px; color:var(--purple);}
+	.budgetsIndv{width: calc(50% - 20px); margin: 10px; padding: 25px; border:solid 2px var(--purple); text-align:center; }
+	.budgetsIndv .title{font-size:35px;  padding-bottom:10px; display:block; transition:all .25s ease-in;}
+	.budgetsIndv .amount{font-weight:600; padding-bottom:10px; margin-bottom:10px; position:relative; }
+		.budgetsIndv .amount:before{content:''; height:2px; width: 25px; background-color:var(--orange); position:absolute; bottom: 0;left: 0; right: 0; margin: 0 auto; transition:all .25s ease-in;}
+			/* hover */
+			.budgetsIndv:hover{cursor: pointer; background-color:var(--purple); color:var(--white); transition:all .25s ease-in;}
+			.budgetsIndv:hover .title{color:var(--white); transition:all .25s ease-in;}
 	
 /* clear */
 .clear .banner{background-image: url("/img/squirel.png"); }
