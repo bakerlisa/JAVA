@@ -32,12 +32,12 @@
     	</div>
     </nav>
     
-    <div class="banner">
+    <!-- <div class="banner">
     	<div class="txtWrp">
     		<h1>Edit Expense </h1>
     		<p class="subtitle">Don't be goosed. 80% of people do budget </p>
     	</div>
-    </div>
+    </div> -->
     
     <div class="container"> <!-- Beginning of Container -->
 		<h2>Edit Recurring Payment: <span>${exp.type }</span></h2>

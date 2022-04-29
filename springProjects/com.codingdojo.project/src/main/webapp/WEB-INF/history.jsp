@@ -33,7 +33,7 @@
     
      <div class="banner">
     	<div class="txtWrp">	
-    		<h1>Temporary Expense</h1>
+    		<h1>Smuget History</h1>
     		<p class="subtitle">Wait wait wait...you bought what for how much?</p>
     	</div>
  	</div>

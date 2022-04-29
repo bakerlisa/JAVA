@@ -204,6 +204,7 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .temp .button{margin-left:auto}
 
 /* editExpense / editTemp */
+.editBud .container{padding-top:125px;}
 .editBud form .flex, .editTemp form .flex{justify-content:space-between;}
 .editBud form span div{width: calc(50% - 20px);}
 .editBud .banner, .editTemp .banner{background-image: url("/img/GOOSE.jpg");}
@@ -215,6 +216,7 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .editBud .buttonWrp, .editTemp .buttonWrp{display: flex; justify-content: space-between; align-items: center;}
 
 /* editTemp */
+.editTemp .container{padding-top:125px;}
 .editTemp .banner{background-image: url("/img/bear.jpg");}
 .editTemp .red{text-align: center;}
 .editTemp .submit{max-width:200px;}
@@ -255,6 +257,13 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .indvhistory .expenseWrp.totals{max-width:600px; margin: 0 auto; font-size:18px; font-weight: 600; padding-top: 10px; margin-top: 10px; border-top:solid 1px var(--gray);}
 	.amount.negative{color:var(--red);}
 	.amount.positive{color:var(--green);}
+
+/* Search */
+.search .banner{background-image: url("/img/squirel.png");}
+.search .subtitle{text-align: left;}
+.search .txtWrp{bottom: initial; top:125px; color:var(--white); right:initial; left:25px; text-align: left;}
+.search .txtWrp h1{text-align: left;}
+.search .subtitle{font-size: 25px; }
 
 /* clear */
 .clear .banner{background-image: url("/img/squirel.png"); }

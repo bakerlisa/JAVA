@@ -53,5 +53,7 @@ public class BudgetService {
 		}
 	}
 	
-	
+	public List<Budget> findSearchResults(int month, int year){
+		return budRepo.getByYearAndMonth(month,year);
+	}
 }

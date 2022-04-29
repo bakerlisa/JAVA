@@ -64,7 +64,7 @@
   				<c:when test="${userName.budgets.size() > 0}">
    
  				<div>
- 					<label for="copy">Copy previous budgets recurring Monthly payments:</label>
+ 					<label for="copy">Copy a previous months recurring payments: </label>
  					<select name="copy">
  						<option value="0">Leave Blank</option>
  						<c:forEach var="bud" items="${ userName.budgets }">

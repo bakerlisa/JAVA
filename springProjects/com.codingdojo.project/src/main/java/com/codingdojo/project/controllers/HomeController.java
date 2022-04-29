@@ -306,7 +306,11 @@ public class HomeController {
 	}
 	
 	// ================================ Search ===============================
-	
+	@PostMapping("/api/search")
+	public String search(Model model,@RequestParam("month")int month,@RequestParam("year")int year) {
+		List<Budget> bugets = budSer.findSearchResults(month,year);
+		return "search.jsp";
+	}
 
 	// ================================ Clear ===============================
 	@GetMapping("/clear")
