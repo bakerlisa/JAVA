@@ -32,10 +32,10 @@ public class Budget {
 	@Size(min=2,max=100,message="Name cannot be blank")
 	private String name;
 	
-	private double total;
-	
 	@NotNull(message="You must input an income")
 	private double income;
+	
+	private String tag;
 	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -52,45 +52,49 @@ public class Budget {
     private List<Expense> expenses;
     
     @OneToMany(mappedBy="budget", fetch = FetchType.LAZY)
-    private List<Temporary> temporary;
+    private List<Temporary> temps;
 
     // ================================ CONSTRUCTORS ================================
     public Budget() {
 		super();
 	}
-    public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
-			double total, @NotEmpty(message = "You must input an income") double income, Date createdAt, Date updatedAt,
-			User user, List<Expense> expenses) {
+
+	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
+			@NotNull(message = "You must input an income") double income, @NotNull String tag) {
+		super();
+		this.name = name;
+		this.income = income;
+		this.tag = tag;
+	}
+
+	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
+			@NotNull(message = "You must input an income") double income, @NotNull String tag, User user,
+			List<Expense> expenses, List<Temporary> temps) {
+		super();
+		this.name = name;
+		this.income = income;
+		this.tag = tag;
+		this.user = user;
+		this.expenses = expenses;
+		this.temps = temps;
+	}
+
+	public Budget(Long id, @NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name,
+			@NotNull(message = "You must input an income") double income, @NotNull String tag, Date createdAt,
+			Date updatedAt, User user, List<Expense> expenses, List<Temporary> temps) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.total = total;
 		this.income = income;
+		this.tag = tag;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.user = user;
 		this.expenses = expenses;
+		this.temps = temps;
 	}
 
-	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name, double total,
-			@NotEmpty(message = "You must input an income") double income, User user, List<Expense> expenses) {
-		super();
-		this.name = name;
-		this.total = total;
-		this.income = income;
-		this.user = user;
-		this.expenses = expenses;
-	}
-
-	public Budget(@NotNull @Size(min = 2, max = 100, message = "Name cannot be blank") String name, double total,
-			@NotEmpty(message = "You must input an income") double income) {
-		super();
-		this.name = name;
-		this.total = total;
-		this.income = income;
-	}
-    
-    // ================================ GETTERS / SETTERS ================================
+	// ================================ GETTERS / SETTERS ================================
 	public Long getId() {
 		return id;
 	}
@@ -102,12 +106,6 @@ public class Budget {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public double getTotal() {
-		return total;
-	}
-	public void setTotal(double total) {
-		this.total = total;
 	}
 	public double getIncome() {
 		return income;
@@ -139,13 +137,22 @@ public class Budget {
 	public void setExpenses(List<Expense> expenses) {
 		this.expenses = expenses;
 	}
-	public List<Temporary> getTemporary() {
-		return temporary;
+	public List<Temporary> getTemps() {
+		return temps;
 	}
-	public void setTemporary(List<Temporary> temporary) {
-		this.temporary = temporary;
+
+	public void setTemps(List<Temporary> temps) {
+		this.temps = temps;
 	}
-	
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
 	@PreUpdate
     protected void onUpdate(){
         this.updatedAt = new Date();

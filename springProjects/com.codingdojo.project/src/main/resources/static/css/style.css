@@ -130,6 +130,7 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 .dash h5{font-size: 25px;}
 .dash .button-wrp{display: flex; align-items:flex-end; justify-content:end; flex-wrap:wrap;}
 .dash .temporary{background-color:transparent; border-color:var(--purple); color:var(--purple); width: 250px; margin-right: 10px;}
+	.dash .temporary:hover{background-color:var(--purple); color:var(--white);}
 .dash .expenseWrp{display:flex; align-items:start; justify-content:start; flex-wrap:wrap; padding: 10px;}
 .dash .expenseWrp.title{font-size:18px; font-weight: 600; padding-bottom: 10px; margin-bottom: 10px; border-bottom:solid 1px var(--gray);}
 .dash .expenseWrp .icon{width: 50px;}
@@ -140,31 +141,43 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 	.dash .expenseWrp .amount.positive{color:var(--green);}
 	.dash .expenseWrp .amount.negative{color:var(--red);}
 .dash .recurring{margin-right: 0; background-color:var(--purple); color: var(--white); width: 250px;}
+	.dash .recurring:hover{background-color:transparent; color:var(--purple);}
 .dash .totals{font-size:18px; font-weight: 600; padding-bottom: 10px; padding-bottom: 10px; padding-top: 20px; margin-bottom: 10px; margin-top:25px; border-top:solid 1px var(--gray);}
 .dash .action{width: 100px; text-align: right;}
 	.dash .action:hover i{cursor: pointer; color:var(--orange);}
+.dash .clear{border:solid  2px var(--red); color:var(--red); padding: 10px 25px; margin-left: 10px;}
+	.dash .clear:hover{background-color:var(--red); color:var(--white);}
 
 /* settings */
 .settings .banner{background-image: url("/img/giraffe.jpg");}
 .settings h1{font-size:75px;}
 .settings p{font-size:26px; }
-.settings .txtWrp{ 	color:var(--white); bottom:initial; top:125px; left:25px; right: initial}
+.settings .txtWrp{ 	color:var(--white); bottom:initial; transform:translateY(-50%); top:50%; left:25px; right: initial}
 
 /* Edit */
 .new .banner{background-image: url("/img/cow.jpg");}
 .new .txtWrp{ bottom:200px;}
 .new .txtWrp h1{text-align: left; width: 100%; display: block; font-size:85px; }
 .new .subtitle{text-align:left; padding: 0; font-size: 24px;}
+.new .current{width: 100%; display: flex; flex-wrap:wrap; text-align: left; justify-content: start;}
+.new .current .title{font-weight: 600;  } 
+.new .current span{display:initial; width:initial; padding-right: 5px;}
+.new .checkbox{display:flex; align-items:center; justify-content:start ;}
+.new .checkbox input{width: 25px; height:20px;}
+.new .checkbox label{width: calc(100% - 25px); padding-left: 10px; padding-bottom:0;}
 
 /* expense */
 .expense .banner{background-image: url("/img/cat.jpg");}
 .expense .banner .txtWrp{position: absolute; top: 100px; right: 50p;  font-size: 100px; text-align:left; color:var(--white);}
 .expense .banner .txtWrp h1{font-size:100px; text-align:left;}
 .expense .banner .txtWrp .subtitle{text-align:left; font-size:25px;}
+.expense h5{text-align:left; padding:25px 0 10px; font-size:22px;}
 .expense h4{text-align: center; padding-bottom: 25px; font-weight: 300; padding-top: 10px;}
 .expense form .submit{width: 100px; margin: 0; padding: 17px 0; background-color:var(--purple); color:var(--white);}
+.expense li{width: 100%; padding: 0 0 10px 0;}
+.expense .button{margin-left:auto}
 
-/* Tooltip */
+/* Tool tip */
 .tooltip{position: relative; display: inline-block; border-bottom: 1px dotted black;}
 .tooltip .tooltiptext{visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; right: 0px; bottom:-40px;}
 .tooltip:hover .tooltiptext{visibility: visible;}
@@ -203,3 +216,7 @@ footer{background-color:var(--orange); color:var(--white); text-align:center; pa
 	.search-budget select{margin-right:10px;}
 	.search-budget .year{margin-left: 10px;}
 	.search-budget .submit{margin-left: 10px; width: 100%; margin-top: 0; padding: 16px;}
+	
+/* clear */
+.clear .banner{background-image: url("/img/squirel.png"); }
+.clear .banner h1{color:var(--white);}

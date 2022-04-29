@@ -58,7 +58,22 @@
  				</span>
  				<form:input path="income" type="text" />
  			</div>
+ 			<div class="checkbox">
+ 				<input type="checkbox" name="tag" />
+ 				<label name="tag">Activate Budget:</label>	
+ 			</div>
+ 			<div class="current">
+ 				<span class="title">Current active budget is: </span>
+ 				<c:forEach var="buds" items="${userName.budgets }">
+ 					<c:if test='${buds.tag.equals("on")}'>		
+ 						<span>${buds.name }</span>
+ 					</c:if>
+ 				</c:forEach>
+ 			</div>
  			
+
+						
+
  			<input type="hidden" name="user" value="${userName.id }" />
  			<input type="submit" value="Next" class="submit"/>
  		</form:form>

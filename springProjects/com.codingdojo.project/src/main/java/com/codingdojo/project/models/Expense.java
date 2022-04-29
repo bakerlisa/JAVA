@@ -38,7 +38,6 @@ public class Expense {
 	
 	private String tag;
 	
-	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;

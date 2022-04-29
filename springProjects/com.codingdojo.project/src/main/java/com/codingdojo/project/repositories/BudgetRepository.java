@@ -1,6 +1,7 @@
 package com.codingdojo.project.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 
@@ -18,4 +19,6 @@ public interface BudgetRepository extends CrudRepository<Budget, Long> {
 	
 //	@Query("select e from Event e where year(e.eventDate) = ?1 and month(e.eventDate) = ?2")
 //	List<Budget> getByYearAndMonth(int year, int month);
+	
+	Optional<Budget> findByTag(String active);
 }

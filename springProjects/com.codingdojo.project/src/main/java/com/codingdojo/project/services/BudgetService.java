@@ -1,5 +1,6 @@
 package com.codingdojo.project.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ public class BudgetService {
 		this.budRepo = budRepo;
 	}
 	
+	
+	
 	public Budget oneBudget(Long id) {
 		Optional<Budget> optBud = budRepo.findById(id);;
 		if(optBud.isPresent()) {
@@ -28,8 +31,13 @@ public class BudgetService {
 		return budRepo.save(budget);
 	}
 	
-//	public Budget searchBudget(int year, String month) {
-//		return budRepo
-//	}
+	public void removeCurrentActive(String active) {
+		Optional<Budget> optBud = budRepo.findByTag(active);
+		if(optBud.isPresent()) {
+			Budget thisBud = optBud.get();
+			thisBud.setTag(null);
+			budRepo.save(thisBud);
+		}
+	}
 	
 }

@@ -1,5 +1,7 @@
 package com.codingdojo.project.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -57,10 +59,10 @@ public class HomeController {
 		if(session.getAttribute("user_id") != null ) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
-			Budget budget = budSer.oneBudget(loggedID);
-			System.out.println("ID: " + userName);
+		
+			
 			model.addAttribute("logged",userName);
-			model.addAttribute("budget",budget);
+		
 				return "dashboard.jsp";
 			}else {
 				return "redirect:/";
@@ -133,12 +135,9 @@ public class HomeController {
 	public String newSmuget(Model model, @ModelAttribute("budget") Budget budget,HttpSession session) {
 		Long loggedID = (Long) session.getAttribute("user_id");
 		User userName = userSer.oneUser(loggedID);
+
 		model.addAttribute("userName",userName);
 		return "newSmuget.jsp";
-	}
-	@GetMapping("/api/add/budget")
-	public String addBudget(Model model, @Valid @ModelAttribute("budget") Budget budget) {
-		return "redirect:/dashboard";
 	}
 	
 	@PostMapping("/api/add/budget")
@@ -146,6 +145,9 @@ public class HomeController {
 		if(result.hasErrors()) {
 			return "newSmuget.jsp";
 		}else {
+			if(budget.getTag().equals("on")) {
+				budSer.removeCurrentActive("on");
+			}
 			Budget bud = budSer.createBudget(budget);
 			return "redirect:/expense/"+bud.getId(); 
 		}
@@ -159,14 +161,14 @@ public class HomeController {
 	
 	@PostMapping("/api/add/expense/{budID}")
 	public String addExpenseForm(Model model,@PathVariable("budID") Long budID,@Valid  @ModelAttribute("expense") Expense expense, BindingResult result) {
+		Budget budget = budSer.oneBudget(budID);
+		model.addAttribute("budget",budget);
 		if(result.hasErrors()) {
-			Budget bud = budSer.oneBudget(budID);
-			return "redirect:/expense/"+bud.getId(); 
+			return "redirect:/expense/"+budget.getId(); 
 		}else {
 			expSer.createExpense(expense);
-			return "redirect:/dashboard";
+			return "redirect:/expense/"+budget.getId(); 
 		}
-		
 	}
 	
 	@GetMapping("/expense/edit/{expID}/{budID}")
@@ -244,10 +246,6 @@ public class HomeController {
 		if(result.hasErrors()) {
 			Long loggedID = (Long) session.getAttribute("user_id");
 			User userName = userSer.oneUser(loggedID);
-			Budget bud = budSer.oneBudget(budID);
-			Temporary temp = tempSer.oneTemp(tempID);
-			model.addAttribute("temp",temp);
-			model.addAttribute("bud",bud);
 			model.addAttribute("userName",userName);
 			return "editTemporary.jsp";
 		}else {
@@ -268,4 +266,10 @@ public class HomeController {
 		return "history.jsp";
 	}
 
+	// ================================ Clear ===============================
+	@GetMapping("/clear")
+	public String clear() {
+		budSer.removeCurrentActive("on");
+		return "redirect:/dashboard";
+	}
 }

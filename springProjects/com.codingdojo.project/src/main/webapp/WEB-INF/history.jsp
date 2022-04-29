@@ -33,7 +33,7 @@
     
     <div class="banner">
     	<div class="txtWrp">	
-    		<h1>History</h1>
+    		<h1>All Budgets</h1>
     		<p class="subtitle">Stop fussing. It's only bad if<br/> you didn't follow the budget </p>
     	</div>
  	</div>
@@ -58,6 +58,8 @@
  			<input type="number" name="year" class="year" placeholder="Year..." />
  			<input type="submit" value="Search" class="submit"/>
  		</form>
+ 		
+ 		
  	</div>
  	
     <footer>

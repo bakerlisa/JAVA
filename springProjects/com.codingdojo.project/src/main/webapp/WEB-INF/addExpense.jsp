@@ -56,8 +56,15 @@
  		</form:form>
  		
  		<div class="expenseList">
- 		
+ 			<h5>Current Recurring Expenses:</h5>
+ 			
+ 			<ul>
+ 				<c:forEach var="charge" items="${budget.expenses }">
+ 				<li>${ charge.type} - $${charge.cost }</li>
+ 				</c:forEach>
+ 			</ul>
  		</div>
+ 		<a href="/" class="button">Full Smuget</a>
     </div> <!-- End of Container -->
     
      <footer>

@@ -35,7 +35,7 @@
     <div class="banner">
     	<div class="txtWrp">
     		<h1>Personal Settings</h1>
-    		<p>I say good chap! What a day!</p>
+    		<p>Giraffes can run up to speeds of 35 miles per hour,<br/> outrunning most horses.</p>
     	</div>
     </div>
     	
