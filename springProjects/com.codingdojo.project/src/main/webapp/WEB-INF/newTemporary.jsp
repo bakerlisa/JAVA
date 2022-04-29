@@ -32,15 +32,16 @@
     	</div>
     </nav>
     
-     <div class="banner">
+     <!-- <div class="banner">
     	<div class="txtWrp">	
     		<h1>Temporary Expense</h1>
     		<p class="subtitle">Wait wait wait...you bought what for how much?</p>
     	</div>
- 	</div>
+ 	</div> -->
  	
  	<div class="container">
- 		<h2>Temp Expense</h2>
+ 		<h2>Temporary Expense</h2>
+		 <p style="text-align:center">Expenses Unquie to this month</p>
  		
  		<form:form action="/api/add/temporary/${budget.id }" method="post" modelAttribute="temporary">
  			<div>

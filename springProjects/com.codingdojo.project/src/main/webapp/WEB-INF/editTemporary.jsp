@@ -32,29 +32,31 @@
     	</div>
     </nav>
     
-    <div class="banner">
+    <!-- <div class="banner">
     	<div class="txtWrp">
     		<h1>Edit Temporary Expense </h1>
     		<p class="subtitle">Bears can sleep more than 100 days without eating, drinking, or passing waste</p>
     	</div>
-    </div>
+    </div> -->
     
     <div class="container"> <!-- Beginning of Container -->
 		<h2>Edit Temporary Payment: <span>${temp.type }</span></h2>
         <form:form method="post" action="/api/update/temporary/${temp.id }/${bud.id}" modelAttribute="temporary">
  			<span class="wrp flex">	
  				<div>
+					<form:label path="type"><strong>Purchase Label:</strong> ${temp.type }</form:label>
  					<form:input type="text" path="type" placeholder="Expense..."  value="${temp.type }" />
  					<form:errors class="error" path="type"/>
  				</div>
  				<div>	
+					<form:label path="cost"><strong>Cost:</strong> $${temp.cost }</form:label>
  					<form:input type="number" path="cost" step="0.01" placeholder="$..." value="${temp.cost }" />
  					<form:errors class="error" path="cost"/>
  				</div>
 
 				<div>
-					<form:label path="category">Category:</form:label>
-				   <form:select path="category">
+					<form:label path="category"><strong>Category:</strong> ${temp.category }</form:label>
+				   <form:select path="category" value="${temp.category }" >
 					   <form:option value="">Leave Blank</form:option>
 					   <form:option value="birthday">Birthday/Holiday</form:option>
 					   <form:option value="transportation">Transportation</form:option>

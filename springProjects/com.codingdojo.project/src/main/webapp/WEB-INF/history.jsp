@@ -31,10 +31,10 @@
     	</div>
     </nav>
     
-    <div class="banner">
+     <div class="banner">
     	<div class="txtWrp">	
-    		<h1>All Budgets</h1>
-    		<p class="subtitle">Stop. No one needs you as an alarm anymore</p>
+    		<h1>Temporary Expense</h1>
+    		<p class="subtitle">Wait wait wait...you bought what for how much?</p>
     	</div>
  	</div>
  	

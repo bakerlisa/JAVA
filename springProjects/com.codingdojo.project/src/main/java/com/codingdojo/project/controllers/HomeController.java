@@ -285,7 +285,7 @@ public class HomeController {
        return "redirect:/dashboard";
    }
 	
-	// ================================ History ===============================
+	// ================================ History  ===============================
 	@GetMapping("/history")
 	public String history(Model model,HttpSession session) {
 		Long loggedID = (Long) session.getAttribute("user_id");
@@ -304,6 +304,8 @@ public class HomeController {
 		model.addAttribute("budget",budget);
 		return "indvHistory.jsp";
 	}
+	
+	// ================================ Search ===============================
 	
 
 	// ================================ Clear ===============================
