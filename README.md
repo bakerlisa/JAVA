@@ -9,4 +9,4 @@ all the wonderful projects and assigments from Coding Dojo as I learned Java
 
 
 #### Take a break, have a laugh
-![](https://github.com/lisabroadhead/smugetor/blob/main/Screen%20Shot%202022-04-28%20at%201.15.16%20PM.png)
+![](https://github.com/lisabroadhead/JAVA-coding-dojo/blob/main/8c11685d2e41404155d1e77ccfa6faeb.jpeg)
