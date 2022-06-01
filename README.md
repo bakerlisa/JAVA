@@ -1,4 +1,6 @@
-# JAVA-coding-dojo
+# JAVA
+
+Languages/Technologies: Java, Spring, Sprinboot, JS, CSS, HTML
 
 
 all the wonderful projects and assigments from Coding Dojo as I learned Java
