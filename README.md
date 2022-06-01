@@ -7,7 +7,7 @@ all the wonderful projects and assigments from Coding Dojo as I learned Java
 ## Best of the Best
 1. Smuegator - https://github.com/lisabroadhead/Smugetor
 
-*** Coming Soon!! ***
+*** Rest Coming Soon!! ***
 
 
 #### Take a break, have a laugh
