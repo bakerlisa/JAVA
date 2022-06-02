@@ -1,6 +1,6 @@
 # JAVA
 
-☕ Welcom to my JAva folder! A majority of this langaues learning, notes and projects are here! Enjoy
+☕ Welcom to my Java folder! A majority of this langaues learning, notes and projects are here! Enjoy
 
 Languages/Technologies: Java, Spring, Sprinboot, JS, CSS, HTML
 
