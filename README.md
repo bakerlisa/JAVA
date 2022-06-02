@@ -23,7 +23,7 @@ all the wonderful projects and assigments from Coding Dojo as I learned Java
 7. Fruity Loops - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.fruityLoops
 8. Hopper's Receipt - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.hoppersHat
 
-*** Rest Coming Soon!! ***
+*** I used a template for a few of my projects, so I want to go back and give them a face lift! Coming soo (if I don't get distracted)  ***
 
 
 #### Take a break, have a laugh
