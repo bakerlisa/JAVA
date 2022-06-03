@@ -1,6 +1,6 @@
 # JAVA
 
-☕ Welcome one and all to Java. This was a language that I;m still not sure about. The backend was odd. It was just odd. But I loved the set up it then gave the frontend. And the langauge itself. Well, I don't know. I'm still on the fence
+☕ Welcome one and all to Java. This was a language that I'm still not sure about. The backend was odd. It was just odd. But I loved the set up it then gave the frontend. And the langauge itself. Well, I don't know. I'm still on the fence
 
 #### Languages/Technologies: 
 Java, Spring, Sprinboot, JS, CSS, HTML
