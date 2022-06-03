@@ -1,14 +1,11 @@
 # JAVA
 
-☕ Welcom to my Java folder! A majority of this langaues learning, notes and projects are here! Enjoy
+☕ Welcome one and all to Java. This was a language that I;m still not sure about. The backend was odd. It was just odd. But I loved the set up it then gave the frontend. And the langauge itself. Well, I don't know. I'm still on the fence
 
-Languages/Technologies: Java, Spring, Sprinboot, JS, CSS, HTML
+#### Languages/Technologies: 
+Java, Spring, Sprinboot, JS, CSS, HTML
 
-
-all the wonderful projects and assigments from Coding Dojo as I learned Java
-
-
-## Best of the Best
+## Top
 1. Smuegator - https://github.com/lisabroadhead/Smugetor
 2. JoyBundler - https://github.com/lisabroadhead/JoyBundler
 
