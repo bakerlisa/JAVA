@@ -5,7 +5,7 @@
 #### Languages/Technologies: 
 Java, Spring, Sprinboot, JS, CSS, HTML
 
-## Top
+## Top Picks
 1. Smuegator - https://github.com/lisabroadhead/Smugetor
 2. JoyBundler - https://github.com/lisabroadhead/JoyBundler
 
