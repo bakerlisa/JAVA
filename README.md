@@ -10,7 +10,7 @@ Java, Spring, Sprinboot, JS, CSS, HTML
 2. Baby Names - https://github.com/lisabroadhead/BabyNames
 
 ### Full Crud Assigments
-1. Dojo Overflo - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.DojoOverflow
+1. Dojo Overflow - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.DojoOverflow
 2. Book Club - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.bookClubAssigment
 3. Songs - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.lookfyTwo
 4. Ninja Gold - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.ninjaGold2
