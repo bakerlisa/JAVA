@@ -7,7 +7,7 @@ Java, Spring, Sprinboot, JS, CSS, HTML
 
 ## Top Picks
 1. Smuegator - https://github.com/lisabroadhead/Smugetor
-2. JoyBundler - https://github.com/lisabroadhead/JoyBundler
+2. Baby Names - https://github.com/lisabroadhead/BabyNames
 
 ### Full Crud Assigments
 1. Dojo Overflo - https://github.com/lisabroadhead/JAVA-coding-dojo/tree/main/springProjects/com.codingdojo.DojoOverflow
